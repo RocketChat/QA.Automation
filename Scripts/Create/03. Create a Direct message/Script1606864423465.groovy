@@ -43,7 +43,7 @@ WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage/DirectMessagesInput_Object
 
 WebUI.click(findTestObject('Rocketchat_OR/Homepage/CreateDmButton_Object'))
 
-WebUI.delay(0)
+WebUI.delay(5)
 
 WebUI.closeBrowser()
 
