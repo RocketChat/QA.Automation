@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>01. Search a user and send a Direct Message</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>65d2f14e-5bf5-4cab-9abc-22a8a05f4c73</testCaseGuid>
+</TestCaseEntity>

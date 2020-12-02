@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>02. Search a private channel and post a message</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d6e3be67-af6e-474e-bbe2-a75e60f43fbd</testCaseGuid>
+</TestCaseEntity>

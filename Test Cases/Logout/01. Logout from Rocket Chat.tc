@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>01. Logout from Rocket Chat</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b940536b-dff0-4931-8959-db303ead8747</testCaseGuid>
+</TestCaseEntity>
