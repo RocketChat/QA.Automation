@@ -15,23 +15,3 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
-
-WebUI.navigateToUrl('https://open.rocket.chat/home')
-
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_emailOrUsername'), GlobalVariable.userName)
-
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_pass'), GlobalVariable.userPassword)
-
-WebUI.click(findTestObject('Rocketchat_OR/LoginPage_OR/button_Login'))
-
-WebUI.delay(5)
-
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/Avatar_Object'))
-
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/Logout_Object'))
-
-WebUI.delay(0)
-
-WebUI.closeBrowser()
-

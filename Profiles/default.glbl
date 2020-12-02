@@ -44,4 +44,9 @@
       <initValue>'automationscript'</initValue>
       <name>ReactionText</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Meher'</initValue>
+      <name>SearchUser</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

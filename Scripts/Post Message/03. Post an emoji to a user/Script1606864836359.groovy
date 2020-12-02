@@ -27,7 +27,7 @@ WebUI.click(findTestObject('Rocketchat_OR/LoginPage_OR/button_Login'))
 
 WebUI.waitForPageLoad(15)
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/searchButton_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage/SearchButton_Object'))
 
 WebUI.click(findTestObject('Rocketchat_OR/Homepage/SearchInput_Object'))
 

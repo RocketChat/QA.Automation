@@ -14,6 +14,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
 
@@ -35,7 +36,7 @@ WebUI.setText(findTestObject('Rocketchat_OR/Homepage/SearchInput_Object'), Globa
 
 WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage/SearchInput_Object'), Keys.chord(Keys.ENTER))
 
-WebUI.waitForElementVisible(findTestObject('Rocketchat_OR/Homepage/ChatWindowTextarea_Object'), 0)
+WebUI.waitForElementVisible(findTestObject('Rocketchat_OR/Homepage/ChatWindowTextarea_Object'), 5)
 
 WebUI.click(findTestObject('Rocketchat_OR/Homepage/ChatWindowTextarea_Object'))
 

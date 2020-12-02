@@ -14,6 +14,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
 
@@ -27,17 +28,23 @@ WebUI.click(findTestObject('Rocketchat_OR/LoginPage_OR/button_Login'))
 
 WebUI.waitForPageLoad(15)
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/general_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage/DirectUser_Object'))
 
 WebUI.waitForPageLoad(5, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/MessageTextArea_Object'))
-
-WebUI.setText(findTestObject('Rocketchat_OR/Homepage/MessageTextArea_Object'), GlobalVariable.ReactionText)
-
-WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage/MessageTextArea_Object'), Keys.chord(Keys.ENTER))
-
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/ReactionMessage_Object'))
+WebUI.mouseOver(findTestObject('Rocketchat_OR/Homepage/ReactionMessage_Object'))
 
 WebUI.click(findTestObject('Rocketchat_OR/Homepage/AddReaction_Object'))
+
+WebUI.click(findTestObject('Rocketchat_OR/Homepage/SmileyInput_Object'))
+
+WebUI.setText(findTestObject('Rocketchat_OR/Homepage/SmileyInput_Object'), 'Smiley')
+
+WebUI.waitForElementVisible(findTestObject('Rocketchat_OR/Homepage/Smileyemoji_Object'), 5)
+
+WebUI.click(findTestObject('Rocketchat_OR/Homepage/Smileyemoji_Object'))
+
+WebUI.delay(3)
+
+WebUI.closeBrowser()
 
