@@ -39,8 +39,6 @@ WebUI.setText(findTestObject('Rocketchat_OR/Homepage/DirectMessagesInput_Object'
 
 WebUI.delay(3)
 
-WebUI.acceptAlert()
-
 WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage/DirectMessagesInput_Object'), Keys.chord(Keys.ENTER))
 
 WebUI.click(findTestObject('Rocketchat_OR/Homepage/CreateDmButton_Object'))
