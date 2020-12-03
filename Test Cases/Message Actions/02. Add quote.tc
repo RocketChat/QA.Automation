@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>07. Post a message in the auto created channel</name>
+   <name>02. Add quote</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>5c37744e-d47f-426a-b08b-50b03f300379</testCaseGuid>
+   <testCaseGuid>133f4cb8-022e-4e63-8987-e1484dec0397</testCaseGuid>
 </TestCaseEntity>

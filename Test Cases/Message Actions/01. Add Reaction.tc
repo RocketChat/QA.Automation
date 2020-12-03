@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>05. Add a reaction to message</name>
+   <name>01. Add Reaction</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>de0b2955-e19a-45d6-a355-69127bfc76a1</testCaseGuid>
+   <testCaseGuid>6e01c2e1-f4a1-4566-97f7-86d0bbbf08b2</testCaseGuid>
 </TestCaseEntity>
