@@ -32,24 +32,17 @@ WebUI.click(findTestObject('Rocketchat_OR/Homepage/DirectUser_Object'))
 
 WebUI.waitForPageLoad(5, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/ChatWindowTextarea_Object'))
-
-WebUI.setText(findTestObject('Rocketchat_OR/Homepage/ChatWindowTextarea_Object'), 'A message to test quote')
-
-WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage/ChatWindowTextarea_Object'), Keys.chord(Keys.ENTER))
-
-//WebUI.click(findTestObject('Rocketchat_OR/Homepage/ChatWindowTextarea_Object'))
-//WebUI.setText(findTestObject('Rocketchat_OR/Homepage/ChatWindowTextarea_Object'), 'A new message')
-//WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage/ChatWindowTextarea_Object'), Keys.chord(Keys.ENTER))
 WebUI.mouseOver(findTestObject('Rocketchat_OR/Homepage/ReactionMessage_Object'))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/AddQuote_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage/AddReaction_Object'))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/ChatWindowTextarea_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage/SmileyInput_Object'))
 
-WebUI.setText(findTestObject('Rocketchat_OR/Homepage/ChatWindowTextarea_Object'), 'Testing quote')
+WebUI.setText(findTestObject('Rocketchat_OR/Homepage/SmileyInput_Object'), 'Smiley')
 
-WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage/ChatWindowTextarea_Object'), Keys.chord(Keys.ENTER))
+WebUI.waitForElementVisible(findTestObject('Rocketchat_OR/Homepage/Smileyemoji_Object'), 5)
+
+WebUI.click(findTestObject('Rocketchat_OR/Homepage/Smileyemoji_Object'))
 
 WebUI.delay(3)
 

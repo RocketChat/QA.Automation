@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>CSS</key>
-         <value>.wrapper>ul>li:last-child>.message-actions:last-child> div.message-actions__buttons> button:nth-child(3)</value>
+         <value>.wrapper>ul>li:last-child> div.message-actions > div.message-actions__buttons > button:nth-child(3)</value>
       </entry>
    </selectorCollection>
    <selectorMethod>CSS</selectorMethod>

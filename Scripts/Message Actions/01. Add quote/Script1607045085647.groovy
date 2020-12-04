@@ -34,17 +34,15 @@ WebUI.waitForPageLoad(5, FailureHandling.STOP_ON_FAILURE)
 
 WebUI.mouseOver(findTestObject('Rocketchat_OR/Homepage/ReactionMessage_Object'))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/ReplyinThread_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage/AddQuote_Object'))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/ReplyinThread-Teaxtarea_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage/ChatWindowTextarea_Object'))
 
-WebUI.setText(findTestObject('Rocketchat_OR/Homepage/ReplyinThread-Teaxtarea_Object'), 'Testing Reply in thread')
+WebUI.setText(findTestObject('Rocketchat_OR/Homepage/ChatWindowTextarea_Object'), 'Testing quote')
 
-WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage/ReplyinThread-Teaxtarea_Object'), Keys.chord(Keys.ENTER))
+WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage/ChatWindowTextarea_Object'), Keys.chord(Keys.ENTER))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/CloseButton_Object'))
-
-WebUI.delay(5)
+WebUI.delay(3)
 
 WebUI.closeBrowser()
 
