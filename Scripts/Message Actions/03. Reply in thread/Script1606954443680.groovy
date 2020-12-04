@@ -14,4 +14,43 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
+
+WebUI.openBrowser('')
+
+WebUI.navigateToUrl('https://open.rocket.chat/home')
+
+WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_emailOrUsername'), GlobalVariable.userName)
+
+WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_pass'), GlobalVariable.userPassword)
+
+WebUI.click(findTestObject('Rocketchat_OR/LoginPage_OR/button_Login'))
+
+WebUI.waitForPageLoad(15)
+
+WebUI.click(findTestObject('Rocketchat_OR/Homepage/DirectUser_Object'))
+
+WebUI.waitForPageLoad(5, FailureHandling.STOP_ON_FAILURE)
+
+WebUI.click(findTestObject('Rocketchat_OR/Homepage/ChatWindowTextarea_Object'))
+
+WebUI.setText(findTestObject('Rocketchat_OR/Homepage/ChatWindowTextarea_Object'), 'A message to test reply in thread')
+
+WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage/ChatWindowTextarea_Object'), Keys.chord(Keys.ENTER))
+
+WebUI.mouseOver(findTestObject('Rocketchat_OR/Homepage/ReactionMessage_Object'))
+
+WebUI.click(findTestObject('Rocketchat_OR/Homepage/ReplyinThread_Object'))
+
+WebUI.click(findTestObject('Rocketchat_OR/Homepage/ReplyinThread-Teaxtarea_Object'))
+
+WebUI.setText(findTestObject('Rocketchat_OR/Homepage/ReplyinThread-Teaxtarea_Object'), 'Testing Reply in thread')
+
+WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage/ReplyinThread-Teaxtarea_Object'), Keys.chord(Keys.ENTER))
+
+WebUI.click(findTestObject('Rocketchat_OR/Homepage/CloseButton_Object'))
+
+WebUI.delay(5)
+
+WebUI.closeBrowser()
 
