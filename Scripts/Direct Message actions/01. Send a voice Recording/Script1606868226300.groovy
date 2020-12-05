@@ -19,27 +19,27 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://open.rocket.chat/home')
 
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_emailOrUsername'), GlobalVariable.userName)
+WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_emailOrUsername'), GlobalVariable.userName)
 
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_pass'), GlobalVariable.userPassword)
+WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_pass'), GlobalVariable.userPassword)
 
-WebUI.click(findTestObject('Rocketchat_OR/LoginPage_OR/button_Login'))
+WebUI.click(findTestObject('Rocketchat_OR/LoginPage Objects/button_Login'))
 
 WebUI.waitForPageLoad(15)
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/searchButton_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/searchButton_Object'))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/SearchInput_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Search Objects/SearchInput_Object'))
 
-WebUI.setText(findTestObject('Rocketchat_OR/Homepage/SearchInput_Object'), 'Meher')
+WebUI.setText(findTestObject('Rocketchat_OR/Homepage Objects/Search Objects/SearchInput_Object'), 'Meher')
 
-WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage/SearchInput_Object'), Keys.chord(Keys.ENTER))
+WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage Objects/Search Objects/SearchInput_Object'), Keys.chord(Keys.ENTER))
 
-WebUI.waitForElementVisible(findTestObject('Rocketchat_OR/Homepage/ChatWindowTextarea_Object'), 0)
+WebUI.waitForElementVisible(findTestObject('Rocketchat_OR/Homepage Objects/DM objects/ChatWindowTextarea_Object'), 0)
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/AudioRecording_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/DM objects/AudioRecording_Object'))
 
 WebUI.delay(5)
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/CheckboxAudio_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/DM objects/CheckboxAudio_Object'))
 

@@ -20,33 +20,33 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://open.rocket.chat/home')
 
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_emailOrUsername'), GlobalVariable.userName)
+WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_emailOrUsername'), GlobalVariable.userName)
 
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_pass'), GlobalVariable.userPassword)
+WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_pass'), GlobalVariable.userPassword)
 
-WebUI.click(findTestObject('Rocketchat_OR/LoginPage_OR/button_Login'))
+WebUI.click(findTestObject('Rocketchat_OR/LoginPage Objects/button_Login'))
 
 WebUI.delay(5)
 
 WebUI.maximizeWindow()
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/AddOption_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/AddOption_Object'))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/Channel_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/Channel_Object'))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/ChannelNameInput_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/ChannelNameInput_Object'))
 
-WebUI.setText(findTestObject('Rocketchat_OR/Homepage/ChannelNameInput_Object'), GlobalVariable.ChannelName)
+WebUI.setText(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/ChannelNameInput_Object'), GlobalVariable.ChannelName)
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/InviteuserInput_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/InviteuserInput_Object'))
 
-WebUI.setText(findTestObject('Rocketchat_OR/Homepage/InviteuserInput_Object'), 'meherishrat')
+WebUI.setText(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/InviteuserInput_Object'), 'meherishrat')
 
 WebUI.delay(5)
 
-WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage/InviteuserInput_Object'), Keys.chord(Keys.ENTER))
+WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/InviteuserInput_Object'), Keys.chord(Keys.ENTER))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/CreateChannelButton_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/CreateChannelButton_Object'))
 
 WebUI.delay(5)
 

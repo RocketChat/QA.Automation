@@ -19,17 +19,17 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://open.rocket.chat/home')
 
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_emailOrUsername'), GlobalVariable.userName)
+WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_emailOrUsername'), GlobalVariable.userName)
 
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_pass'), GlobalVariable.userPassword)
+WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_pass'), GlobalVariable.userPassword)
 
-WebUI.click(findTestObject('Rocketchat_OR/LoginPage_OR/button_Login'))
+WebUI.click(findTestObject('Rocketchat_OR/LoginPage Objects/button_Login'))
 
 WebUI.delay(5)
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/Avatar_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Menu objects/Avatar_Object'))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/Logout_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Menu objects/Logout_Object'))
 
 WebUI.delay(0)
 

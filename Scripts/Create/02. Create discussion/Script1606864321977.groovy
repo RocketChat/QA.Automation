@@ -20,49 +20,51 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://open.rocket.chat/home')
 
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_emailOrUsername'), GlobalVariable.userName)
+WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_emailOrUsername'), GlobalVariable.userName)
 
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_pass'), GlobalVariable.userPassword)
+WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_pass'), GlobalVariable.userPassword)
 
-WebUI.click(findTestObject('Rocketchat_OR/LoginPage_OR/button_Login'))
+WebUI.click(findTestObject('Rocketchat_OR/LoginPage Objects/button_Login'))
 
 WebUI.delay(5)
 
 WebUI.maximizeWindow()
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/AddOption_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/AddOption_Object'))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/Discussion_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/Discussion_Object'))
 
 WebUI.delay(5)
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/DiscussionParentInput_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/DiscussionParentInput_Object'))
 
-WebUI.setText(findTestObject('Rocketchat_OR/Homepage/DiscussionParentInput_Object'), 'general')
-
-WebUI.delay(4)
-
-WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage/DiscussionParentInput_Object'), Keys.chord(Keys.ENTER))
+WebUI.setText(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/DiscussionParentInput_Object'), 'general')
 
 WebUI.delay(4)
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/DiscussionName_Object'))
-
-WebUI.setText(findTestObject('Rocketchat_OR/Homepage/DiscussionName_Object'), GlobalVariable.DiscussionName)
-
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/DiscussionInviteUsers_Object'))
-
-WebUI.setText(findTestObject('Rocketchat_OR/Homepage/DiscussionInviteUsers_Object'), 'meherishrat')
+WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/DiscussionParentInput_Object'), Keys.chord(
+        Keys.ENTER))
 
 WebUI.delay(4)
 
-WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage/DiscussionInviteUsers_Object'), Keys.chord(Keys.ENTER))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/DiscussionName_Object'))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/DiscussionMessage_Object'))
+WebUI.setText(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/DiscussionName_Object'), GlobalVariable.DiscussionName)
 
-WebUI.setText(findTestObject('Rocketchat_OR/Homepage/DiscussionMessage_Object'), 'TestDiscussion')
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/DiscussionInviteUsers_Object'))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/CreateDiscussionButton_Object'))
+WebUI.setText(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/DiscussionInviteUsers_Object'), 'meherishrat')
+
+WebUI.delay(4)
+
+WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/DiscussionInviteUsers_Object'), Keys.chord(
+        Keys.ENTER))
+
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/DiscussionMessage_Object'))
+
+WebUI.setText(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/DiscussionMessage_Object'), 'TestDiscussion')
+
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/CreateDiscussionButton_Object'))
 
 WebUI.delay(5)
 

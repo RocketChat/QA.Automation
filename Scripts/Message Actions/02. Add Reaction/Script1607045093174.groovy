@@ -20,29 +20,29 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://open.rocket.chat/home')
 
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_emailOrUsername'), GlobalVariable.userName)
+WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_emailOrUsername'), GlobalVariable.userName)
 
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_pass'), GlobalVariable.userPassword)
+WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_pass'), GlobalVariable.userPassword)
 
-WebUI.click(findTestObject('Rocketchat_OR/LoginPage_OR/button_Login'))
+WebUI.click(findTestObject('Rocketchat_OR/LoginPage Objects/button_Login'))
 
 WebUI.waitForPageLoad(15)
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/DirectUser_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/DM objects/DirectUser_Object'))
 
 WebUI.waitForPageLoad(5, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.mouseOver(findTestObject('Rocketchat_OR/Homepage/ReactionMessage_Object'))
+WebUI.mouseOver(findTestObject('Rocketchat_OR/Homepage Objects/MessageAction Objects/ReactionMessage_Object'))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/AddReaction_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/MessageAction Objects/AddReaction_Object'))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/SmileyInput_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Emoji objects/SmileyInput_Object'))
 
-WebUI.setText(findTestObject('Rocketchat_OR/Homepage/SmileyInput_Object'), 'Smiley')
+WebUI.setText(findTestObject('Rocketchat_OR/Homepage Objects/Emoji objects/SmileyInput_Object'), 'Smiley')
 
-WebUI.waitForElementVisible(findTestObject('Rocketchat_OR/Homepage/Smileyemoji_Object'), 5)
+WebUI.waitForElementVisible(findTestObject('Rocketchat_OR/Homepage Objects/Emoji objects/Smileyemoji_Object'), 5)
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/Smileyemoji_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Emoji objects/Smileyemoji_Object'))
 
 WebUI.delay(3)
 

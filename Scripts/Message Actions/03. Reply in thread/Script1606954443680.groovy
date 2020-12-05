@@ -20,29 +20,30 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://open.rocket.chat/home')
 
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_emailOrUsername'), GlobalVariable.userName)
+WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_emailOrUsername'), GlobalVariable.userName)
 
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_pass'), GlobalVariable.userPassword)
+WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_pass'), GlobalVariable.userPassword)
 
-WebUI.click(findTestObject('Rocketchat_OR/LoginPage_OR/button_Login'))
+WebUI.click(findTestObject('Rocketchat_OR/LoginPage Objects/button_Login'))
 
 WebUI.waitForPageLoad(15)
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/DirectUser_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/DM objects/DirectUser_Object'))
 
 WebUI.waitForPageLoad(5, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.mouseOver(findTestObject('Rocketchat_OR/Homepage/ReactionMessage_Object'))
+WebUI.mouseOver(findTestObject('Rocketchat_OR/Homepage Objects/MessageAction Objects/ReactionMessage_Object'))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/ReplyinThread_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/MessageAction Objects/ReplyinThread_Object'))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/ReplyinThread-Teaxtarea_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/MessageAction Objects/ReplyinThread-Teaxtarea_Object'))
 
-WebUI.setText(findTestObject('Rocketchat_OR/Homepage/ReplyinThread-Teaxtarea_Object'), 'Testing Reply in thread')
+WebUI.setText(findTestObject('Rocketchat_OR/Homepage Objects/MessageAction Objects/ReplyinThread-Teaxtarea_Object'), 'Testing Reply in thread')
 
-WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage/ReplyinThread-Teaxtarea_Object'), Keys.chord(Keys.ENTER))
+WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage Objects/MessageAction Objects/ReplyinThread-Teaxtarea_Object'), Keys.chord(
+        Keys.ENTER))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/CloseButton_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/MessageAction Objects/CloseButton_Object'))
 
 WebUI.delay(5)
 

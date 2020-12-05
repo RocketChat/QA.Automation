@@ -14,28 +14,31 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://open.rocket.chat/home')
 
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_emailOrUsername'), GlobalVariable.userName)
+WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_emailOrUsername'), GlobalVariable.userName)
 
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_pass'), GlobalVariable.userPassword)
+WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_pass'), GlobalVariable.userPassword)
 
-WebUI.click(findTestObject('Rocketchat_OR/LoginPage_OR/button_Login'))
+WebUI.click(findTestObject('Rocketchat_OR/LoginPage Objects/button_Login'))
 
 WebUI.waitForPageLoad(15)
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/PrivateChannel_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Private Channel Objects/PrivateChannel_Object'))
 
-WebUI.waitForElementVisible(findTestObject('Rocketchat_OR/Homepage/ChannelTextarea_Object'), 0)
+WebUI.waitForElementVisible(findTestObject('Rocketchat_OR/Homepage Objects/Private Channel Objects/ChannelTextarea_Object'), 
+    0)
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/ChannelTextarea_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Private Channel Objects/ChannelTextarea_Object'))
 
-WebUI.setText(findTestObject('Rocketchat_OR/Homepage/ChannelTextarea_Object'), 'Hello Testing')
+WebUI.setText(findTestObject('Rocketchat_OR/Homepage Objects/Private Channel Objects/ChannelTextarea_Object'), GlobalVariable.MessageText)
 
-WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage/ChannelTextarea_Object'), Keys.chord(Keys.ENTER))
+WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage Objects/Private Channel Objects/ChannelTextarea_Object'), Keys.chord(
+        Keys.ENTER))
 
 WebUI.delay(5)
 

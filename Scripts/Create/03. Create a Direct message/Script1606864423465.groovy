@@ -20,29 +20,29 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://open.rocket.chat/home')
 
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_emailOrUsername'), GlobalVariable.userName)
+WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_emailOrUsername'), GlobalVariable.userName)
 
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_pass'), GlobalVariable.userPassword)
+WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_pass'), GlobalVariable.userPassword)
 
-WebUI.click(findTestObject('Rocketchat_OR/LoginPage_OR/button_Login'))
+WebUI.click(findTestObject('Rocketchat_OR/LoginPage Objects/button_Login'))
 
 WebUI.delay(5)
 
 WebUI.maximizeWindow()
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/AddOption_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/AddOption_Object'))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/DirectMessage_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/DirectMessage_Object'))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/DirectMessagesInput_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/DirectMessagesInput_Object'))
 
-WebUI.setText(findTestObject('Rocketchat_OR/Homepage/DirectMessagesInput_Object'), 'meherishrat')
+WebUI.setText(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/DirectMessagesInput_Object'), 'meherishrat')
 
 WebUI.delay(3)
 
-WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage/DirectMessagesInput_Object'), Keys.chord(Keys.ENTER))
+WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/DirectMessagesInput_Object'), Keys.chord(Keys.ENTER))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/CreateDmButton_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Create Objects/CreateDmButton_Object'))
 
 WebUI.delay(5)
 

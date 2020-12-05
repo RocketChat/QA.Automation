@@ -19,23 +19,23 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://open.rocket.chat/home')
 
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_emailOrUsername'), GlobalVariable.userName)
+WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_emailOrUsername'), GlobalVariable.userName)
 
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage_OR/input_Login_pass'), GlobalVariable.userPassword)
+WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_pass'), GlobalVariable.userPassword)
 
-WebUI.click(findTestObject('Rocketchat_OR/LoginPage_OR/button_Login'))
+WebUI.click(findTestObject('Rocketchat_OR/LoginPage Objects/button_Login'))
 
 WebUI.waitForPageLoad(15)
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/Autochannel_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Private Channel Objects/Autochannel_Object'))
 
-WebUI.waitForElementVisible(findTestObject('Rocketchat_OR/Homepage/ChannelTextarea_Object'), 0)
+WebUI.waitForElementVisible(findTestObject('Rocketchat_OR/Homepage Objects/Private Channel Objects/ChannelTextarea_Object'), 0)
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage/ChannelTextarea_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Private Channel Objects/ChannelTextarea_Object'))
 
-WebUI.setText(findTestObject('Rocketchat_OR/Homepage/ChannelTextarea_Object'), 'Hello Testing')
+WebUI.setText(findTestObject('Rocketchat_OR/Homepage Objects/Private Channel Objects/ChannelTextarea_Object'), 'Hello Testing')
 
-WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage/ChannelTextarea_Object'), Keys.chord(Keys.ENTER))
+WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage Objects/Private Channel Objects/ChannelTextarea_Object'), Keys.chord(Keys.ENTER))
 
 WebUI.delay(5)
 
