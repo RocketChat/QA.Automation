@@ -25,6 +25,8 @@ WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_pass')
 
 WebUI.click(findTestObject('Rocketchat_OR/LoginPage Objects/button_Login'))
 
+WebUI.waitForPageLoad(10)
+
 WebUI.delay(5)
 
 WebUI.closeBrowser()

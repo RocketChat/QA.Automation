@@ -20,21 +20,19 @@ WebUI.openBrowser('')
 
 CustomKeywords.'rocketchatPackage.loginKeyword.loginRocketchat'()
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/DM objects/DirectUser_Object'))
+WebUI.maximizeWindow()
 
-WebUI.waitForPageLoad(5, FailureHandling.STOP_ON_FAILURE)
+WebUI.scrollToElement(findTestObject('Rocketchat_OR/Homepage Objects/Private Channel Objects/ScrollTochannel_Object'), 0)
 
-WebUI.mouseOver(findTestObject('Rocketchat_OR/Homepage Objects/MessageAction Objects/ReactionMessage_Object'))
+WebUI.mouseOver(findTestObject('Rocketchat_OR/Homepage Objects/DM objects/FirstDirectUser_Object'))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/MessageAction Objects/AddQuote_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/MoreOptions_Object/UserMoreOptions_Object'))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/DM objects/ChatWindowTextarea_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/MoreOptions_Object/UserHideoption_Object'))
 
-WebUI.setText(findTestObject('Rocketchat_OR/Homepage Objects/DM objects/ChatWindowTextarea_Object'), 'Testing quote')
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/MoreOptions_Object/HideButton_Object'))
 
-WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage Objects/DM objects/ChatWindowTextarea_Object'), Keys.chord(Keys.ENTER))
-
-WebUI.delay(3)
+WebUI.delay(5)
 
 WebUI.closeBrowser()
 

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>DirectUser_Object</name>
+   <name>UserHideoption_Object</name>
    <tag></tag>
-   <elementGuidId>428affea-66f3-4351-a584-7cf6b7285f0c</elementGuidId>
+   <elementGuidId>056ee8b7-b56a-4936-9cf8-a78a38bdf36f</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//*[contains(text(),'Meher')]  </value>
+         <value>//*[contains(text(),&quot;Hide&quot;)]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

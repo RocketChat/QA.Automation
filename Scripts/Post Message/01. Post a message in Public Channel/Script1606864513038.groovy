@@ -17,15 +17,7 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('https://open.rocket.chat/home')
-
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_emailOrUsername'), GlobalVariable.userName)
-
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_pass'), GlobalVariable.userPassword)
-
-WebUI.click(findTestObject('Rocketchat_OR/LoginPage Objects/button_Login'))
-
-WebUI.waitForPageLoad(15)
+CustomKeywords.'rocketchatPackage.loginKeyword.loginRocketchat'()
 
 WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/Public Channel Objects/general_Object'))
 

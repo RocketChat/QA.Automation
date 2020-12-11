@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>DirectUser_Object</name>
+   <name>HideButton_Object</name>
    <tag></tag>
-   <elementGuidId>428affea-66f3-4351-a584-7cf6b7285f0c</elementGuidId>
+   <elementGuidId>7cea983d-94df-4d22-8ba9-36c7cb44f880</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//*[contains(text(),'Meher')]  </value>
+         <value>//button[contains(text(),'Yes, hide it!')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

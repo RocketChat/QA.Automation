@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>DirectUser_Object</name>
+   <name>UnFavoriteOption_Object</name>
    <tag></tag>
-   <elementGuidId>428affea-66f3-4351-a584-7cf6b7285f0c</elementGuidId>
+   <elementGuidId>b2223199-bf12-44bf-a42c-3ac4ffa683cb</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//*[contains(text(),'Meher')]  </value>
+         <value>//*[contains(text(),&quot;Unfavorite&quot;)]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

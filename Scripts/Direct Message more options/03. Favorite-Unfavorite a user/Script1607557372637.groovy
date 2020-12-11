@@ -14,27 +14,31 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
-
 CustomKeywords.'rocketchatPackage.loginKeyword.loginRocketchat'()
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/DM objects/DirectUser_Object'))
+WebUI.maximizeWindow()
 
-WebUI.waitForPageLoad(5, FailureHandling.STOP_ON_FAILURE)
+WebUI.scrollToElement(findTestObject('Rocketchat_OR/Homepage Objects/Private Channel Objects/ScrollTochannel_Object'), 0)
 
-WebUI.mouseOver(findTestObject('Rocketchat_OR/Homepage Objects/MessageAction Objects/ReactionMessage_Object'))
+WebUI.mouseOver(findTestObject('Rocketchat_OR/Homepage Objects/DM objects/FirstDirectUser_Object'))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/MessageAction Objects/AddQuote_Object'))
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/MoreOptions_Object/UserMoreOptions_Object'))
 
-WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/DM objects/ChatWindowTextarea_Object'))
+WebUI.delay(2)
 
-WebUI.setText(findTestObject('Rocketchat_OR/Homepage Objects/DM objects/ChatWindowTextarea_Object'), 'Testing quote')
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/MoreOptions_Object/FavoriteOption_Object'))
 
-WebUI.sendKeys(findTestObject('Rocketchat_OR/Homepage Objects/DM objects/ChatWindowTextarea_Object'), Keys.chord(Keys.ENTER))
+WebUI.delay(5)
 
-WebUI.delay(3)
+WebUI.mouseOver(findTestObject('Rocketchat_OR/Homepage Objects/MoreOptions_Object/FavoriteUser_Object'))
+
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/MoreOptions_Object/FavoriteUserMoreOptions_Object'))
+
+WebUI.click(findTestObject('Rocketchat_OR/Homepage Objects/MoreOptions_Object/UnFavoriteOption_Object'))
+
+WebUI.delay(5)
 
 WebUI.closeBrowser()
 

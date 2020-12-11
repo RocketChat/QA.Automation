@@ -18,15 +18,7 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('https://open.rocket.chat/home')
-
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_emailOrUsername'), GlobalVariable.userName)
-
-WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_pass'), GlobalVariable.userPassword)
-
-WebUI.click(findTestObject('Rocketchat_OR/LoginPage Objects/button_Login'))
-
-WebUI.delay(5)
+CustomKeywords.'rocketchatPackage.loginKeyword.loginRocketchat'()
 
 WebUI.maximizeWindow()
 
