@@ -23,15 +23,15 @@ import internal.GlobalVariable
 public class loginKeyword {
 	@Keyword
 	def loginRocketchat (String) {
-		
+
 		WebUI.navigateToUrl('https://open.rocket.chat/home')
-		
-		WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_emailOrUsername'), GlobalVariable.userName)
-		
-		WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/input_Login_pass'), GlobalVariable.userPassword)
-		
-		WebUI.click(findTestObject('Rocketchat_OR/LoginPage Objects/button_Login'))
-		
+
+		WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/RocketChatLogin_Objects/input_Login_emailOrUsername'), GlobalVariable.userName)
+
+		WebUI.setText(findTestObject('Rocketchat_OR/LoginPage Objects/RocketChatLogin_Objects/input_Login_pass'), GlobalVariable.userPassword)
+
+		WebUI.click(findTestObject('Rocketchat_OR/LoginPage Objects/RocketChatLogin_Objects/button_Login'))
+
 		WebUI.waitForPageLoad(10)
 	}
 }

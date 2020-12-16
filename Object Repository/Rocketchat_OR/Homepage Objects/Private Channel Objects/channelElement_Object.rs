@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>channelElement_Object</name>
+   <tag></tag>
+   <elementGuidId>001146e4-4ea0-4426-8029-9be1e35f2b69</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//*[@id=&quot;rocket-chat&quot;]/div[2]/section/div[3]/div/div/div[1]/div[2]/div/div/div/div/table/tbody/tr</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+</WebElementEntity>

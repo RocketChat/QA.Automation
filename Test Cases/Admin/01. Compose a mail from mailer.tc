@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>01. Compose a mail from mailer</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>f84b97fd-6032-44ea-ad32-f7e4154f18c0</testCaseGuid>
-</TestCaseEntity>

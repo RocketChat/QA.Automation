@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>02. Login with Google account</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b2b79f7b-938e-445e-8ae2-0fafdaf67dcc</testCaseGuid>
+   <variable>
+      <defaultValue>'meherishrat@gmail.com'</defaultValue>
+      <description></description>
+      <id>bf660b1d-aa35-4fdb-bff4-9c2f4c9b77b8</id>
+      <masked>false</masked>
+      <name>Email</name>
+   </variable>
+</TestCaseEntity>
