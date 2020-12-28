@@ -3,12 +3,9 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 import time
 
-#chrome_options = webdriver.ChromeOptions()
+chrome_options = webdriver.ChromeOptions()
 #prefs = {"profile.default_content_setting_values.notifications" : 2}
 #chrome_options.add_experimental_option("prefs",prefs)
-#driver = webdriver.Chrome(options=chrome_options)
-
-chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
 driver = webdriver.Chrome(options=chrome_options)
 
