@@ -20,3 +20,4 @@ driver.find_element_by_xpath("//*[contains(text(),'Login')]").click()
 
 time.sleep(15)
 driver.close()
+
