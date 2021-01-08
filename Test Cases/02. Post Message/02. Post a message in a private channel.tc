@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>02. Post a message in a private channel</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>9bb6e296-2cf7-4d39-a642-b7154fa4f1e5</testCaseGuid>
-</TestCaseEntity>
