@@ -1,6 +1,7 @@
 from selenium.webdriver.common.keys import Keys
 from automation_init import AutomationInit
 automation = AutomationInit()
+automation.chrome()
 browser = automation.getBrowser()
 automation.login()
 browser.implicitly_wait(10)
