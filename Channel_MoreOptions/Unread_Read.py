@@ -1,4 +1,6 @@
 from selenium.webdriver.common.action_chains import ActionChains
+import sys, os
+sys.path.append(os.path.abspath('../AutomationModule'))
 from automation_init import AutomationInit
 from messageOperations import MessageOperations
 
