@@ -1,3 +1,5 @@
+import sys, os
+sys.path.append(os.path.abspath('../AutomationModule'))
 from automation_init import AutomationInit
 from selenium.webdriver import ActionChains
 automation = AutomationInit()

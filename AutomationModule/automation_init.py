@@ -21,7 +21,7 @@ class AutomationInit:
         self.driver = driver
 
     def firefox(self):
-        driver= webdriver.Firefox(log_path="/Users/ishratmanzoor/Desktop/QA.Automation/Log/geckodriver.log")
+        driver= webdriver.Firefox(log_path="/Users/ishratmanzoor/Desktop/QA.Automation/Logs/geckodriver.log")
         driver.get(self.url)
         self.driver=driver
 

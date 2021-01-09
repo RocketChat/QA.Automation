@@ -1,4 +1,6 @@
 from selenium.webdriver.common.keys import Keys
+import sys, os
+sys.path.append(os.path.abspath('../AutomationModule'))
 from automation_init import AutomationInit
 automation = AutomationInit()
 automation.chrome()
