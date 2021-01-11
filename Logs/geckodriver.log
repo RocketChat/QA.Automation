@@ -85,3 +85,27 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1610343749178	geckodriver	INFO	Listening on 127.0.0.1:51250
+1610343750171	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileOZ6ABC"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1610343753852	Marionette	INFO	Listening on port 51262
+1610343753926	Marionette	WARN	TLS certificate errors will be ignored for this session
+1610343779141	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:235:19
+TimedPromise@chrome://marionette/content/sync.js:220:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:418:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+1610343795375	Marionette	INFO	Stopped listening on port 51262
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1610344629935	geckodriver	INFO	Listening on 127.0.0.1:51453
+1610344630957	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofile9EAIzB"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1610344633621	Marionette	INFO	Listening on port 51464
+1610344633657	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'MarionetteEvents'
+1610344638848	Marionette	INFO	Stopped listening on port 51464
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
