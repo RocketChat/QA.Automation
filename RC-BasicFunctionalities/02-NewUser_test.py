@@ -67,6 +67,7 @@ def test_CreateNewUser():
     save_button.click()
     browser.refresh()
     # add assert here
+    assert browser.find_element_by_xpath("//*[contains(text(),'" + data.new_user + "')]")
     automation.delay()
 
 def test_DMNewUser():

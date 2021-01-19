@@ -24,6 +24,7 @@ def test_Channel():
     browser.find_element_by_xpath("//*[@id='create-channel']/div[2]/div[2]/label/div[2]/div[2]/input").send_keys(Keys.ENTER)
     browser.find_element_by_xpath("//*[@id='create-channel']/div[3]/input").click()
     automation.delay()
+    assert browser.find_element_by_xpath("//*[contains(text(),'" + data.channel_name + "')]")
 
 def test_DM():
     add_button.click()

@@ -2,7 +2,7 @@ class LocalData:
     user_name = "ishrat.manzoor@rocket.chat"
     password = "Welcome@123"
     url = "http://localhost:3000/"
-    channel_name = "localchannel3"
+    channel_name = "localchannel4"
     user = "meher"
     discussion_channel = "general"
     discussion_name = "Discussion1"

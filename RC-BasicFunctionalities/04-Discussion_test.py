@@ -31,4 +31,5 @@ def test_Discussion():
     browser.find_element_by_xpath("//*[@id='discussion_message']").send_keys(data.discussion_message)
     browser.find_element_by_xpath("//button[@form='create-discussion']").click()
     automation.delay(3)
+    assert browser.find_element_by_xpath("//*[contains(text(),'" + data.discussion_name + "')]")
     browser.close()
