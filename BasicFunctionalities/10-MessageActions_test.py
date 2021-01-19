@@ -2,14 +2,18 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 import sys, os
 sys.path.append(os.path.abspath('../AutomationModule'))
+sys.path.append(os.path.abspath('../Data'))
 from automation_init import AutomationInit
+from Data import main
+data = main.main()
 
 automation = AutomationInit()
 browser = automation.getBrowser()
 automation.login()
 
 def test_AddQuote():
-    browser.find_element_by_xpath("//*[contains(text(),'Meher')]").click()
+    #browser.find_element_by_xpath("//*[contains(text(),'Meher')]").click()
+    browser.find_element_by_xpath("//*[contains(text(),'" + data.new_username + "')]").click()
     automation.delay()
     browser.find_element_by_xpath("//*[@name='msg']").click()
     browser.find_element_by_xpath("//*[@name='msg']").send_keys("Hello testing")
@@ -26,7 +30,8 @@ def test_AddQuote():
 def test_AddReaction():
 
     action = ActionChains(browser)
-    browser.find_element_by_xpath("//*[contains(text(),'Meher')]").click()
+    #browser.find_element_by_xpath("//*[contains(text(),'Meher')]").click()
+    browser.find_element_by_xpath("//*[contains(text(),'" + data.new_username + "')]").click()
     automation.delay()
     source = browser.find_element_by_css_selector(".wrapper>ul>li:last-child")
     action.move_to_element(source).perform()
@@ -41,7 +46,8 @@ def test_AddReaction():
 def test_ReplyInThread():
 
     action = ActionChains(browser)
-    browser.find_element_by_xpath("//*[contains(text(),'Meher')]").click()
+    #browser.find_element_by_xpath("//*[contains(text(),'Meher')]").click()
+    browser.find_element_by_xpath("//*[contains(text(),'" + data.new_username + "')]").click()
     automation.delay()
     source = browser.find_element_by_css_selector(".wrapper>ul>li:last-child")
     action.move_to_element(source).perform()

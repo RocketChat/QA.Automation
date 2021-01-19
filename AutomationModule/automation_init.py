@@ -1,13 +1,17 @@
 from selenium import webdriver
 import time
 from selenium.common.exceptions import NoSuchElementException
+import sys, os
+sys.path.append(os.path.abspath('../Data'))
+from Data import main
+data = main.main()
 
 class AutomationInit:
     def __init__(self, values=None):
         if values is None:
-            values = {"username": "ishrat.manzoor@rocket.chat",
-                      "password": "I0s1h2u3##@",
-                      "url": "https://open.rocket.chat/" }
+            values = {"username": data.user_name,
+                      "password": data.password,
+                      "url": data.url }
         self.user_name = values["username"]
         self.password = values["password"]
         self.url = values["url"]

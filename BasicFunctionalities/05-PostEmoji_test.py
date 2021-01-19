@@ -1,7 +1,11 @@
 from selenium.webdriver.common.keys import Keys
 import sys, os
 sys.path.append(os.path.abspath('../AutomationModule'))
+sys.path.append(os.path.abspath('../Data'))
 from automation_init import AutomationInit
+from Data import main
+data = main.main()
+
 automation = AutomationInit()
 browser = automation.getBrowser()
 automation.login()
@@ -14,7 +18,7 @@ def test_PostEmoji():
     automation.delay(2)
     search_input.click()
     automation.delay(2)
-    search_input.send_keys("Meher")
+    search_input.send_keys(data.new_user)
     automation.delay()
     search_input.send_keys(Keys.ENTER)
     automation.delay()
