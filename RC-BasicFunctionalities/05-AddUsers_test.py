@@ -25,7 +25,11 @@ def test_AddUsersToChannel():
     input_field.send_keys(Keys.ENTER)
     add_button = browser.find_element_by_xpath("//*[@id='rocket-chat']/div[2]/div/div/main/div/aside/footer/button")
     add_button.click()
-    # add assert here that the user is already added
+    automation.delay()
+    # Assert below that the user is already added
+    element = browser.find_element_by_css_selector(".wrapper>ul>li:last-child>div:nth-child(2)>div:nth-child(2)>span:nth-child(3)")
+    assert element
+    print("user is already added")
     home = browser.find_element_by_xpath("//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[1]")
     home.click()
     automation.delay(3)

@@ -10,5 +10,8 @@ def test_logout():
     avatar.click()
     logout_button = browser.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='My Account'])[1]/following::span[2]")
     logout_button.click()
+    automation.delay(2)
+    # Assert below
+    browser.find_element_by_xpath("//input[@id='emailOrUsername']").is_displayed()
     automation.delay()
     browser.close()

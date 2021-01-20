@@ -13,6 +13,7 @@ def test_withRocketChat():
     browser.save_screenshot(path + "/Screenshots/Login.png")
     automation.login()
     automation.delay()
+    # Assert below
     rc = browser.find_element_by_id('rocket-chat')
     assert rc
     browser.close()

@@ -21,7 +21,7 @@ def test_SearchPrivateChannel():
     automation.delay()
     search_input.send_keys(Keys.ENTER)
     automation.delay()
-    # verify chat textarea is present
+    # Assert below verify chat textarea is present
     status = browser.find_element_by_xpath("//textarea[@name='msg']").is_displayed()
     print(status)
 
@@ -37,7 +37,7 @@ def test_SearchPublicChannel():
     automation.delay()
     search_input.send_keys(Keys.ENTER)
     automation.delay()
-    # verify chat textarea is present
+    # Assert below verify chat textarea is present
     status = browser.find_element_by_xpath("//textarea[@name='msg']").is_displayed()
     print(status)
 
@@ -53,7 +53,7 @@ def test_SearchUser():
     automation.delay()
     search_input.send_keys(Keys.ENTER)
     automation.delay()
-    # verify chat textarea is present
+    # Assert below verify chat textarea is present
     status = browser.find_element_by_xpath("//textarea[@name='msg']").is_displayed()
     print(status)
     browser.close()

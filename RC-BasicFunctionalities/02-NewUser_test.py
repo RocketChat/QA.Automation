@@ -66,7 +66,7 @@ def test_CreateNewUser():
     save_button = browser.find_element_by_xpath("//*[@id='rocket-chat']/div[2]/section/div/div/div/div[1]/div[2]/div/div/div/form/fieldset/div[13]/span/div/button[2]")
     save_button.click()
     browser.refresh()
-    # add assert here
+    # Assert below
     assert browser.find_element_by_xpath("//*[contains(text(),'" + data.new_user + "')]")
     automation.delay()
 
