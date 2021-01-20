@@ -5,6 +5,7 @@ sys.path.append(os.path.abspath('../Data'))
 from automation_init import AutomationInit
 from Data import main
 data = main.main()
+path = os.getcwd()
 
 automation = AutomationInit()
 browser = automation.getBrowser()
@@ -24,6 +25,8 @@ def test_Channel():
     browser.find_element_by_xpath("//*[@id='create-channel']/div[2]/div[2]/label/div[2]/div[2]/input").send_keys(Keys.ENTER)
     browser.find_element_by_xpath("//*[@id='create-channel']/div[3]/input").click()
     automation.delay()
+    # Assert below
+    assert browser.find_element_by_xpath("//*[contains(text(),'" + data.channel_name + "')]")
 
 def test_DM():
     add_button.click()
@@ -35,9 +38,10 @@ def test_DM():
     automation.delay(3)
     browser.find_element_by_xpath("//*[@id='directMessageUsers']").send_keys(Keys.ENTER)
     automation.delay(2)
-    browser.save_screenshot("/Users/ishratmanzoor/Desktop/QA.Automation/Screenshots/DMscreen.png")
+    browser.save_screenshot(path + "/Screenshots/DM.png")
     # browser.get_screenshot_as_file("screenDm.png")
     browser.find_element_by_xpath("//button[@form='create-dm']").click()
+    # Assert below
     status = browser.find_element_by_xpath("//textarea[@name='msg']").is_displayed()
     print(status)
     automation.delay()

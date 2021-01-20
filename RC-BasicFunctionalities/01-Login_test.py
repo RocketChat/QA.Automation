@@ -1,19 +1,26 @@
 import sys, os
 sys.path.append(os.path.abspath('../AutomationModule'))
+sys.path.append(os.path.abspath('../Data'))
 from automation_init import AutomationInit
-
+from Data import main
+data = main.main()
+path = os.getcwd()
+print("current working directory is: {0}".format(path))
 def test_withRocketChat():
     automation = AutomationInit()
     browser = automation.getBrowser()
+    automation.delay(2)
+    browser.save_screenshot(path + "/Screenshots/Login.png")
     automation.login()
-    browser.save_screenshot("/Users/ishratmanzoor/Desktop/QA.Automation/Screenshots/Login.png")
     automation.delay()
+    # Assert below
+    rc = browser.find_element_by_id('rocket-chat')
+    assert rc
     browser.close()
 
+# test for open RC
 def test_withGoogle():
     automation = AutomationInit()
-    user_name = "meherishrat@gmail.com"
-    password = "Welcome@123"
     browser = automation.getBrowser()
 
     automation.delay()
@@ -22,11 +29,11 @@ def test_withGoogle():
     browser.switch_to.window(browser.window_handles[1])
     automation.delay(3)
     browser.find_element_by_xpath("//*[@id='identifierId']").click()
-    browser.find_element_by_xpath("//*[@id='identifierId']").send_keys(user_name)
+    browser.find_element_by_xpath("//*[@id='identifierId']").send_keys(data.user_name)
     browser.find_element_by_css_selector("#identifierNext > div > button").click()
     automation.delay(3)
     browser.find_element_by_xpath("//*[@id='password']/div[1]/div/div[1]/input").click()
-    browser.find_element_by_xpath("//*[@id='password']/div[1]/div/div[1]/input").send_keys(password)
+    browser.find_element_by_xpath("//*[@id='password']/div[1]/div/div[1]/input").send_keys(data.password)
     browser.find_element_by_css_selector("#passwordNext > div > button").click()
     automation.delay()
     browser.quit()

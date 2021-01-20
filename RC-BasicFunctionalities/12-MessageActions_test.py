@@ -12,11 +12,10 @@ browser = automation.getBrowser()
 automation.login()
 
 def test_AddQuote():
-    #browser.find_element_by_xpath("//*[contains(text(),'Meher')]").click()
     browser.find_element_by_xpath("//*[contains(text(),'" + data.new_username + "')]").click()
     automation.delay()
     browser.find_element_by_xpath("//*[@name='msg']").click()
-    browser.find_element_by_xpath("//*[@name='msg']").send_keys("Hello testing")
+    browser.find_element_by_xpath("//*[@name='msg']").send_keys(data.message)
     browser.find_element_by_xpath("//*[@name='msg']").send_keys(Keys.ENTER)
     action = ActionChains(browser)
     source = browser.find_element_by_css_selector(".wrapper>ul>li:last-child")
@@ -26,11 +25,11 @@ def test_AddQuote():
     browser.find_element_by_xpath("//textarea[@name='msg']").send_keys("Testing quote")
     browser.find_element_by_xpath("//textarea[@name='msg']").send_keys(Keys.ENTER)
     automation.delay()
+    assert browser.find_element_by_xpath("//*[text()[contains(.,'Testing quote')]]")
 
 def test_AddReaction():
 
     action = ActionChains(browser)
-    #browser.find_element_by_xpath("//*[contains(text(),'Meher')]").click()
     browser.find_element_by_xpath("//*[contains(text(),'" + data.new_username + "')]").click()
     automation.delay()
     source = browser.find_element_by_css_selector(".wrapper>ul>li:last-child")
@@ -42,11 +41,12 @@ def test_AddReaction():
     automation.delay()
     browser.find_element_by_xpath("//*[@data-emoji='smiley']").click()
     automation.delay()
+    emoji_reply = browser.find_element_by_css_selector(".wrapper>ul>li:last-child>.reactions")
+    assert emoji_reply
 
 def test_ReplyInThread():
 
     action = ActionChains(browser)
-    #browser.find_element_by_xpath("//*[contains(text(),'Meher')]").click()
     browser.find_element_by_xpath("//*[contains(text(),'" + data.new_username + "')]").click()
     automation.delay()
     source = browser.find_element_by_css_selector(".wrapper>ul>li:last-child")
@@ -60,4 +60,7 @@ def test_ReplyInThread():
     browser.find_element_by_css_selector("section > div.rc-message-box.rc-new > label >textarea").send_keys(Keys.ENTER)
     browser.find_element_by_css_selector(".rcx-box >div>h3>div>div> button:nth-child(2)").click()
     automation.delay()
+    # Assert below
+    reply_message = browser.find_element_by_css_selector(".wrapper>ul>li:last-child>.thread-replied>span>span")
+    reply_message.is_displayed()
     browser.close()

@@ -31,6 +31,10 @@ def test_PostEmoji():
     automation.delay()
     browser.find_element_by_xpath("//*[@name='msg']").send_keys(Keys.ENTER)
     automation.delay()
+    # Assert below
+    emoji = browser.find_element_by_css_selector(".wrapper>ul>li:last-child>div>div:last-child>span")
+    assert emoji
+    print("emoji posted successfully")
     automation.logout()
     automation.delay()
     browser.close()

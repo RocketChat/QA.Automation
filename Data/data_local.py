@@ -2,11 +2,12 @@ class LocalData:
     user_name = "ishrat.manzoor@rocket.chat"
     password = "Welcome@123"
     url = "http://localhost:3000/"
-    channel_name = "localchannel3"
+    channel_name = "localchannel5"
     user = "meher"
     discussion_channel = "general"
-    discussion_name = "Discussion1"
+    discussion_name = "Discussion2"
     discussion_message = "Test Local Discussion"
+    message = "Hello testing"
 
     # Create New user data
     new_user = "TestLocalUser4"
