@@ -18,7 +18,7 @@ def test_LeaveJoin():
     actions.move_to_element(source1).perform()
     automation.delay(3)
     button = browser.find_element_by_css_selector(
-        ".rcx-sidebar-item:nth-child(6)>div.rcx-sidebar-item__wrapper>div.rcx-sidebar-item__content>div.rcx-sidebar-item__menu-wraper>button")
+        ".rcx-sidebar-item:nth-child(2)>div.rcx-sidebar-item__wrapper>div.rcx-sidebar-item__content>div.rcx-sidebar-item__menu-wraper>button")
     button.click()
     # Leave channel
     browser.find_element_by_xpath("//*[contains(text(),'Leave')]").click()

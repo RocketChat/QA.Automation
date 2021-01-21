@@ -32,6 +32,8 @@ def test_Discussion():
     browser.find_element_by_xpath("//button[@form='create-discussion']").click()
     automation.delay(3)
     # Assert below
-    assert browser.find_element_by_xpath("//*[contains(text(),'" + data.discussion_name + "')]")
-    print("discussion added successfully")
+    if browser.find_element_by_xpath("//*[contains(text(),'" + data.discussion_name + "')]").is_displayed():
+        print("Test Passed: Discussion added and displayed successfully")
+    else:
+        print("Test Failed: Discussion is not getting displayed")
     browser.close()

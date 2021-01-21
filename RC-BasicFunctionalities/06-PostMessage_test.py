@@ -20,7 +20,7 @@ def test_InPrivateChannel():
     # Assert below
     message_sent = browser.find_element_by_xpath("//*[text()[contains(.,'" + data.message + "')]]")
     assert message_sent
-    print("message sent successfully")
+    print("Test Passed: Message sent successfully")
 
 def test_InPublicChannel():
     automation.delay()
@@ -33,7 +33,7 @@ def test_InPublicChannel():
     # Assert below
     message_sent = browser.find_element_by_xpath("//*[text()[contains(.,'" + data.message + "')]]")
     assert message_sent
-    print("message sent successfully")
+    print("Test Passed: Message sent successfully")
     browser.close()
 
 

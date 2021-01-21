@@ -23,7 +23,10 @@ def test_SearchPrivateChannel():
     automation.delay()
     # Assert below verify chat textarea is present
     status = browser.find_element_by_xpath("//textarea[@name='msg']").is_displayed()
-    print(status)
+    if status == True:
+        print("Test Passed: Channel searched successfully")
+    else:
+        print("Test Failed: Channel search failed")
 
 def test_SearchPublicChannel():
     automation.delay(3)
@@ -39,7 +42,10 @@ def test_SearchPublicChannel():
     automation.delay()
     # Assert below verify chat textarea is present
     status = browser.find_element_by_xpath("//textarea[@name='msg']").is_displayed()
-    print(status)
+    if status == True:
+        print("Test Passed: Public Channel searched successfully")
+    else:
+        print("Test Failed: Public Channel search failed")
 
 def test_SearchUser():
     automation.delay(3)
@@ -55,6 +61,9 @@ def test_SearchUser():
     automation.delay()
     # Assert below verify chat textarea is present
     status = browser.find_element_by_xpath("//textarea[@name='msg']").is_displayed()
-    print(status)
+    if status == True:
+        print("Test Passed: User searched successfully")
+    else:
+        print("Test Failed: User search failed")
     browser.close()
 

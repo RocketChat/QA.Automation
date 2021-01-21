@@ -67,7 +67,10 @@ def test_CreateNewUser():
     save_button.click()
     browser.refresh()
     # Assert below
-    assert browser.find_element_by_xpath("//*[contains(text(),'" + data.new_user + "')]")
+    if browser.find_element_by_xpath("//*[contains(text(),'" + data.new_user + "')]").is_displayed():
+        print("User is added and displayed successfully")
+    else:
+        print("Test failed: user added is not getting displayed")
     automation.delay()
 
 def test_DMNewUser():

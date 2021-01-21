@@ -1,11 +1,15 @@
 import sys, os
+
 sys.path.append(os.path.abspath('../AutomationModule'))
 sys.path.append(os.path.abspath('../Data'))
 from automation_init import AutomationInit
 from Data import main
+
 data = main.main()
 path = os.getcwd()
 print("current working directory is: {0}".format(path))
+
+
 def test_withRocketChat():
     automation = AutomationInit()
     browser = automation.getBrowser()
@@ -15,8 +19,13 @@ def test_withRocketChat():
     automation.delay()
     # Assert below
     rc = browser.find_element_by_id('rocket-chat')
-    assert rc
+    if rc.is_displayed():
+        print("user is successfully navigated to the homepage")
+    else:
+        print("Test failed: Homepage is not displayed in the given time")
+
     browser.close()
+
 
 # test for open RC
 def test_withGoogle():
@@ -37,8 +46,3 @@ def test_withGoogle():
     browser.find_element_by_css_selector("#passwordNext > div > button").click()
     automation.delay()
     browser.quit()
-
-
-
-
-

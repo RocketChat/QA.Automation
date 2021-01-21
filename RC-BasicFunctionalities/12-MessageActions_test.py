@@ -62,5 +62,8 @@ def test_ReplyInThread():
     automation.delay()
     # Assert below
     reply_message = browser.find_element_by_css_selector(".wrapper>ul>li:last-child>.thread-replied>span>span")
-    reply_message.is_displayed()
+    if reply_message.is_displayed():
+        print("Test Passed")
+    else:
+        print("Test Failed")
     browser.close()
