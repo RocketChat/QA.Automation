@@ -9,19 +9,19 @@ automation = AutomationInit()
 browser = automation.getBrowser()
 operation = MessageOperations(browser)
 automation.login()
-value = browser.find_element_by_css_selector(".rcx-sidebar-item:nth-child(8)").text
+value = browser.find_element_by_css_selector(".rcx-sidebar-item:nth-child(6)").text
 print(value)
 
 def goToOption():
-    # on open RC consider nth-child(18) and 8 for local
-    source1 = browser.find_element_by_css_selector(".rcx-sidebar-item:nth-child(8)")
+    # on open RC consider nth-child(18) and 6 for local
+    source1 = browser.find_element_by_css_selector(".rcx-sidebar-item:nth-child(6)")
     browser.execute_script("arguments[0].scrollIntoView(true);", source1)
     automation.delay()
     actions = ActionChains(browser)
     actions.move_to_element(source1).perform()
     automation.delay(3)
     button = browser.find_element_by_css_selector(
-        ".rcx-sidebar-item:nth-child(8)>div.rcx-sidebar-item__wrapper>div.rcx-sidebar-item__content>div.rcx-sidebar-item__menu-wraper>button")
+        ".rcx-sidebar-item:nth-child(6)>div.rcx-sidebar-item__wrapper>div.rcx-sidebar-item__content>div.rcx-sidebar-item__menu-wraper>button")
     button.click()
 
 def test_FavoriteUnfavorite():
@@ -71,6 +71,15 @@ def test_HideShow():
 
 def test_ReadUnread():
     goToOption()
+    button_label = browser.find_element_by_css_selector(
+        "body > div:nth-child(23) > div > div > ol > li:nth-child(2)").text
     operation.performReadUnread()
+    # Assert below
+    goToOption()
+    new_label = browser.find_element_by_css_selector("body > div:nth-child(23) > div > div > ol > li:nth-child(2)").text
+    if button_label == new_label:
+        print("Test Failed: Button label is not changed")
+    else:
+        print("Test Passed: Button label changed successfully")
     browser.close()
 

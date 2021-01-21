@@ -12,19 +12,19 @@ operation = MessageOperations(browser)
 automation.login()
 
 value = browser.find_element_by_css_selector(
-        "#rocket-chat > aside > div.rooms-list.sidebar--custom-colors > div > div > div > div.simplebar-wrapper > div.simplebar-mask > div > div > div > div > a:nth-child(4) > div > div.rc-box.rcx-box--full.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rc-box.rcx-box--full.rcx-sidebar-item__title").text
+        "#rocket-chat > aside > div.rooms-list.sidebar--custom-colors > div > div > div > div.simplebar-wrapper > div.simplebar-mask > div > div > div > div > a:nth-child(2) > div > div.rc-box.rcx-box--full.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rc-box.rcx-box--full.rcx-sidebar-item__title").text
 print(value)
 
 def goToOption():
     # on open RC consider nth-child(13)
-    source1 = browser.find_element_by_css_selector(".rcx-sidebar-item:nth-child(4)")
+    source1 = browser.find_element_by_css_selector(".rcx-sidebar-item:nth-child(2)")
     browser.execute_script("arguments[0].scrollIntoView(true);", source1)
     automation.delay()
     actions = ActionChains(browser)
     actions.move_to_element(source1).perform()
     automation.delay(3)
     button = browser.find_element_by_css_selector(
-        ".rcx-sidebar-item:nth-child(4)>div.rcx-sidebar-item__wrapper>div.rcx-sidebar-item__content>div.rcx-sidebar-item__menu-wraper>button")
+        ".rcx-sidebar-item:nth-child(2)>div.rcx-sidebar-item__wrapper>div.rcx-sidebar-item__content>div.rcx-sidebar-item__menu-wraper>button")
     button.click()
 
 def test_FavoriteUnfavorite():
@@ -75,5 +75,13 @@ def test_HideShow():
 
 def test_ReadUnread():
     goToOption()
+    button_label = browser.find_element_by_css_selector("body > div:nth-child(23) > div > div > ol > li:nth-child(2)").text
     operation.performReadUnread()
+    # Assert below
+    goToOption()
+    new_label = browser.find_element_by_css_selector("body > div:nth-child(23) > div > div > ol > li:nth-child(2)").text
+    if button_label == new_label:
+        print("Test Failed: Button label is not changed")
+    else:
+        print("Test Passed: Button label changed successfully")
     browser.close()
