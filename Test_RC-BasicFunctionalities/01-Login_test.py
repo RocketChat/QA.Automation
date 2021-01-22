@@ -1,14 +1,13 @@
 import sys, os
-
 sys.path.append(os.path.abspath('../AutomationModule'))
 sys.path.append(os.path.abspath('../Data'))
 from automation_init import AutomationInit
-from Data import main
+from main import TestData
+test_data = TestData()
+data = test_data.get_data()
 
-data = main.main()
 path = os.getcwd()
 print("current working directory is: {0}".format(path))
-
 
 def test_withRocketChat():
     automation = AutomationInit()

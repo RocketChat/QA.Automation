@@ -4,8 +4,9 @@ import sys, os
 sys.path.append(os.path.abspath('../AutomationModule'))
 sys.path.append(os.path.abspath('../Data'))
 from automation_init import AutomationInit
-from Data import main
-data = main.main()
+from main import TestData
+test_data = TestData()
+data = test_data.get_data()
 
 automation = AutomationInit()
 browser = automation.getBrowser()

@@ -1,6 +1,6 @@
 import sys, os
-from selenium.common.exceptions import NoSuchElementException
 sys.path.append(os.path.abspath('../AutomationModule'))
+from selenium.common.exceptions import NoSuchElementException
 from automation_init import AutomationInit
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
