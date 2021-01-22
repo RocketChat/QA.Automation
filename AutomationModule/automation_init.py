@@ -1,10 +1,12 @@
+import pytest
+import sys, os
+sys.path.append(os.path.abspath('../Data'))
 from selenium import webdriver
 import time
 from selenium.common.exceptions import NoSuchElementException
-import sys, os
-sys.path.append(os.path.abspath('../Data'))
-from Data import main
-data = main.main()
+from main import Data
+data_env = Data()
+data = data_env.get_data()
 
 class AutomationInit:
     def __init__(self, values=None):

@@ -1,10 +1,11 @@
+import pytest
 import sys, os
 sys.path.append(os.path.abspath('../AutomationModule'))
 sys.path.append(os.path.abspath('../Data'))
 from automation_init import AutomationInit
-from main import TestData
-test_data = TestData()
-data = test_data.get_data()
+from main import Data
+data_env = Data()
+data = data_env.get_data()
 
 path = os.getcwd()
 print("current working directory is: {0}".format(path))
@@ -27,7 +28,7 @@ def test_withRocketChat():
 
 
 # test for open RC
-def test_withGoogle():
+def withGoogle():
     automation = AutomationInit()
     browser = automation.getBrowser()
 
