@@ -100,14 +100,14 @@ def test_ReadUnread():
     automation.delay()
 
 def test_LeaveJoin():
-    source1 = browser.find_element_by_xpath("//*[contains(text(), 'general')]")
-    browser.execute_script("arguments[0].scrollIntoView(true);", source1)
+    source = browser.find_element_by_xpath("//*[contains(text(), 'general')]")
+    browser.execute_script("arguments[0].scrollIntoView(true);", source)
     automation.delay()
     actions = ActionChains(browser)
-    actions.move_to_element(source1).perform()
+    actions.move_to_element(source).perform()
     automation.delay(3)
     button = browser.find_element_by_css_selector(
-        ".rcx-sidebar-item:nth-child(2)>div.rcx-sidebar-item__wrapper>div.rcx-sidebar-item__content>div.rcx-sidebar-item__menu-wraper>button")
+        ".rcx-sidebar-item:nth-child(6)>div.rcx-sidebar-item__wrapper>div.rcx-sidebar-item__content>div.rcx-sidebar-item__menu-wraper>button")
     button.click()
     # Leave channel
     browser.find_element_by_xpath("//*[contains(text(),'Leave')]").click()

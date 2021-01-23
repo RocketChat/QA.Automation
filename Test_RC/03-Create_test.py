@@ -26,7 +26,7 @@ def test_Discussion():
     browser.find_element_by_xpath("//*[@id='discussion_name']").click()
     browser.find_element_by_xpath("//*[@id='discussion_name']").send_keys(data.discussion_name)
     browser.find_element_by_xpath("//*[@id='users']").click()
-    browser.find_element_by_xpath("//*[@id='users']").send_keys(data.user)
+    browser.find_element_by_xpath("//*[@id='users']").send_keys(data.new_user)
     automation.delay(3)
     browser.find_element_by_xpath("//*[@id='users']").send_keys(Keys.ENTER)
 
@@ -60,4 +60,4 @@ def test_DM():
     else:
         print("Test failed: DM not created")
         automation.delay()
-        browser.close()
+    browser.close()
