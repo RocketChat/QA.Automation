@@ -1,10 +1,12 @@
+import pytest
+import sys, os
+sys.path.append(os.path.abspath('../Data'))
 from selenium import webdriver
 import time
 from selenium.common.exceptions import NoSuchElementException
-import sys, os
-sys.path.append(os.path.abspath('../Data'))
-from Data import main
-data = main.main()
+from main import Data
+data_env = Data()
+data = data_env.get_data()
 
 class AutomationInit:
     def __init__(self, values=None):
@@ -20,7 +22,7 @@ class AutomationInit:
         chrome_options=webdriver.ChromeOptions()
         prefs={"profile.default_content_setting_values.notifications": 2}
         chrome_options.add_experimental_option("prefs", prefs)
-        # chrome_options.add_argument('--headless')
+        #chrome_options.add_argument('--headless')
         driver=webdriver.Chrome(options=chrome_options)
         driver.get(self.url)
         self.driver=driver
