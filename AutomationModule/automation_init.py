@@ -1,6 +1,6 @@
 import pytest
 import sys, os
-sys.path.append(os.path.abspath('../Data'))
+sys.path.append(os.path.abspath('Data'))
 from selenium import webdriver
 import time
 from selenium.common.exceptions import NoSuchElementException

@@ -1,6 +1,6 @@
 import pytest
 import sys, os
-sys.path.append(os.path.abspath('../AutomationModule'))
+sys.path.append(os.path.abspath('AutomationModule'))
 from selenium.common.exceptions import NoSuchElementException
 from automation_init import AutomationInit
 from selenium.webdriver.common.action_chains import ActionChains

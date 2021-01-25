@@ -2,8 +2,8 @@ import pytest
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 import sys, os
-sys.path.append(os.path.abspath('../AutomationModule'))
-sys.path.append(os.path.abspath('../Data'))
+sys.path.append(os.path.abspath('AutomationModule'))
+sys.path.append(os.path.abspath('Data'))
 from automation_init import AutomationInit
 from main import Data
 data_env = Data()
