@@ -67,5 +67,6 @@ def test_SearchUser():
         print("Test Passed: User searched successfully")
     else:
         print("Test Failed: User search failed")
-    browser.close()
+
+    browser.quit()
 

@@ -4,5 +4,5 @@ function foo() {
    for i in Test_RC/*_test.py; do py.test "$i"
    done
 }
-foo
 
+foo
