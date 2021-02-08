@@ -1,8 +1,8 @@
 import pytest
 from selenium.webdriver.common.keys import Keys
 import sys, os
-sys.path.append(os.path.abspath('../AutomationModule'))
-sys.path.append(os.path.abspath('../Data'))
+sys.path.append(os.path.abspath('AutomationModule'))
+sys.path.append(os.path.abspath('Data'))
 from automation_init import AutomationInit
 from main import Data
 data_env = Data()
@@ -67,5 +67,6 @@ def test_SearchUser():
         print("Test Passed: User searched successfully")
     else:
         print("Test Failed: User search failed")
-    browser.close()
+
+    browser.quit()
 

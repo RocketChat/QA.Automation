@@ -1,6 +1,6 @@
 import pytest
 import sys, os
-sys.path.append(os.path.abspath('../AutomationModule'))
+sys.path.append(os.path.abspath('AutomationModule'))
 from selenium.common.exceptions import NoSuchElementException
 from automation_init import AutomationInit
 from selenium.webdriver.common.action_chains import ActionChains
@@ -15,7 +15,6 @@ automation.login()
 value = browser.find_element_by_css_selector(
         "#rocket-chat > aside > div.rooms-list.sidebar--custom-colors > div > div > div > div.simplebar-wrapper > div.simplebar-mask > div > div > div > div > a:nth-child(4) > div > div.rc-box.rcx-box--full.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rc-box.rcx-box--full.rcx-sidebar-item__title").text
 print(value)
-
 def goToOption():
     # on open RC consider nth-child(13)
     source1 = browser.find_element_by_css_selector(".rcx-sidebar-item:nth-child(4)")
