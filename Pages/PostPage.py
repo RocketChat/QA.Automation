@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from Pages.BasePage import BasePage
 from Config.main import Data
+import time
 data_env = Data()
 data = data_env.get_data()
 
@@ -34,12 +35,13 @@ class PostPage(BasePage):
         self.do_send_keys(self.TextArea, message)
         self.do_enter(self.TextArea)
 
-    def post_emoji(self, message):
+    def post_emoji(self, emoji):
         self.do_click(self.USER)
         self.do_click(self.TextArea)
         self.do_click(self.EMOJI_PICKER)
         self.do_click(self.EMOJI_INPUT)
-        self.do_send_keys(self.EMOJI_INPUT, message)
+        self.do_send_keys(self.EMOJI_INPUT, emoji)
+        time.sleep(3)
         self.do_click(self.EMOJI)
         self.do_enter(self.TextArea)
 

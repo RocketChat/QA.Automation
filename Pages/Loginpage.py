@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 from Pages.BasePage import BasePage
 from Pages.SearchPage import SearchPage
 import time
-import os
 from Config.main import Data
 data_env = Data()
 data = data_env.get_data()
@@ -16,7 +15,7 @@ class LoginPage(BasePage):
     LOGIN_BUTTON = (By.XPATH, "//*[contains(text(),'Login')]")
 
     AVATAR = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[1]")
-    LOGOUT_BUTTON = (By.XPATH, "(.//*[normalize-space(text()) and normalize-space(.)='My Account'])[1]/following::span[2]")
+    LOGOUT_BUTTON = (By.XPATH, "//*[contains(text(), 'Logout')]")
 
     """Constructor of the page class"""
     def __init__(self, driver):

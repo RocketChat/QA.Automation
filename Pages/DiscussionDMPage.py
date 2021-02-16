@@ -46,6 +46,7 @@ class DiscussionDMPage(BasePage):
         time.sleep(2)
 
         self.do_click(self.CREATE__DISCUSSION_BUTTON)
+        time.sleep(3)
 
     def is_discussion_visible(self):
         return self.is_visible(self.CREATED_DISCUSSION)

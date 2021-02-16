@@ -119,7 +119,7 @@ class CreateDataPage(BasePage):
         return self.is_visible(self.CHANNEL_CREATED)
 
     def add_users_to_channel(self, new_user):
-        self.do_click(self.USER_CREATED)
+        self.do_click(self.CHANNEL_CREATED)
         self.do_click(self.MEMBER_BUTTON)
         self.do_click(self.ADD_USERS)
         self.do_click(self.INPUT_FIELD)

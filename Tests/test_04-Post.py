@@ -22,5 +22,5 @@ class Test_Post(BaseTest):
 
     def test_post_emoji(self):
         self.post = PostPage(self.driver)
-        self.post.post_emoji("Smiley")
+        self.post.post_emoji(data.EMOJI_SEARCH)
         assert self.post.emoji_sent_is_visible()
