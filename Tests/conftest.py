@@ -1,9 +1,9 @@
 import pytest
-import os
 from selenium import webdriver
+from browserstack.local import Local
 
 
-@pytest.fixture(params=["Chrome"], scope="class")
+@pytest.fixture(params=["Chrome", "RemoteIE"], scope="class")
 def init_driver(request):
     if request.param == "Chrome":
         chrome_options = webdriver.ChromeOptions()
@@ -16,6 +16,24 @@ def init_driver(request):
     #     driver = webdriver.Firefox(service_log_path=path + "/Logs/geckodriver.log")
     # if request.param == "Safari":
     #     driver = webdriver.Safari()
+    if request.param == "RemoteIE":
+        BROWSERSTACK_URL = 'http://rocketchattester1:3qKpZ3j75MbhWztWU1R9@hub-cloud.browserstack.com/wd/hub'
+
+        desired_cap = {
+
+            'os': 'Windows',
+            'os_version': '10',
+            'browser': 'IE',
+            'browser_version': '11.0',
+            'name': "rocketchattester1's First Test",
+            'browserstack.local': 'true'
+
+        }
+
+        driver = webdriver.Remote(
+            command_executor=BROWSERSTACK_URL,
+            desired_capabilities=desired_cap
+        )
     request.cls.driver = driver
     yield
     driver.close()
