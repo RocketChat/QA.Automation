@@ -1,8 +1,8 @@
 #! /bin/bash
-function foo() {
+function mytests() {
    echo "Running all test files!"
-   for i in Test_RC/*_test.py; do py.test "$i"
+   for i in Tests/test_*; do py.test "$i"
    done
 }
 
-foo
+mytests
