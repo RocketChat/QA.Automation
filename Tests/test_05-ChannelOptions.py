@@ -5,6 +5,7 @@ from Tests.test_base import BaseTest
 from Config.main import Data
 import time
 import allure
+import pytest
 data_env = Data()
 data = data_env.get_data()
 
