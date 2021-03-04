@@ -1,9 +1,9 @@
 class OpenData:
-    user_name = "ishrat.manzoor@rocket.chat"
-    password = "I0s1h2u3##@"
+    user_name = "meherishrat@gmail.com"
+    password = "Welcome@123"
     url = "https://open.rocket.chat"
     channel_name = "dataChannel3"
-    user = "meherishrat"
+    user = "ishrat.manzoor"
     discussion_channel = "dataChannel1"
     discussion_name = "DiscussiondataTestt"
     discussion_message = "Test Discussion"
