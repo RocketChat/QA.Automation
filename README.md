@@ -71,7 +71,7 @@ On Mac, go to path "/usr/local/bin" and paste the unzipped driver.
     3. browserstack-local
     
 10. For Parallel Mode: 
-    `pip install pytest-xdist`\
+    `pip install pytest-xdist`
     
     To execute tests:
     `pytest filename.py -v -s -n 2` 
@@ -80,7 +80,7 @@ On Mac, go to path "/usr/local/bin" and paste the unzipped driver.
 **Running the Project**
     `git clone https://github.com/RocketChat/QA.Automation.git` 
      \
-     `cd QA.Automation`
+      `cd QA.Automation`
 
 **To run all the Test cases use below commands:**
     1. `pytest Tests`\
@@ -88,16 +88,17 @@ On Mac, go to path "/usr/local/bin" and paste the unzipped driver.
     3. `py.test -v -s Tests`
 
 **To run a single Test case use below commands:**
-    1. `pytest Tests/filename.py`\
+    1. `pytest Tests/filename.py`
     (e.g pytest Tests/test_01-LoginLogout.py)
+
     2. `pytest -v -s Tests/filename.py`\
-    3. `py.test -v -s Tests/filename.py`\
+    3. `py.test -v -s Tests/filename.py`
 
 **To generate html report in test execution use below command**
     1. `Pytest -v -s —html = report.html filename.py`
  
 **To generate html report in test execution use below command**   
-    1. `pytest -v -s --alluredir="<path of the folder>" Tests/filename.py`
+    1. `pytest -v -s --alluredir="<path of the folder>" Tests/filename.py`\
     Here path is : "./reports/allure_reports"
 
 **View html reports in a browser**
