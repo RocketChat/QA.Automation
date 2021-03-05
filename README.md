@@ -39,6 +39,7 @@ HTML and Allure.
    
 2. Check python and pip is installed successfully
    `python --version`
+   
    `pip --version`
    
 3. Set Environment Variable for Python.
@@ -72,15 +73,18 @@ On Mac, go to path "/usr/local/bin" and paste the unzipped driver.
     
 10. For Parallel Mode: 
     `pip install pytest-xdist`
-    To execute tests: `pytest filename.py -v -s -n 2` 
+    
+    To execute tests:
+    `pytest filename.py -v -s -n 2` 
     (Give any value for n e.g n 2 will open two tabs simultaneously)
     
 **Running the Project**
-    `git clone https://github.com/RocketChat/QA.Automation.git
-    cd QA.Automation `
+    `git clone https://github.com/RocketChat/QA.Automation.git` 
+     \
+     `cd QA.Automation`
 
 **To run all the Test cases use below commands:**
-    1. `pytest Tests`
+    1. `pytest Tests`\
     2. `pytest -v -s Tests`
     3. `py.test -v -s Tests`
 
