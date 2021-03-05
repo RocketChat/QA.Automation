@@ -37,13 +37,13 @@ HTML and Allure.
 **Dependencies**
 1. Python: Download and Install Python 3.9 from the official link-  [https://www.python.org/downloads/]
    
-2. Check python and pip is installed successfully
+2. Check python and pip is installed successfully\
    `python --version`\
    `pip --version`
    
 3. Set Environment Variable for Python.
    
-4. Selenium: Install selenium libraries
+4. Selenium: Install selenium libraries\
    `pip install -U selenium`
    
 5. Download PyCharm - community edition
@@ -55,59 +55,56 @@ HTML and Allure.
 On Windows unzip and paste the driver under Scripts folder in python
 On Mac, go to path "/usr/local/bin" and paste the unzipped driver.
 
-6. Install Pytest: On terminal, run below command
+7. Install Pytest: On terminal, run below command\
     `pip install pytest`
    
-7. Install allure: 
+8. Install allure: \
     Windows: `scoop install allure`\
     Mac: `brew install allure`
    
-8. Install html Report:
+9. Install html Report:\
     `pip install pytest-html`
 
-9. Pycharm Installations - Go to Python Interpreter on pycharm and install below plugins:
+10. Pycharm Installations - Go to Python Interpreter on pycharm and install below plugins:
     1. allure-pytest
     2. pytest-html
     3. browserstack-local
     
-10. For Parallel Mode: 
+11. For Parallel Mode - run below command in terminal: \
     `pip install pytest-xdist`
     
-    To execute tests:
-    `pytest filename.py -v -s -n 2` 
+    To execute tests:\
+    `pytest filename.py -v -s -n 2` \
     (Give any value for n e.g n 2 will open two tabs simultaneously)
     
-**Running the Project**
-    `git clone https://github.com/RocketChat/QA.Automation.git` 
-     \
-      `cd QA.Automation`
+**Running the Project**\
+    `git clone https://github.com/RocketChat/QA.Automation.git` \
+    `cd QA.Automation`
 
-**To run all the Test cases use below commands:**
+**To run all the Test cases use below commands:**\
     1. `pytest Tests`\
     2. `pytest -v -s Tests`\
     3. `py.test -v -s Tests`
 
-**To run a single Test case use below commands:**
-    1. `pytest Tests/filename.py`
-    (e.g pytest Tests/test_01-LoginLogout.py)
-
+**To run a single Test case use below commands:**\
+    1. `pytest Tests/filename.py`\
     2. `pytest -v -s Tests/filename.py`\
     3. `py.test -v -s Tests/filename.py`
 
-**To generate html report in test execution use below command**
+**To generate html report in test execution use below command**\
     1. `Pytest -v -s —html = report.html filename.py`
  
-**To generate html report in test execution use below command**   
+**To generate html report in test execution use below command** \  
     1. `pytest -v -s --alluredir="<path of the folder>" Tests/filename.py`\
     Here path is : "./reports/allure_reports"
 
-**View html reports in a browser**
+**View html reports in a browser**\
     In pycharm, copy path of report.html file and paste in the browser or directly open the report.html
     file in pycharm and click on the browser icon to view the reports.
 
-**View allure reports in a browser**
+**View allure reports in a browser**\
     Copy the path of the allure_reports folder generated after the test execution in the pycharm. 
-    Now go to the terminal and run below command:
+    Now go to the terminal and run below command:\
     `allure serve <path of the folder>`
 
 
