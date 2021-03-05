@@ -1,5 +1,7 @@
 import pytest
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options as ff_Options
+from selenium.webdriver.chrome.options import Options as chrome_Options
 import os
 
 
@@ -9,22 +11,24 @@ def init_driver(request):
     """This checks chrome browser"""
     print("------Setup------")
     if request.param == "Chrome":
-        chrome_options = webdriver.ChromeOptions()
+        options = chrome_Options()
+        options.headless = False
         prefs = {"profile.default_content_setting_values.notifications": 2}
-        chrome_options.add_experimental_option("prefs", prefs)
-        # chrome_options.add_argument('--headless')
-        driver = webdriver.Chrome(options=chrome_options)
+        options.add_experimental_option("prefs", prefs)
+        driver = webdriver.Chrome(options=options)
 
     """This checks Firefox browser"""
     if request.param == "Firefox":
         path = os.getcwd()
-        driver = webdriver.Firefox(service_log_path=path + "/Logs/geckodriver.log")
+        options = ff_Options()
+        options.headless = False
+        driver = webdriver.Firefox(options=options, service_log_path=path + "/Logs/geckodriver.log")
 
     """This checks Safari browser"""
     if request.param == "Safari":
         driver = webdriver.Safari()
 
-    """This code is for BrowserStack IE """
+    """This is for BrowserStack IE """
     if request.param == "RemoteIE":
         BROWSERSTACK_URL = 'http://rocketchattester1:3qKpZ3j75MbhWztWU1R9@hub-cloud.browserstack.com/wd/hub'
         desired_cap = {

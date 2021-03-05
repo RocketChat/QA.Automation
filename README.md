@@ -2,7 +2,7 @@
 **Title**: QA.Automation\
 **OverView**: It consists of automated end to end Regression test scripts for all the basic functionalities in 
 Rocket.chat, written in Selenium webdriver with Python. The purpose of QA Regression is to ensure that the entire system 
-works flawlessly after any code change.\
+works flawlessly after any code change.
 
 The test scripts allows cross browser testing
 with all the test cases to be executed on most popular browsers: Chrome, Firefox, Safari, and IE.\
@@ -110,7 +110,8 @@ On Mac, go to path "/usr/local/bin" and paste the unzipped driver.
     Now go to the terminal and run below command:\
     `allure serve <path of the folder>`
 
+**Browserstack Testing**\
+    Follow Browserstack documentation here: [https://www.browserstack.com/docs/]
 
 
-    
-    
+   
