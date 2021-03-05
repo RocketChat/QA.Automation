@@ -94,7 +94,7 @@ On Mac, go to path "/usr/local/bin" and paste the unzipped driver.
 **To generate html report in test execution use below command**\
     1. `Pytest -v -s —html = report.html filename.py`
  
-**To generate html report in test execution use below command** \  
+**To generate allure report in test execution use below command**  
     1. `pytest -v -s --alluredir="<path of the folder>" Tests/filename.py`\
     Here path is : "./reports/allure_reports"
 
