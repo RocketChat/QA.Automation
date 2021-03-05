@@ -76,8 +76,8 @@ On Mac, go to path "/usr/local/bin" and paste the unzipped driver.
     (Give any value for n e.g n 2 will open two tabs simultaneously)
     
 **Running the Project**
-    `git clone https://github.com/RocketChat/QA.Automation.git`
-    `cd QA.Automation `
+    `git clone https://github.com/RocketChat/QA.Automation.git
+    cd QA.Automation `
 
 **To run all the Test cases use below commands:**
     1. `pytest Tests`
