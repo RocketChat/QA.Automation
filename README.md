@@ -77,6 +77,7 @@ On Mac, go to path "/usr/local/bin" and paste the unzipped driver.
     
 **Running the Project**
     `git clone https://github.com/RocketChat/QA.Automation.git`
+    
     `cd QA.Automation `
 
 **To run all the Test cases use below commands:**
