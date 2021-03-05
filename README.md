@@ -1,11 +1,14 @@
 # QA.Automation
-**Title**: QA.Automation
+**Title**: QA.Automation\
 **OverView**: It consists of automated end to end Regression test scripts for all the basic functionalities in 
-Rocket.chat, written in Selenium webdriver with Python. The purpose is to ensure that the entire system 
-(not just a selected component) works flawlessly after any code change. The test scripts allows cross browser testing
-and all the test cases can be executed on most popular browsers: Chrome, Firefox, Safari, and IE. The project also
-supports running Selenium Webdriver tests with Python on BrowserStack. The test reports can be generated with
-HTML and Allure.
+Rocket.chat, written in Selenium webdriver with Python. The purpose of QA Regression is to ensure that the entire system 
+works flawlessly after any code change.\
+
+The test scripts allows cross browser testing
+with all the test cases to be executed on most popular browsers: Chrome, Firefox, Safari, and IE.\
+The project also supports running Selenium Webdriver tests with Python on BrowserStack.\
+ The test reports can be generated with
+HTML and Allure plugins.\
 **Features**: 
 1. Login to Rocket.chat with Username and Password 
 2. Create New User 
@@ -35,7 +38,7 @@ HTML and Allure.
 22. Logout Rocket.chat
     
 **Dependencies**
-1. Python: Download and Install Python 3.9 from the official link-  [https://www.python.org/downloads/]
+1. Download and Install Python 3.9 from the official link-  [https://www.python.org/downloads/]
    
 2. Check python and pip is installed successfully\
    `python --version`\
@@ -43,7 +46,7 @@ HTML and Allure.
    
 3. Set Environment Variable for Python.
    
-4. Selenium: Install selenium libraries\
+4. Install selenium libraries\
    `pip install -U selenium`
    
 5. Download PyCharm - community edition
