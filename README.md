@@ -38,8 +38,7 @@ HTML and Allure.
 1. Python: Download and Install Python 3.9 from the official link-  [https://www.python.org/downloads/]
    
 2. Check python and pip is installed successfully
-   `python --version`
-   
+   `python --version`\
    `pip --version`
    
 3. Set Environment Variable for Python.
@@ -60,7 +59,7 @@ On Mac, go to path "/usr/local/bin" and paste the unzipped driver.
     `pip install pytest`
    
 7. Install allure: 
-    Windows: `scoop install allure`
+    Windows: `scoop install allure`\
     Mac: `brew install allure`
    
 8. Install html Report:
@@ -72,7 +71,7 @@ On Mac, go to path "/usr/local/bin" and paste the unzipped driver.
     3. browserstack-local
     
 10. For Parallel Mode: 
-    `pip install pytest-xdist`
+    `pip install pytest-xdist`\
     
     To execute tests:
     `pytest filename.py -v -s -n 2` 
@@ -85,14 +84,14 @@ On Mac, go to path "/usr/local/bin" and paste the unzipped driver.
 
 **To run all the Test cases use below commands:**
     1. `pytest Tests`\
-    2. `pytest -v -s Tests`
+    2. `pytest -v -s Tests`\
     3. `py.test -v -s Tests`
 
 **To run a single Test case use below commands:**
-    1. `pytest Tests/filename.py`
+    1. `pytest Tests/filename.py`\
     (e.g pytest Tests/test_01-LoginLogout.py)
-    2. `pytest -v -s Tests/filename.py`
-    3. `py.test -v -s Tests/filename.py`
+    2. `pytest -v -s Tests/filename.py`\
+    3. `py.test -v -s Tests/filename.py`\
 
 **To generate html report in test execution use below command**
     1. `Pytest -v -s —html = report.html filename.py`
