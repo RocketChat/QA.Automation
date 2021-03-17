@@ -31,6 +31,5 @@ jobs:
     - name: Test
       run: |
         cd ..
-        git clone --depth=1 https://github.com/RocketChat/QA.Automation.git
         cd QA.Automation
         pytest -v -s --alluredir="./reports/allure_reports" Tests
