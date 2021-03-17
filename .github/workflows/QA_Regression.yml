@@ -26,9 +26,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -U selenium
         pip install pytest pytest-html
-        sudo apt-add-repository ppa:qameta/allure
-        sudo apt-get update 
-        sudo apt-get install allure
+        pip install allure-pytest
    
     - name: Test
       run: |
