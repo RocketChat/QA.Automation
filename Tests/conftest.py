@@ -12,7 +12,7 @@ def init_driver(request):
     print("------Setup------")
     if request.param == "Chrome":
         options = chrome_Options()
-        options.headless = False
+        options.headless = True
         prefs = {"profile.default_content_setting_values.notifications": 2}
         options.add_experimental_option("prefs", prefs)
         driver = webdriver.Chrome(options=options)
@@ -21,7 +21,7 @@ def init_driver(request):
     if request.param == "Firefox":
         path = os.getcwd()
         options = ff_Options()
-        options.headless = False
+        options.headless = True
         driver = webdriver.Firefox(options=options, service_log_path=path + "/Logs/geckodriver.log")
 
     # """This checks Safari browser"""
