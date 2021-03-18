@@ -27,14 +27,14 @@ jobs:
         pip install allure-pytest
 
     - name: 'BrowserStack Env Setup'
-      uses: 'browserstack/github-actions/setup-env@master'
+      uses: 'browserstack/github-actions/setup-env@develop'
       with:
         username: ${{ secrets.BROWSERSTACK_USERNAME }}
         access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
 
 
     - name: 'Start BrowserStackLocal Tunnel'
-      uses: 'browserstack/github-actions/setup-local@master'
+      uses: 'browserstack/github-actions/setup-local@develop'
       with:
         local-testing: 'start'
         local-logging-level: 'all-logs'
@@ -47,6 +47,6 @@ jobs:
         pytest -v -s --alluredir="./reports/allure_reports" Tests
 
     - name: 'Stop BrowserStackLocal'
-      uses: 'browserstack/github-actions/setup-local@master'
+      uses: 'browserstack/github-actions/setup-local@develop'
       with:
         local-testing: stop
