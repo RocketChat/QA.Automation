@@ -9,6 +9,8 @@ jobs:
   test:
     name: Running end to end tests
     runs-on: ubuntu-latest
+    container:
+      image: https://hub.docker.com/r/rocketchat/rocket.chat.preview
 
     steps:
     - uses: actions/checkout@v2
@@ -23,9 +25,6 @@ jobs:
         pip install pytest pytest-html
         pip install allure-pytest
 
-    - name: Launch RC
-      run: |
-        docker run --rm -p 3000:3000 -e TEST_MODE=true rocketchat/rocket.chat.preview:3.10.4
     - name: Test
       run: |
         cd ..
