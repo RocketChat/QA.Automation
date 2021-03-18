@@ -27,9 +27,18 @@ jobs:
         pip install -U selenium
         pip install pytest pytest-html
         pip install allure-pytest
-        
+
     - name: Test
+      env:
+        TEST_MODE: "true"
+        MONGO_URL: mongodb://localhost:27017/rocketchat
+        MONGO_OPLOG_URL: mongodb://localhost:27017/local
       run: |
+        RUN_TESTS=no node .scripts/start.js &
+
+        # wait until port is bind
+        timeout 60 bash -c 'until printf "" 2>>/dev/null >>/dev/tcp/$0/$1; do sleep 1; done' localhost 3000
+
         cd ..
         cd QA.Automation
         pytest -v -s --alluredir="./reports/allure_reports" Tests
