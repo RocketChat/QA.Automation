@@ -27,6 +27,7 @@ jobs:
         pip install -U selenium
         pip install pytest pytest-html
         pip install allure-pytest
+        chromedriver-version: '89.0.4389.82'
         
     - name: Test
       run: |
