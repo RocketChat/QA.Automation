@@ -26,8 +26,27 @@ jobs:
         pip install pytest pytest-html
         pip install allure-pytest
 
+    - name: 'BrowserStack Env Setup'
+      uses: 'browserstack/github-actions/setup-env@master'
+      with:
+        username: ${{ secrets.BROWSERSTACK_USERNAME }}
+        access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+
+
+    - name: 'Start BrowserStackLocal Tunnel'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: 'start'
+        local-logging-level: 'all-logs'
+        local-identifier: 'random'
+
     - name: Test
       run: |
         cd ..
         cd QA.Automation
         pytest -v -s --alluredir="./reports/allure_reports" Tests
+
+    - name: 'Stop BrowserStackLocal'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: stop
