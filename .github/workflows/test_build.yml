@@ -1,0 +1,33 @@
+name: Run QA
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  test:
+    name: Running end to end tests
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -U selenium
+        pip install pytest pytest-html
+        pip install allure-pytest
+
+    - name: Launch RC
+      run: |
+        docker run --rm -p 3000:3000 -e TEST_MODE=true rocketchat/rocket.chat.preview:3.10.4
+    - name: Test
+      run: |
+        cd ..
+        cd QA.Automation
+        pytest -v -s --alluredir="./reports/allure_reports" Tests
