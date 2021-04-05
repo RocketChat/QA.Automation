@@ -1,10 +1,9 @@
-name: Run QA
+name: CI
 
 on:
   push:
     branches:
-      - develop
-      - main
+      - ci
 
 jobs:
   test:
