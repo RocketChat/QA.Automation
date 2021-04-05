@@ -38,11 +38,11 @@ jobs:
       run: |
         # wait until port is bind
         timeout 60 bash -c 'until printf "" 2>>/dev/null >>/dev/tcp/$0/$1; do sleep 1; done' localhost 3000
-        curl http://localhost:3000
         python -m pip install --upgrade pip
         pip install -U selenium
         pip install pytest pytest-html
         pip install allure-pytest
+        curl http://localhost:3000
 
     - name: 'BrowserStack Env Setup'
       uses: 'browserstack/github-actions/setup-env@master'
