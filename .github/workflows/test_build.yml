@@ -26,11 +26,15 @@ jobs:
         rocketchat:
           # Docker Hub image
           image: rocketchat/rocket.chat.preview:3.10.4
+          ports:
+            # Opens tcp port 6379 on the host and service container
+            - 80:80
       # with:
         # python-version: 3.9
 
     - name: Install dependencies
       run: |
+        curl http://localhost
         python -m pip install --upgrade pip
         pip install -U selenium
         pip install pytest pytest-html
