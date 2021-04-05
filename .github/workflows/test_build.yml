@@ -20,6 +20,8 @@ jobs:
         ports:
           # Opens tcp port 6379 on the host and service container
           - 3000:3000
+        env:
+          TEST_MODE: true
 
     steps:
     - uses: actions/checkout@v2
