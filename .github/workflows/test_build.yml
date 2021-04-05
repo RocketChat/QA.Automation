@@ -19,7 +19,7 @@ jobs:
         image: rocketchat/rocket.chat.preview:3.10.4
         ports:
           # Opens tcp port 6379 on the host and service container
-          - 80:3000
+          - 3000:80
 
     steps:
     - uses: actions/checkout@v2
