@@ -6,7 +6,7 @@ import os
 
 
 # @pytest.fixture(params=["Chrome", "Firefox", "Safari", "RemoteIE", "RemoteSafari"], scope="class")
-@pytest.fixture(params=["RemoteSafari"], scope="class")
+@pytest.fixture(params=["RemoteChrome"], scope="class")
 def init_driver(request):
     global driver
     """This checks chrome browser"""
@@ -64,6 +64,25 @@ def init_driver(request):
             'browser': 'Safari',
             'browser_version': '13.1',
             'name': "SafariTesting",
+            'browserstack.local': 'true',
+            'browserstack.localIdentifier': LOCAL_IDENTIFIER,
+            'project': PROJECT_NAME,
+            'build': BUILD_NAME
+        }
+        driver = webdriver.Remote(
+            command_executor=BROWSERSTACK_URL,
+            desired_capabilities=desired_cap
+        )
+
+    """BrowserStack Chrome"""
+    if request.param == "RemoteChrome":
+        desired_cap = {
+            'os': 'Windows',
+            'os_version': '10',
+            'resolution': '1920x1080',
+            'browser': 'Chrome',
+            'browser_version': 'latest',
+            'name': "ChromeTesting",
             'browserstack.local': 'true',
             'browserstack.localIdentifier': LOCAL_IDENTIFIER,
             'project': PROJECT_NAME,
