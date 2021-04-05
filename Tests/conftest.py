@@ -40,7 +40,7 @@ def init_driver(request):
             'browser': 'IE',
             'browser_version': '11.0',
             'name': "IETesting",
-            'browserstack.local': 'true'
+            # 'browserstack.local': 'true'
         }
         driver = webdriver.Remote(
             command_executor=BROWSERSTACK_URL,
@@ -58,7 +58,7 @@ def init_driver(request):
                 'browser': 'Safari',
                 'browser_version': '13.1',
                 'name': "SafariTesting",
-                'browserstack.local': 'true',
+                # 'browserstack.local': 'true',
             }
         driver = webdriver.Remote(
                 command_executor=BROWSERSTACK_URL,
