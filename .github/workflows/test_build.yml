@@ -38,7 +38,7 @@ jobs:
       run: |
         # wait until port is bind
         timeout 60 bash -c 'until printf "" 2>>/dev/null >>/dev/tcp/$0/$1; do sleep 1; done' localhost 3000
-        sleep 20
+        sleep 30
         curl http://localhost:3000/api/info
         python -m pip install --upgrade pip
         pip install -U selenium
