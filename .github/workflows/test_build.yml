@@ -12,25 +12,27 @@ jobs:
     name: Running end to end tests
     runs-on: ubuntu-latest
 
+    # container: node:10.18-jessie
+    # Service containers to run with `container-job`
+    services:
+      # Label used to access the service container
+      rocketchat:
+        # Docker Hub image
+        image: rocketchat/rocket.chat.preview:3.10.4
+        ports:
+          # Opens tcp port 6379 on the host and service container
+          - 80:80
+
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@v2
 
-    - name: use docker image
+    # - name: use docker image
       # Containers must run in Linux based operating systems
-      runs-on: ubuntu-latest
+      # runs-on: ubuntu-latest
       # Docker Hub image that `container-job` executes in
-      container: node:10.18-jessie
-      # Service containers to run with `container-job`
-      services:
-        # Label used to access the service container
-        rocketchat:
-          # Docker Hub image
-          image: rocketchat/rocket.chat.preview:3.10.4
-          ports:
-            # Opens tcp port 6379 on the host and service container
-            - 80:80
+
       # with:
         # python-version: 3.9
 
