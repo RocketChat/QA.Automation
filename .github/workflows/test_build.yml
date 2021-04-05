@@ -65,12 +65,14 @@ jobs:
         local-testing: stop
 
     - name: Store Reports
+      if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
         name: Reports
         path: /tmp/reports
 
     - name: Store Screenshots
+      if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
         name: Screenshots
