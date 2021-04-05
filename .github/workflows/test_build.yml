@@ -57,9 +57,21 @@ jobs:
       run: |
         cd ..
         cd QA.Automation
-        pytest -v -s -x --alluredir="./reports/allure_reports" Tests
+        pytest -v -s -x --alluredir="/tmp/reports/allure_reports" Tests
 
     - name: 'Stop BrowserStackLocal'
       uses: 'browserstack/github-actions/setup-local@master'
       with:
         local-testing: stop
+
+    - name: Store Reports
+      uses: actions/upload-artifact@v2
+      with:
+        name: Reports
+        path: /tmp/reports
+
+    - name: Store Screenshots
+      uses: actions/upload-artifact@v2
+      with:
+        name: Screenshots
+        path: /Screenshots
