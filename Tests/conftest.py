@@ -30,40 +30,49 @@ def init_driver(request):
     #     driver = webdriver.Safari()
 
     """This is for BrowserStack IE """
+    USERNAME = os.environ['BROWSERSTACK_USERNAME']
+    ACCESS_KEY = os.environ['BROWSERSTACK_ACCESS_KEY']
+    LOCAL_IDENTIFIER = os.environ['BROWSERSTACK_LOCAL_IDENTIFIER']
+    BUILD_NAME = os.environ['BROWSERSTACK_BUILD_NAME']
+    PROJECT_NAME = os.environ['BROWSERSTACK_PROJECT_NAME']
+
+    BROWSERSTACK_URL = 'http://'+USERNAME+':'+ACCESS_KEY+'@hub-cloud.browserstack.com/wd/hub'
+
     if request.param == "RemoteIE":
-        userName = os.environ['BROWSERSTACK_USERNAME']
-        accessKey = os.environ['BROWSERSTACK_ACCESS_KEY']
-        BROWSERSTACK_URL = 'http://'+userName+':'+accessKey+'@hub-cloud.browserstack.com/wd/hub'
         desired_cap = {
             'os': 'Windows',
             'os_version': '10',
             'browser': 'IE',
             'browser_version': '11.0',
             'name': "IETesting",
-            # 'browserstack.local': 'true'
+            'browserstack.local': 'true',
+            'browserstack.localIdentifier': LOCAL_IDENTIFIER,
+            'project': PROJECT_NAME,
+            'build': BUILD_NAME
         }
         driver = webdriver.Remote(
             command_executor=BROWSERSTACK_URL,
             desired_capabilities=desired_cap
         )
+
     """BrowserStack Safari"""
     if request.param == "RemoteSafari":
-        userName = os.environ['BROWSERSTACK_USERNAME']
-        accessKey = os.environ['BROWSERSTACK_ACCESS_KEY']
-        BROWSERSTACK_URL = 'http://'+userName+':'+accessKey+'@hub-cloud.browserstack.com/wd/hub'
         desired_cap = {
-                'os': 'OS X',
-                'os_version': 'Catalina',
-                'resolution': '1920x1080',
-                'browser': 'Safari',
-                'browser_version': '13.1',
-                'name': "SafariTesting",
-                # 'browserstack.local': 'true',
-            }
+            'os': 'OS X',
+            'os_version': 'Catalina',
+            'resolution': '1920x1080',
+            'browser': 'Safari',
+            'browser_version': '13.1',
+            'name': "SafariTesting",
+            'browserstack.local': 'true',
+            'browserstack.localIdentifier': LOCAL_IDENTIFIER,
+            'project': PROJECT_NAME,
+            'build': BUILD_NAME
+        }
         driver = webdriver.Remote(
-                command_executor=BROWSERSTACK_URL,
-                desired_capabilities=desired_cap
-            )
+            command_executor=BROWSERSTACK_URL,
+            desired_capabilities=desired_cap
+        )
 
     request.cls.driver = driver
     yield
