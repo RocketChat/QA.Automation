@@ -3,6 +3,7 @@ from Pages.Loginpage import LoginPage
 from Tests.test_base import BaseTest
 from Config.main import Data
 import allure
+import pytest
 from allure_commons.types import AttachmentType
 data_env = Data()
 data = data_env.get_data()

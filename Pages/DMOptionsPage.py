@@ -8,13 +8,23 @@ data = data_env.get_data()
 
 
 class DMOptionsPage(BasePage):
-    VALUE = (By.CSS_SELECTOR, "#rocket-chat > aside > div.rooms-list.sidebar--custom-colors > div > div > div > div.simplebar-wrapper > div.simplebar-mask > div > div > div > div > a:nth-child(6) > div > div.rc-box.rcx-box--full.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rc-box.rcx-box--full.rcx-sidebar-item__title")
-    SOURCE_1 = ".rcx-sidebar-item:nth-child(6)"
-    OPTIONS_BUTTON = (By.CSS_SELECTOR, ".rcx-sidebar-item:nth-child(6)>div.rcx-sidebar-item__wrapper>div.rcx-sidebar-item__content>div.rcx-sidebar-item__menu-wraper>button")
+    #VALUE = (By.CSS_SELECTOR, "#rocket-chat > aside > div.rooms-list.sidebar--custom-colors > div > div > div > div.simplebar-wrapper > div.simplebar-mask > div > div > div > div > a:nth-child(6) > div > div.rc-box.rcx-box--full.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rc-box.rcx-box--full.rcx-sidebar-item__title")
+    VALUE = (By.CSS_SELECTOR,
+             "#rocket-chat > aside > div.rooms-list.sidebar--custom-colors > div > div > div > div.rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(6) > a > div > div.rc-box.rcx-box--full.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rc-box.rcx-box--full.rcx-sidebar-item__title")
+    #SOURCE_1 = ".rcx-sidebar-item:nth-child(6)"
+    SOURCE_1 = ".rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(6)"
+    #OPTIONS_BUTTON = (By.CSS_SELECTOR, ".rcx-sidebar-item:nth-child(6)>div.rcx-sidebar-item__wrapper>div.rcx-sidebar-item__content>div.rcx-sidebar-item__menu-wraper>button")
+    OPTIONS_BUTTON = (By.CSS_SELECTOR,
+                      ".rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(6) > a > div > div.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rcx-sidebar-item__menu-wraper > button")
     FAVORITE_BUTTON = (By.XPATH, "//*[contains(text(),'Favorite')]")
-    FAVORITE_ITEM = (By.CSS_SELECTOR, "#rocket-chat > aside > div.rooms-list.sidebar--custom-colors > div > div > div > div.simplebar-wrapper > div.simplebar-mask > div > div > div > div > a:nth-child(2) > div > div.rc-box.rcx-box--full.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rc-box.rcx-box--full.rcx-sidebar-item__title")
-    SOURCE_2 = ".rcx-sidebar-item:nth-child(2)"
-    FAVORITE_ITEM_OPTIONS_BUTTON = (By.CSS_SELECTOR, ".rcx-sidebar-item:nth-child(2)>div.rcx-sidebar-item__wrapper>div.rcx-sidebar-item__content>div.rcx-sidebar-item__menu-wraper>button")
+    #FAVORITE_ITEM = (By.CSS_SELECTOR, "#rocket-chat > aside > div.rooms-list.sidebar--custom-colors > div > div > div > div.simplebar-wrapper > div.simplebar-mask > div > div > div > div > a:nth-child(2) > div > div.rc-box.rcx-box--full.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rc-box.rcx-box--full.rcx-sidebar-item__title")
+    FAVORITE_ITEM = (By.CSS_SELECTOR,
+                     "#rocket-chat > aside > div.rooms-list.sidebar--custom-colors > div > div > div > div.rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(2) > a > div > div.rc-box.rcx-box--full.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rc-box.rcx-box--full.rcx-sidebar-item__title")
+    #SOURCE_2 = ".rcx-sidebar-item:nth-child(2)"
+    SOURCE_2 = ".rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(2)"
+    #FAVORITE_ITEM_OPTIONS_BUTTON = (By.CSS_SELECTOR, ".rcx-sidebar-item:nth-child(2)>div.rcx-sidebar-item__wrapper>div.rcx-sidebar-item__content>div.rcx-sidebar-item__menu-wraper>button")
+    FAVORITE_ITEM_OPTIONS_BUTTON = (By.CSS_SELECTOR,
+                                    ".rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(2) > a > div > div.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rcx-sidebar-item__menu-wraper > button")
     UNFAVORITE_BUTTON = (By.XPATH, "//*[contains(text(),'Unfavorite')]")
 
     HIDE_OPTION = (By.XPATH, "//*[contains(text(),'Hide')]")
