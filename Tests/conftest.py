@@ -6,7 +6,7 @@ import os
 
 
 # @pytest.fixture(params=["Chrome", "Firefox", "Safari", "RemoteIE", "RemoteSafari"], scope="class")
-@pytest.fixture(params=["RemoteChrome"], scope="class")
+@pytest.fixture(params=["RemoteChrome", "RemoteIE", "RemoteSafari"], scope="class")
 def init_driver(request):
     global driver
     """This checks chrome browser"""
