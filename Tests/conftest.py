@@ -32,7 +32,7 @@ def init_driver(request):
     if request.param == "RemoteIE":
         userName = os.environ['BROWSERSTACK_USERNAME']
         accessKey = os.environ['BROWSERSTACK_ACCESS_KEY']
-        BROWSERSTACK_URL = 'http://'+userName+':'+accessKey+'@hub-cloud.browserstack.com/wd/hub'
+        BROWSERSTACK_URL = 'https://rocketchattester1:3qKpZ3j75MbhWztWU1R9@hub-cloud.browserstack.com/wd/hub'
         desired_cap = {
             'os': 'Windows',
             'os_version': '10',
@@ -49,7 +49,7 @@ def init_driver(request):
     if request.param == "RemoteSafari":
         userName = os.environ['BROWSERSTACK_USERNAME']
         accessKey = os.environ['BROWSERSTACK_ACCESS_KEY']
-        BROWSERSTACK_URL = 'http://'+userName+':'+accessKey+'@hub-cloud.browserstack.com/wd/hub'
+        BROWSERSTACK_URL = 'https://rocketchattester1:3qKpZ3j75MbhWztWU1R9@hub-cloud.browserstack.com/wd/hub'
         desired_cap = {
                 'os': 'OS X',
                 'os_version': 'Catalina',
