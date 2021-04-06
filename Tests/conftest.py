@@ -30,8 +30,6 @@ def init_driver(request):
 
     """This is for BrowserStack IE """
     if request.param == "RemoteIE":
-        userName = os.environ['BROWSERSTACK_USERNAME']
-        accessKey = os.environ['BROWSERSTACK_ACCESS_KEY']
         BROWSERSTACK_URL = 'https://rocketchattester1:3qKpZ3j75MbhWztWU1R9@hub-cloud.browserstack.com/wd/hub'
         desired_cap = {
             'os': 'Windows',
@@ -39,7 +37,8 @@ def init_driver(request):
             'browser': 'IE',
             'browser_version': '11.0',
             'name': "IETesting",
-            'browserstack.local': 'true'
+            'browserstack.local': 'true',
+            'acceptSslCerts': 'true'
         }
         driver = webdriver.Remote(
             command_executor=BROWSERSTACK_URL,
@@ -47,8 +46,6 @@ def init_driver(request):
         )
     """BrowserStack Safari"""
     if request.param == "RemoteSafari":
-        userName = os.environ['BROWSERSTACK_USERNAME']
-        accessKey = os.environ['BROWSERSTACK_ACCESS_KEY']
         BROWSERSTACK_URL = 'https://rocketchattester1:3qKpZ3j75MbhWztWU1R9@hub-cloud.browserstack.com/wd/hub'
         desired_cap = {
                 'os': 'OS X',
@@ -58,6 +55,7 @@ def init_driver(request):
                 'browser_version': '13.1',
                 'name': "SafariTesting",
                 'browserstack.local': 'true',
+                'acceptSslCerts': 'true'
             }
         driver = webdriver.Remote(
                 command_executor=BROWSERSTACK_URL,

@@ -353,3 +353,33 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1617690871142	geckodriver	INFO	Listening on 127.0.0.1:61879
+1617690872153	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileqcR257"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617690874828	Marionette	INFO	Listening on port 61895
+1617690874927	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617690886826	Marionette	INFO	Stopped listening on port 61895
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617690992781	geckodriver	INFO	Listening on 127.0.0.1:62556
+1617690993787	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileGCnCG1"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617690996799	Marionette	INFO	Listening on port 62574
+1617690996903	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617691009133	Marionette	INFO	Stopped listening on port 62574
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617691409855	geckodriver	INFO	Listening on 127.0.0.1:64806
+1617691410871	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileRHnhqq"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617691413730	Marionette	INFO	Listening on port 64821
+1617691413785	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617691426228	Marionette	INFO	Stopped listening on port 64821
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
