@@ -10,6 +10,10 @@ jobs:
     name: Running end to end tests
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        browser: ["RemoteChrome", "RemoteSafari", "RemoteIE"]
+
     services:
       rocketchat:
         image: rocketchat/rocket.chat.preview:3.13.0
@@ -55,6 +59,7 @@ jobs:
       env:
         BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
         BROWSERSTACK_ACCESS_KEY-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+        BROWSER: ${{ matrix.browser }}
       run: |
         cd ..
         cd QA.Automation
