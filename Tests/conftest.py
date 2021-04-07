@@ -92,7 +92,6 @@ def init_driver(request):
             command_executor=BROWSERSTACK_URL,
             desired_capabilities=desired_cap
         )
-
     request.cls.driver = driver
     yield
     print("------Teardown------")
