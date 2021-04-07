@@ -5,26 +5,26 @@ from selenium.webdriver.chrome.options import Options as chrome_Options
 import os
 
 
-# @pytest.fixture(params=["Chrome", "Firefox", "Safari", "RemoteIE", "RemoteSafari"], scope="class")
-@pytest.fixture(params=["RemoteChrome"], scope="class")
+@pytest.fixture(params=[os.environ['BROWSER']], scope="class")
+#@pytest.fixture(params=["Chrome", "Firefox", "Safari", "RemoteIE", "RemoteSafari"], scope="class")
 def init_driver(request):
     global driver
     """This checks chrome browser"""
     print("------Setup------")
     # if request.param == "Chrome":
     #     options = chrome_Options()
-    #     options.headless = True
+    #     options.headless = False
     #     prefs = {"profile.default_content_setting_values.notifications": 2}
     #     options.add_experimental_option("prefs", prefs)
     #     driver = webdriver.Chrome(options=options)
-
+    #
     # """This checks Firefox browser"""
     # if request.param == "Firefox":
     #     path = os.getcwd()
     #     options = ff_Options()
     #     options.headless = True
     #     driver = webdriver.Firefox(options=options, service_log_path=path + "/Logs/geckodriver.log")
-
+    #
     # """This checks Safari browser"""
     # if request.param == "Safari":
     #     driver = webdriver.Safari()
@@ -92,7 +92,6 @@ def init_driver(request):
             command_executor=BROWSERSTACK_URL,
             desired_capabilities=desired_cap
         )
-
     request.cls.driver = driver
     yield
     print("------Teardown------")

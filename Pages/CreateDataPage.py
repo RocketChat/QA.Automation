@@ -8,20 +8,21 @@ data = data_env.get_data()
 
 class CreateDataPage(BasePage):
 
-    MORE_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[6]")
-    ADMINISTRATION_BUTTON = (By.XPATH, "//span[contains(text(),'Administration')]")
-    USERS_BUTTON = (By.XPATH, "//div[contains(text(), 'Users')]")
+    #MORE_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[6]")
+    AVATAR = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[1]")
+    ADMINISTRATION_BUTTON = (By.CSS_SELECTOR, "body > div.rc-popover.rc-popover-- > div > div > div > div:nth-child(5) > li > div > div.rcx-option__content")
+    USERS_BUTTON = (By.CSS_SELECTOR, "#rocket-chat > aside > div.flex-nav > div > div > div > div > div.rc-scrollbars-view > div > div > a:nth-child(3)")
     NEW_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/div[2]/section/section/div[1]/div/div/button[1]")
-    NAME_INPUT = (By.XPATH, "//*[@id='rocket-chat']/div[2]/section/div/div/div/div[1]/div[2]/div/div/div/form/fieldset/div[1]/span/input")
-    USERNAME_INPUT = (By.XPATH, "//*[@id='rocket-chat']/div[2]/section/div/div/div/div[1]/div[2]/div/div/div/form/fieldset/div[2]/span/label/input")
-    EMAIL_INPUT = (By.XPATH, "//*[@id='rocket-chat']/div[2]/section/div/div/div/div[1]/div[2]/div/div/div/form/fieldset/div[3]/span[1]/label/input")
-    STATUS_INPUT = (By.XPATH, "//*[@id='rocket-chat']/div[2]/section/div/div/div/div[1]/div[2]/div/div/div/form/fieldset/div[4]/span/label/input")
-    BIO_INPUT = (By.XPATH, "//*[@id='rocket-chat']/div[2]/section/div/div/div/div[1]/div[2]/div/div/div/form/fieldset/div[5]/span/label/textarea")
-    NICKNAME_INPUT = (By.XPATH, "//*[@id='rocket-chat']/div[2]/section/div/div/div/div[1]/div[2]/div/div/div/form/fieldset/div[6]/span/label/input")
-    PASSWORD_INPUT = (By.XPATH, "//*[@id='rocket-chat']/div[2]/section/div/div/div/div[1]/div[2]/div/div/div/form/fieldset/div[7]/span/label/input")
-    ROLES_INPUT = (By.XPATH, "//*[@id='rocket-chat']/div[2]/section/div/div/div/div[1]/div[2]/div/div/div/form/fieldset/div[10]/span/div/div[1]/div/input")
-    OPTION_USER = (By.CSS_SELECTOR, "body > div:nth-child(23) > div > div > ol > li:nth-child(5) > div > div")
-    SAVE_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/div[2]/section/div/div/div/div[1]/div[2]/div/div/div/form/fieldset/div[13]/span/div/button[2]")
+    NAME_INPUT = (By.CSS_SELECTOR, "div.rc-scrollbars-view > form > fieldset > div:nth-child(1) > span > input")
+    USERNAME_INPUT = (By.CSS_SELECTOR, "div.rc-scrollbars-view > form > fieldset > div:nth-child(2) > span > label > input")
+    EMAIL_INPUT = (By.CSS_SELECTOR, "div.rc-scrollbars-view > form > fieldset > div:nth-child(3) > span:nth-child(2) > label > input")
+    STATUS_INPUT = (By.CSS_SELECTOR, "div.rc-scrollbars-view > form > fieldset > div:nth-child(4) > span > label > input")
+    BIO_INPUT = (By.CSS_SELECTOR, "div.rc-scrollbars-view > form > fieldset > div:nth-child(5) > span > label > textarea")
+    NICKNAME_INPUT = (By.CSS_SELECTOR, "div.rc-scrollbars-view > form > fieldset > div:nth-child(6) > span > label > input")
+    PASSWORD_INPUT = (By.CSS_SELECTOR, "div.rc-scrollbars-view > form > fieldset > div:nth-child(7) > span > label > input")
+    ROLES_INPUT = (By.CSS_SELECTOR, "div.rc-scrollbars-view > form > fieldset > div:nth-child(10) > span >div>div>div>input")
+    OPTION_USER = (By.CSS_SELECTOR, "body > div:nth-child(22) > div > div > ol > li:nth-child(5) > div >label>input")
+    SAVE_BUTTON = (By.CSS_SELECTOR, "div.rc-scrollbars-view > form > fieldset > div:nth-child(13) > span > div > button.rcx-box.rcx-box--full.rcx-box--animated.rcx-button.rcx-css-t3n91h")
 
     USER_CREATED = (By.XPATH, "//*[contains(text(),'" + data.new_user + "')]")
     DM_BUTTON = (By.XPATH, "//button[contains(text(),'Direct Message')]")
@@ -30,22 +31,22 @@ class CreateDataPage(BasePage):
 
     ADD_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[5]")
     CHANNEL_BUTTON = (By.XPATH, "//span[contains(text(),'Channel')]")
-    CHANNEL_NAME_INPUT = (By.XPATH, "//*[@id='create-channel']/div[2]/div[1]/label/div[2]/input")
-    INVITE_USER_INPUT = (By.XPATH, "//*[@id='create-channel']/div[2]/div[2]/label/div[2]/div[2]/input")
-    CREATE_BUTTON = (By.XPATH, "//*[@id='create-channel']/div[3]/input")
+    CHANNEL_NAME_INPUT = (By.XPATH, "//*[@id='modal-root']/div/dialog/div/div[1]/div/div[1]/span/label/input")
+    INVITE_USER_INPUT = (By.XPATH, "//*[@id='modal-root']/div/dialog/div/div[1]/div/div[7]/div/div[1]/input")
+    CREATE_BUTTON = (By.XPATH, "//*[@id='modal-root']/div/dialog/div/div[2]/div/button[2]")
     CHANNEL_CREATED = (By.XPATH, "//*[contains(text(),'" + data.channel_name + "')]")
 
-    MEMBER_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/div/main/header/div/div[3]/button[4]")
+    MEMBER_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/div/main/header/div/div[3]/button[3]")
     ADD_USERS = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/div/main/div/aside/footer/div/button[2]")
-    INPUT_FIELD = (By.XPATH, "//input[@placeholder='Choose users']")
+    INPUT_FIELD = (By.CSS_SELECTOR, "div.rc-scrollbars-view > div > div > div > div.rcx-box> input")
     ADD_USERS_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/div/main/div/aside/footer/button")
-    MESSAGE = (By.CSS_SELECTOR, ".wrapper>ul>li:last-child>div:nth-child(2)>div:nth-child(2)>span:nth-child(3)")
+    MESSAGE = (By.CSS_SELECTOR, ".wrapper>ul>li:last-child>div:nth-child(2)>div:nth-child(2)")
 
     def __init__(self, driver):
         super().__init__(driver)
 
     def add_new_user(self, new_user, new_username, new_email, new_status, new_bio, new_nickname, new_password):
-        self.do_click(self.MORE_BUTTON)
+        self.do_click(self.AVATAR)
         self.do_click(self.ADMINISTRATION_BUTTON)
         self.do_click(self.USERS_BUTTON)
         self.do_click(self.NEW_BUTTON)
@@ -78,10 +79,10 @@ class CreateDataPage(BasePage):
         self.do_send_keys(self.PASSWORD_INPUT, new_password)
         self.do_enter(self.PASSWORD_INPUT)
 
-        self.do_click(self.ROLES_INPUT)
-        self.do_click(self.OPTION_USER)
-        self.do_click(self.PASSWORD_INPUT)
-        time.sleep(3)
+        #self.do_click(self.ROLES_INPUT)
+        #self.do_click(self.OPTION_USER)
+        #self.do_click(self.PASSWORD_INPUT)
+        #time.sleep(3)
 
         self.do_click(self.SAVE_BUTTON)
         self.driver.refresh()
@@ -129,6 +130,8 @@ class CreateDataPage(BasePage):
 
     def is_message_visible(self):
         return self.is_visible(self.MESSAGE)
+
+
 
 
 

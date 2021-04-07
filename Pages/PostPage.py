@@ -19,7 +19,6 @@ class PostPage(BasePage):
     EMOJI_SENT = (By.CSS_SELECTOR, ".wrapper>ul>li:last-child>div>div:last-child>span")
     USER = (By.XPATH, "//*[text()[contains(.,'" + data.user + "')]]")
 
-
     def __init__(self, driver):
         super().__init__(driver)
 

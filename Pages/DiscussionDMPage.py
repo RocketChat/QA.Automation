@@ -29,6 +29,7 @@ class DiscussionDMPage(BasePage):
         self.do_click(self.DISCUSSION_BUTTON)
         self.do_click(self.CHANNEL_INPUT)
         self.do_send_keys(self.CHANNEL_INPUT, channel_name)
+        time.sleep(3)
         self.do_enter(self.CHANNEL_INPUT)
 
         self.do_click(self.DISCUSSION_INPUT)
