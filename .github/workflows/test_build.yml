@@ -16,7 +16,7 @@ jobs:
 
     services:
       rocketchat:
-        image: rocketchat/rocket.chat.preview:3.13.0
+        image: ghcr.io/rocketchat/rocket.chat:pr-21484
         ports:
           - 3000:3000
         env:
