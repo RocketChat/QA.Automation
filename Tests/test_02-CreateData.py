@@ -3,6 +3,7 @@ from Pages.Loginpage import LoginPage
 from Tests.test_base import BaseTest
 from Config.main import Data
 import allure
+import time
 import pytest
 from allure_commons.types import AttachmentType
 data_env = Data()
@@ -15,6 +16,7 @@ class Test_Create(BaseTest):
         self.loginPage = LoginPage(self.driver)
         self.loginPage.do_login(data.user_name, data.password)
         self.driver.maximize_window()
+        time.sleep(5)
         self.create = CreateDataPage(self.driver)
         self.create.add_new_user(data.new_user, data.new_username, data.new_email, data.new_status, data.new_bio, data.new_nickname, data.new_password)
         allure.attach(self.driver.get_screenshot_as_png(), name="CreateUser", attachment_type=AttachmentType.PNG)
