@@ -5,8 +5,8 @@ from selenium.webdriver.chrome.options import Options as chrome_Options
 import os
 
 
-@pytest.fixture(params=["RemoteIE", "RemoteChrome", "RemoteSafari"], scope="class")
-#@pytest.fixture(params=["Chrome"], scope="class")
+@pytest.fixture(params=["RemoteChrome", "RemoteIE", "RemoteSafari"], scope="class")
+#@pytest.fixture(params=["Chrome", "Firefox", "Safari"], scope="class")
 def init_driver(request):
     global driver
     """This checks chrome browser"""
@@ -35,11 +35,12 @@ def init_driver(request):
         desired_cap = {
             'os': 'Windows',
             'os_version': '10',
+            'resolution': '1920x1080',
             'browser': 'IE',
             'browser_version': '11.0',
             'name': "IETesting",
-            'browserstack.local': 'true',
-            'acceptSslCerts': 'true'
+            'build': 'BStack Build Number 1',
+            'browserstack.local': 'true'
         }
         driver = webdriver.Remote(
             command_executor=BROWSERSTACK_URL,
@@ -73,7 +74,8 @@ def init_driver(request):
                 'browser': 'Safari',
                 'browser_version': '13.1',
                 'name': "SafariTesting",
-                'browserstack.local': 'true',
+                'build': 'BStack Build Number 1',
+                'browserstack.local': 'true'
             }
         driver = webdriver.Remote(
                 command_executor=BROWSERSTACK_URL,
