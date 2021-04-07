@@ -29,7 +29,7 @@ def init_driver(request):
     # if request.param == "Safari":
     #     driver = webdriver.Safari()
 
-    """This is for BrowserStack IE """
+    """This is BrowserStack Testing"""
     USERNAME = os.environ['BROWSERSTACK_USERNAME']
     ACCESS_KEY = os.environ['BROWSERSTACK_ACCESS_KEY']
     LOCAL_IDENTIFIER = os.environ['BROWSERSTACK_LOCAL_IDENTIFIER']
