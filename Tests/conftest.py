@@ -92,7 +92,7 @@ def init_driver(request):
             command_executor=BROWSERSTACK_URL,
             desired_capabilities=desired_cap
         )
-    yield
+    yield driver
     print("------Teardown------")
     driver.quit()
 
