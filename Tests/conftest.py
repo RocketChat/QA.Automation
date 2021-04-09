@@ -98,6 +98,6 @@ def init_driver(request):
 
 
 @pytest.fixture(scope="class")
-def init_driver_class(request):
+def init_driver_class(request, init_driver):
     print("------Class------")
     request.cls.driver = init_driver
