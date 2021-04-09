@@ -75,6 +75,7 @@ def init_driver(request):
 
     """BrowserStack Chrome"""
     if request.param == "RemoteChrome":
+        print("------RemoteChrome------")
         desired_cap = {
             'os': 'Windows',
             'os_version': '10',
@@ -98,4 +99,5 @@ def init_driver(request):
 
 @pytest.fixture(scope="class")
 def init_driver_class(request):
+    print("------Class------")
     request.cls.driver = driver
