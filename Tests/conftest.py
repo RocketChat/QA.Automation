@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.options import Options as chrome_Options
 import os
 
 
-@pytest.fixture(params=[os.environ['BROWSER']], scope="class")
+@pytest.fixture(params=[os.environ['BROWSER']], scope="session")
 #@pytest.fixture(params=["Chrome", "Firefox", "Safari", "RemoteIE", "RemoteSafari"], scope="class")
 def init_driver(request):
     global driver
