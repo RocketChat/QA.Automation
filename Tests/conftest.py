@@ -93,6 +93,25 @@ def init_driver(request):
             desired_capabilities=desired_cap
         )
 
+    """BrowserStack Firefox"""
+    if request.param == "RemoteFirefox":
+        desired_cap = {
+            'os': 'Windows',
+            'os_version': '10',
+            'resolution': '1920x1080',
+            'browser': 'Firefox',
+            'browser_version': 'latest',
+            'name': "FirefoxTesting",
+            'browserstack.local': 'true',
+            'browserstack.localIdentifier': LOCAL_IDENTIFIER,
+            'project': PROJECT_NAME,
+            'build': BUILD_NAME
+        }
+        driver = webdriver.Remote(
+            command_executor=BROWSERSTACK_URL,
+            desired_capabilities=desired_cap
+        )
+
     yield driver
 
     print("------Teardown------")
