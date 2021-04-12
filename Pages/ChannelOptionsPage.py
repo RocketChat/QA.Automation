@@ -43,7 +43,7 @@ class ChannelOptionsPage(BasePage):
         super().__init__(driver)
 
     def go_to_option(self):
-        self.do_mouse_hover(self.CHANNEL)
+        self.do_mouse_hover(self.SOURCE_1)
         time.sleep(2)
         self.do_click(self.OPTIONS_BUTTON)
 
