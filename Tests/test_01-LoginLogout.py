@@ -21,6 +21,12 @@ class Test_Login(BaseTest):
         allure.attach(self.driver.get_screenshot_as_png(), name="LoginScreen", attachment_type=AttachmentType.PNG)
         assert title == data.LOGIN_PAGE_TITLE
 
+    @allure.severity(allure.severity_level.NORMAL)
+    def test_links(self):
+        self.loginPage = LoginPage(self.driver)
+        assert self.loginPage.is_forgot_password_link_present()
+        assert self.loginPage.is_register_account_link_present()
+
     @allure.severity(allure.severity_level.BLOCKER)
     def test_login(self):
         self.loginPage = LoginPage(self.driver)

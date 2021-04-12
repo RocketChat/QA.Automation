@@ -13,6 +13,8 @@ class LoginPage(BasePage):
     EMAIL = (By.XPATH, "//input[@id='emailOrUsername']")
     PASSWORD = (By.XPATH, "//input[@id='pass']")
     LOGIN_BUTTON = (By.XPATH, "//*[contains(text(),'Login')]")
+    FORGOT_PASSWORD = (By.XPATH, "//*[contains(text(), 'Forgot your password?')]")
+    REGISTER = (By.XPATH, "//*[contains(text(), 'Register a new account')]")
 
     AVATAR = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[1]")
     LOGOUT_BUTTON = (By.XPATH, "//*[contains(text(), 'Logout')]")
@@ -26,6 +28,12 @@ class LoginPage(BasePage):
     """this is used to get page title"""
     def get_login_page_title(self, title):
         return self.get_title(title)
+
+    def is_forgot_password_link_present(self):
+        return self.is_visible(self.FORGOT_PASSWORD)
+
+    def is_register_account_link_present(self):
+        return self.is_visible(self.REGISTER)
 
     """this is used to login"""
     def do_login(self, username, password):
