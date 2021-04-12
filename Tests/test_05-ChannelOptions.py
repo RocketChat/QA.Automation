@@ -13,7 +13,6 @@ data = data_env.get_data()
 class Test_ChannelOptions(BaseTest):
     @allure.severity(allure.severity_level.NORMAL)
     def test_perform_favorite_unfavorite_channel(self):
-        pytest.skip("test")
         self.loginPage = LoginPage(self.driver)
         self.loginPage.do_login(data.user_name, data.password)
         self.driver.maximize_window()
@@ -29,9 +28,6 @@ class Test_ChannelOptions(BaseTest):
 
     @allure.severity(allure.severity_level.NORMAL)
     def test_perform_read_unread_channel(self):
-        self.loginPage = LoginPage(self.driver)
-        self.loginPage.do_login(data.user_name, data.password)
-        self.driver.maximize_window()
         self.channelOptions = ChannelOptionsPage(self.driver)
         self.channelOptions.go_to_option()
         label1 = self.channelOptions.get_button_label()
@@ -44,7 +40,6 @@ class Test_ChannelOptions(BaseTest):
 
     @allure.severity(allure.severity_level.NORMAL)
     def test_perform_hide_show_channel(self):
-        pytest.skip("test")
         self.channelOptions = ChannelOptionsPage(self.driver)
         self.channelOptions.go_to_option()
         self.channelOptions.perform_hide()
@@ -55,7 +50,6 @@ class Test_ChannelOptions(BaseTest):
 
     @allure.severity(allure.severity_level.CRITICAL)
     def test_perform_leave_join_channel(self):
-        pytest.skip("test")
         self.channelOptions = ChannelOptionsPage(self.driver)
         self.channelOptions.go_to_option()
         self.channelOptions.perform_leave()

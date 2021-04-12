@@ -25,6 +25,7 @@ class DiscussionDMPage(BasePage):
         super().__init__(driver)
 
     def create_discussion(self, channel_name, discussion_name, new_user, discussion_message):
+        time.sleep(5)
         self.do_click(self.ADD_BUTTON)
         self.do_click(self.DISCUSSION_BUTTON)
         self.do_click(self.CHANNEL_INPUT)
