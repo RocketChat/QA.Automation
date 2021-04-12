@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        browser: ["RemoteChrome", "RemoteFirefox", "RemoteSafari", "RemoteIE"]
+        browser: ["RemoteChrome"]
 
     services:
       rocketchat:

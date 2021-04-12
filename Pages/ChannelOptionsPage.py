@@ -8,18 +8,13 @@ data = data_env.get_data()
 
 
 class ChannelOptionsPage(BasePage):
-    #VALUE = (By.CSS_SELECTOR, "#rocket-chat > aside > div.rooms-list.sidebar--custom-colors > div > div > div > div.simplebar-wrapper > div.simplebar-mask > div > div > div > div > a:nth-child(4) > div > div.rc-box.rcx-box--full.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rc-box.rcx-box--full.rcx-sidebar-item__title")
     VALUE = (By.CSS_SELECTOR, "#rocket-chat > aside > div.rooms-list.sidebar--custom-colors > div > div > div > div.rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(4) > a > div > div.rc-box.rcx-box--full.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rc-box.rcx-box--full.rcx-sidebar-item__title")
-    #SOURCE_1 = ".rcx-sidebar-item:nth-child(4)"
+    CHANNEL = (By.XPATH, "//*[contains(text(),'" + data.channel_name + "')]")
     SOURCE_1 = ".rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(4)"
-    #OPTIONS_BUTTON = (By.CSS_SELECTOR, ".rcx-sidebar-item:nth-child(4)>div.rcx-sidebar-item__wrapper>div.rcx-sidebar-item__content>div.rcx-sidebar-item__menu-wraper>button")
     OPTIONS_BUTTON = (By.CSS_SELECTOR, ".rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(4) > a > div > div.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rcx-sidebar-item__menu-wraper > button")
     FAVORITE_BUTTON = (By.XPATH, "//*[contains(text(),'Favorite')]")
-    #FAVORITE_ITEM = (By.CSS_SELECTOR, "#rocket-chat > aside > div.rooms-list.sidebar--custom-colors > div > div > div > div.simplebar-wrapper > div.simplebar-mask > div > div > div > div > a:nth-child(2) > div > div.rc-box.rcx-box--full.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rc-box.rcx-box--full.rcx-sidebar-item__title")
     FAVORITE_ITEM = (By.CSS_SELECTOR, "#rocket-chat > aside > div.rooms-list.sidebar--custom-colors > div > div > div > div.rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(2) > a > div > div.rc-box.rcx-box--full.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rc-box.rcx-box--full.rcx-sidebar-item__title")
-    #SOURCE_2 = ".rcx-sidebar-item:nth-child(2)"
     SOURCE_2 = ".rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(2)"
-    #FAVORITE_ITEM_OPTIONS_BUTTON = (By.CSS_SELECTOR, ".rcx-sidebar-item:nth-child(2)>div.rcx-sidebar-item__wrapper>div.rcx-sidebar-item__content>div.rcx-sidebar-item__menu-wraper>button")
     FAVORITE_ITEM_OPTIONS_BUTTON = (By.CSS_SELECTOR, ".rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(2) > a > div > div.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rcx-sidebar-item__menu-wraper > button")
     UNFAVORITE_BUTTON = (By.XPATH, "//*[contains(text(),'Unfavorite')]")
     HIDE_OPTION = (By.XPATH, "//*[contains(text(),'Hide')]")
@@ -48,7 +43,7 @@ class ChannelOptionsPage(BasePage):
         super().__init__(driver)
 
     def go_to_option(self):
-        self.do_mouse_hover(self.SOURCE_1)
+        self.do_mouse_hover(self.CHANNEL)
         time.sleep(2)
         self.do_click(self.OPTIONS_BUTTON)
 
@@ -72,7 +67,7 @@ class ChannelOptionsPage(BasePage):
         time.sleep(2)
         self.do_click(self.RESULT_1)
         time.sleep(2)
-        # self.do_click(self.JOIN_BUTTON)
+        self.do_click(self.JOIN_BUTTON)
 
     def is_channel_displayed(self):
         return self.is_displayed(self.PUBLIC_CHANNEL)
