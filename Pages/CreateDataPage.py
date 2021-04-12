@@ -108,11 +108,11 @@ class CreateDataPage(BasePage):
         self.do_send_keys(self.CHANNEL_NAME_INPUT, channel_name)
         self.do_enter(self.CHANNEL_NAME_INPUT)
         time.sleep(3)
-        self.do_click(self.INVITE_USER_INPUT)
-        self.do_send_keys(self.INVITE_USER_INPUT, new_user)
-        time.sleep(5)
-        self.do_enter(self.INVITE_USER_INPUT)
-        time.sleep(5)
+        # self.do_click(self.INVITE_USER_INPUT)
+        # self.do_send_keys(self.INVITE_USER_INPUT, new_user)
+        # time.sleep(5)
+        # self.do_enter(self.INVITE_USER_INPUT)
+        # time.sleep(5)
 
         self.do_click(self.CREATE_BUTTON)
 

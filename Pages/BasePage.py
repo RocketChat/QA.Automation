@@ -54,6 +54,9 @@ class BasePage:
         path = os.getcwd()
         self.driver.save_screenshot(path + folder)
 
+    def switch_to_alert(self):
+        self.driver.switch_to.alert()
+
 
 
 
