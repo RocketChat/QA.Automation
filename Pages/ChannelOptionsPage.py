@@ -29,7 +29,7 @@ class ChannelOptionsPage(BasePage):
     TEXTAREA = (By.XPATH, "//textarea[@name='msg']")
 
     """Read and Unread"""
-    BUTTON_LABEL = (By.CSS_SELECTOR, "body > div:nth-child(23) > div > div > ol > li:nth-child(2)")
+    BUTTON_LABEL = (By.CSS_SELECTOR, "ol > li:nth-child(2) > div > div.rcx-option__content")
     UNREAD_BUTTON = (By.XPATH, "//*[contains(text(),'Mark Unread')]")
     READ_BUTTON = (By.XPATH, "//*[contains(text(),'Mark Read')]")
 
@@ -40,6 +40,7 @@ class ChannelOptionsPage(BasePage):
     DIRECTORY = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[3]")
     DIRECTORY_SEARCH_INPUT = (By.XPATH, "//*[@id='rocket-chat']/div[2]/section/div[3]/form/label/input")
     DIRECTORY_SEARCH_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/div[2]/section/div[3]/div/div/div[1]/div[2]/div/div/div/div/table/tbody/tr")
+    RESULT_1 = (By.CSS_SELECTOR, ".rc-scrollbars-view > div > table > tbody > tr > td:nth-child(1)")
     JOIN_BUTTON = (By.CSS_SELECTOR, ".js-join")
     PUBLIC_CHANNEL = (By.XPATH, "//*[contains(text(),'general')]")
 
@@ -67,9 +68,11 @@ class ChannelOptionsPage(BasePage):
         self.do_send_keys(self.DIRECTORY_SEARCH_INPUT, value)
         time.sleep(2)
         self.do_enter(self.DIRECTORY_SEARCH_INPUT)
-        self.do_click(self.DIRECTORY_SEARCH_BUTTON)
+        #self.do_click(self.DIRECTORY_SEARCH_BUTTON)
         time.sleep(2)
-        self.do_click(self.JOIN_BUTTON)
+        self.do_click(self.RESULT_1)
+        time.sleep(2)
+        #self.do_click(self.JOIN_BUTTON)
 
     def is_channel_displayed(self):
         return self.is_displayed(self.PUBLIC_CHANNEL)
