@@ -4,6 +4,7 @@ from Pages.Loginpage import LoginPage
 from Tests.test_base import BaseTest
 from Config.main import Data
 import allure
+import time
 data_env = Data()
 data = data_env.get_data()
 
@@ -14,6 +15,7 @@ class Test_DiscussionDM(BaseTest):
         self.loginPage = LoginPage(self.driver)
         self.loginPage.do_login(data.user_name, data.password)
         self.driver.maximize_window()
+        time.sleep(4)
         self.discussionDM = DiscussionDMPage(self.driver)
         self.discussionDM.create_discussion(data.channel_name, data.discussion_name, data.new_user, data.discussion_message)
         allure.attach(self.driver.get_screenshot_as_png(), name="CreateDiscussion", attachment_type=AttachmentType.PNG)
