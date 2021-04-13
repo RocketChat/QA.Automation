@@ -100,19 +100,19 @@ class CreateDataPage(BasePage):
 
     def add_new_channel(self, channel_name, new_user):
         """There is currently an issue so we have to first click on the close button"""
-        self.do_click(self.CLOSE_BUTTON)
-        time.sleep(3)
+        #self.do_click(self.CLOSE_BUTTON)
+        #time.sleep(3)
         self.do_click(self.ADD_BUTTON)
         self.do_click(self.CHANNEL_BUTTON)
         self.do_click(self.CHANNEL_NAME_INPUT)
         self.do_send_keys(self.CHANNEL_NAME_INPUT, channel_name)
         self.do_enter(self.CHANNEL_NAME_INPUT)
         time.sleep(3)
-        #self.do_click(self.INVITE_USER_INPUT)
-        #self.do_send_keys(self.INVITE_USER_INPUT, new_user)
-        #time.sleep(5)
-        #self.do_enter(self.INVITE_USER_INPUT)
-        #time.sleep(5)
+        # self.do_click(self.INVITE_USER_INPUT)
+        # self.do_send_keys(self.INVITE_USER_INPUT, new_user)
+        # time.sleep(5)
+        # self.do_enter(self.INVITE_USER_INPUT)
+        # time.sleep(5)
 
         self.do_click(self.CREATE_BUTTON)
 

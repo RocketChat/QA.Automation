@@ -77,11 +77,11 @@ def init_driver(request):
     """BrowserStack Chrome"""
     if request.param == "RemoteChrome":
         desired_cap = {
-            'os': 'Windows',
-            'os_version': '10',
+            'os_version': 'Catalina',
             'resolution': '1920x1080',
             'browser': 'Chrome',
             'browser_version': 'latest',
+            'os': 'OS X',
             'name': "ChromeTesting",
             'browserstack.local': 'true',
             'browserstack.localIdentifier': LOCAL_IDENTIFIER,
