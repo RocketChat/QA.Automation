@@ -14,6 +14,7 @@ class Test_MessageActions(BaseTest):
         self.loginPage = LoginPage(self.driver)
         self.loginPage.do_login(data.user_name, data.password)
         self.driver.maximize_window()
+        self.driver.implicitly_wait(10)
         self.messageActions = MessageActionsPage(self.driver)
         self.messageActions.send_message(data.message)
         self.messageActions.mouse_over_message()

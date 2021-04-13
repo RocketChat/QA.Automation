@@ -16,6 +16,7 @@ class Test_ViewMode(BaseTest):
         self.loginPage = LoginPage(self.driver)
         self.loginPage.do_login(data.user_name, data.password)
         self.driver.maximize_window()
+        self.driver.implicitly_wait(10)
         self.viewMode = ViewModePage(self.driver)
         time.sleep(3)
         self.viewMode.select_Extended_Mode()

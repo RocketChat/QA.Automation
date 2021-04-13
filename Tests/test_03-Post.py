@@ -14,8 +14,8 @@ class Test_Post(BaseTest):
         self.loginPage = LoginPage(self.driver)
         self.loginPage.do_login(data.user_name, data.password)
         self.driver.maximize_window()
-        time.sleep(4)
         self.post = PostPage(self.driver)
+        self.driver.implicitly_wait(10)
         self.post.post_message_in_private_channel(data.message)
         assert self.post.message_sent_is_visible()
 
