@@ -42,6 +42,19 @@ class CreateDataPage(BasePage):
     ADD_USERS_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/div/main/div/aside/footer/button")
     MESSAGE = (By.CSS_SELECTOR, ".wrapper>ul>li:last-child>div:nth-child(2)>div:nth-child(2)")
 
+    DISCUSSION_BUTTON = (By.XPATH, "//span[contains(text(),'Discussion')]")
+    CHANNEL_INPUT = (By.XPATH, "//*[@id='parentChannel']")
+    DISCUSSION_INPUT = (By.XPATH, "//*[@id='discussion_name']")
+    CHANNEL_USERS_INPUT = (By.XPATH, "//*[@id='users']")
+    DISCUSSION_MESSAGE = (By.XPATH, "//*[@id='discussion_message']")
+    CREATE__DISCUSSION_BUTTON = (By.XPATH, "//button[@form='create-discussion']")
+    CREATED_DISCUSSION = (By.XPATH, "//*[contains(text(),'" + data.discussion_name + "')]")
+
+    DMBUTTON = (By.XPATH, "//*[contains(text(),'Direct Messages')]")
+    DM_USERS_INPUT = (By.XPATH, "//*[@id='directMessageUsers']")
+    CREATE_DM_BUTTON = (By.XPATH, "//button[@form='create-dm']")
+    HOME_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[1]")
+
     def __init__(self, driver):
         super().__init__(driver)
 
@@ -131,23 +144,44 @@ class CreateDataPage(BasePage):
     def is_message_visible(self):
         return self.is_visible(self.MESSAGE)
 
+    def add_discussion(self, channel_name, discussion_name, new_user, discussion_message):
+        time.sleep(5)
+        self.do_click(self.ADD_BUTTON)
+        self.do_click(self.DISCUSSION_BUTTON)
+        self.do_click(self.CHANNEL_INPUT)
+        self.do_send_keys(self.CHANNEL_INPUT, channel_name)
+        time.sleep(3)
+        self.do_enter(self.CHANNEL_INPUT)
 
+        self.do_click(self.DISCUSSION_INPUT)
+        self.do_send_keys(self.DISCUSSION_INPUT, discussion_name)
 
+        self.do_click(self.CHANNEL_USERS_INPUT)
+        self.do_send_keys(self.CHANNEL_USERS_INPUT, new_user)
+        time.sleep(3)
+        self.do_enter(self.CHANNEL_USERS_INPUT)
 
+        self.do_click(self.DISCUSSION_MESSAGE)
+        self.do_send_keys(self.DISCUSSION_MESSAGE, discussion_message)
+        time.sleep(2)
 
+        self.do_click(self.CREATE__DISCUSSION_BUTTON)
+        time.sleep(3)
 
+    def is_discussion_visible(self):
+        return self.is_visible(self.CREATED_DISCUSSION)
 
+    def add_DM(self, new_user):
+        self.do_click(self.ADD_BUTTON)
+        self.do_click(self.DMBUTTON)
+        self.do_click(self.DM_USERS_INPUT)
+        self.do_send_keys(self.DM_USERS_INPUT, new_user)
+        time.sleep(3)
+        self.do_enter(self.DM_USERS_INPUT)
+        self.do_click(self.CREATE_DM_BUTTON)
 
+    def is_DM_visible(self):
+        return self.is_visible(self.TEXTAREA)
 
-
-
-
-
-
-
-
-
-
-
-
-
+    def go_to_Home(self):
+        self.do_click(self.HOME_BUTTON)
