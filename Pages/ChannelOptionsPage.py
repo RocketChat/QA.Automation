@@ -8,15 +8,13 @@ data = data_env.get_data()
 
 
 class ChannelOptionsPage(BasePage):
-    VALUE = (By.CSS_SELECTOR, "#rocket-chat > aside > div.rooms-list.sidebar--custom-colors > div > div > div > div.rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(4) > a > div > div.rc-box.rcx-box--full.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rc-box.rcx-box--full.rcx-sidebar-item__title")
-    CHANNEL = (By.XPATH, "//*[contains(text(),'" + data.channel_name + "')]")
-    SOURCE_1 = ".rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(4)"
-    OPTIONS_BUTTON = (By.CSS_SELECTOR, ".rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(4) > a > div > div.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rcx-sidebar-item__menu-wraper > button")
+    VALUE = (By.XPATH, "//a[@aria-label='" + data.channel_name + "']//div[@data-qa='sidebar-item-title']")
+    CHANNEL = "//a[@aria-label='" + data.channel_name + "']/parent::div"
+    OPTIONS_BUTTON = (By.XPATH, "//a[@aria-label='" + data.channel_name + "']//button[@class='rcx-box rcx-box--full rcx-box--animated rcx-sidebar-item__menu rcx-button--mini-square rcx-button--square rcx-button--ghost rcx-button rcx-css-ue04py']")
     FAVORITE_BUTTON = (By.XPATH, "//*[contains(text(),'Favorite')]")
     FAVORITE_ITEM = (By.CSS_SELECTOR, "#rocket-chat > aside > div.rooms-list.sidebar--custom-colors > div > div > div > div.rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(2) > a > div > div.rc-box.rcx-box--full.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rc-box.rcx-box--full.rcx-sidebar-item__title")
-    SOURCE_2 = ".rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(2)"
-    FAVORITE_ITEM_OPTIONS_BUTTON = (By.CSS_SELECTOR, ".rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(2) > a > div > div.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rcx-sidebar-item__menu-wraper > button")
     UNFAVORITE_BUTTON = (By.XPATH, "//*[contains(text(),'Unfavorite')]")
+    HOME_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[1]")
     HIDE_OPTION = (By.XPATH, "//*[contains(text(),'Hide')]")
     HIDE_BUTTON = (By.XPATH, "//button[contains(text(),'Yes, hide it!')]")
     SEARCH_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[2]")
@@ -29,7 +27,9 @@ class ChannelOptionsPage(BasePage):
     READ_BUTTON = (By.XPATH, "//*[contains(text(),'Mark Read')]")
 
     """Leave and Join"""
-    SOURCE = (By.XPATH, "//*[contains(text(), 'general')]")
+    SOURCE = "//a[@aria-label='general']/parent::div"
+    OPTIONS_BUTTON_GENERAL = (By.XPATH,
+                              "//a[@aria-label='general']//button[@class='rcx-box rcx-box--full rcx-box--animated rcx-sidebar-item__menu rcx-button--mini-square rcx-button--square rcx-button--ghost rcx-button rcx-css-ue04py']")
     LEAVE_OPTION = (By.XPATH, "//*[contains(text(),'Leave')]")
     LEAVE_BUTTON = (By.XPATH, "//button[contains(text(),'Leave')]")
     DIRECTORY = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[3]")
@@ -43,14 +43,17 @@ class ChannelOptionsPage(BasePage):
         super().__init__(driver)
 
     def go_to_option(self):
-        self.do_mouse_hover(self.SOURCE_1)
+        self.do_mouse_hover(self.CHANNEL)
         time.sleep(2)
         self.do_click(self.OPTIONS_BUTTON)
 
     def go_to_general(self):
         self.do_mouse_hover(self.SOURCE)
         time.sleep(2)
-        self.do_click(self.OPTIONS_BUTTON)
+        self.do_click(self.OPTIONS_BUTTON_GENERAL)
+
+    def go_to_Home(self):
+        self.do_click(self.HOME_BUTTON)
 
     def perform_leave(self):
         self.do_click(self.LEAVE_OPTION)
@@ -63,7 +66,7 @@ class ChannelOptionsPage(BasePage):
         self.do_send_keys(self.DIRECTORY_SEARCH_INPUT, value)
         time.sleep(2)
         self.do_enter(self.DIRECTORY_SEARCH_INPUT)
-        # self.do_click(self.DIRECTORY_SEARCH_BUTTON)
+        #self.do_click(self.DIRECTORY_SEARCH_BUTTON)
         time.sleep(2)
         self.do_click(self.RESULT_1)
         time.sleep(2)
@@ -80,8 +83,8 @@ class ChannelOptionsPage(BasePage):
         return self.get_element_text(self.FAVORITE_ITEM)
 
     def perform_unfavorite(self):
-        self.do_mouse_hover(self.SOURCE_2)
-        self.do_click(self.FAVORITE_ITEM_OPTIONS_BUTTON)
+        self.do_mouse_hover(self.CHANNEL)
+        self.do_click(self.OPTIONS_BUTTON)
         time.sleep(2)
         self.do_click(self.UNFAVORITE_BUTTON)
 
@@ -100,8 +103,10 @@ class ChannelOptionsPage(BasePage):
         self.do_click(self.SEARCH_INPUT)
         time.sleep(2)
         self.do_send_keys(self.SEARCH_INPUT, value)
-        time.sleep(3)
+        time.sleep(5)
         self.do_enter(self.SEARCH_INPUT)
+        time.sleep(3)
+        assert self.TEXTAREA
 
     def get_button_label(self):
         return self.get_element_text(self.BUTTON_LABEL)

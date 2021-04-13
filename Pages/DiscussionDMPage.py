@@ -29,7 +29,7 @@ class DiscussionDMPage(BasePage):
         self.do_click(self.DISCUSSION_BUTTON)
         self.do_click(self.CHANNEL_INPUT)
         self.do_send_keys(self.CHANNEL_INPUT, channel_name)
-        time.sleep(3)
+        time.sleep(5)
         self.do_enter(self.CHANNEL_INPUT)
 
         self.do_click(self.DISCUSSION_INPUT)
@@ -42,7 +42,7 @@ class DiscussionDMPage(BasePage):
 
         self.do_click(self.DISCUSSION_MESSAGE)
         self.do_send_keys(self.DISCUSSION_MESSAGE, discussion_message)
-        time.sleep(2)
+        time.sleep(3)
 
         self.do_click(self.CREATE__DISCUSSION_BUTTON)
         time.sleep(3)
