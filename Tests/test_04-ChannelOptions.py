@@ -16,7 +16,6 @@ class Test_ChannelOptions(BaseTest):
         self.loginPage = LoginPage(self.driver)
         self.loginPage.do_login(data.user_name, data.password)
         self.driver.maximize_window()
-        self.driver.implicitly_wait(10)
         self.channelOptions = ChannelOptionsPage(self.driver)
         value = self.channelOptions.get_label_text()
         self.channelOptions.go_to_option()

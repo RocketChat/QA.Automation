@@ -15,7 +15,6 @@ class Test_Home(BaseTest):
         self.loginPage = LoginPage(self.driver)
         self.loginPage.do_login(data.user_name, data.password)
         self.driver.maximize_window()
-        self.driver.implicitly_wait(10)
         self.search = SearchPage(self.driver)
         self.search.save_screenshot("/Screenshots/Homepage.png")
         header = self.search.get_header_value()

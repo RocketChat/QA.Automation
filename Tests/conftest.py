@@ -112,11 +112,14 @@ def init_driver(request):
             desired_capabilities=desired_cap
         )
 
-    yield driver
-
+    request.cls.driver = driver
+    yield
     print("------Teardown------")
     driver.quit()
 
-@pytest.fixture(scope="class")
-def init_driver_class(request, init_driver):
-    request.cls.driver = init_driver
+
+
+
+#@pytest.fixture(scope="class")
+#def init_driver_class(request, init_driver):
+    #request.cls.driver = init_driver
