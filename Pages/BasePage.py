@@ -43,7 +43,7 @@ class BasePage:
         ActionChains(self.driver).double_click(source).perform()
 
     def do_mouse_hover(self, by_locator):
-        source = self.driver.find_element_by_css_selector(by_locator)
+        source = self.driver.find_element_by_xpath(by_locator)
         ActionChains(self.driver).move_to_element(source).perform()
 
     def is_displayed(self, by_locator):
@@ -54,8 +54,10 @@ class BasePage:
         path = os.getcwd()
         self.driver.save_screenshot(path + folder)
 
-    def switch_to_alert(self):
-        self.driver.switch_to.alert()
+
+
+
+
 
 
 
