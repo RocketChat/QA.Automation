@@ -12,7 +12,7 @@ PROJECT_NAME = os.environ['BROWSERSTACK_PROJECT_NAME']
 
 BROWSERSTACK_URL = 'http://'+USERNAME+':'+ACCESS_KEY+'@hub-cloud.browserstack.com/wd/hub'
 
-@pytest.fixture(params=[os.environ['BROWSER']], scope="session")
+@pytest.fixture(params=[os.environ['BROWSER']], scope="class")
 #@pytest.fixture(params=["Chrome", "Firefox", "Safari", "RemoteIE", "RemoteSafari"], scope="class")
 def init_driver(request):
     global driver
