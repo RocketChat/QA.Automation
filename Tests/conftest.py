@@ -30,14 +30,14 @@ def init_driver(request):
     # if request.param == "Safari":
     #     driver = webdriver.Safari()
 
-    # """This is for BrowserStack Testing"""
-    # USERNAME = os.environ['BROWSERSTACK_USERNAME']
-    # ACCESS_KEY = os.environ['BROWSERSTACK_ACCESS_KEY']
-    # LOCAL_IDENTIFIER = os.environ['BROWSERSTACK_LOCAL_IDENTIFIER']
-    # BUILD_NAME = os.environ['BROWSERSTACK_BUILD_NAME']
-    # PROJECT_NAME = os.environ['BROWSERSTACK_PROJECT_NAME']
+    """This is for BrowserStack Testing"""
+    USERNAME = os.environ['BROWSERSTACK_USERNAME']
+    ACCESS_KEY = os.environ['BROWSERSTACK_ACCESS_KEY']
+    LOCAL_IDENTIFIER = os.environ['BROWSERSTACK_LOCAL_IDENTIFIER']
+    BUILD_NAME = os.environ['BROWSERSTACK_BUILD_NAME']
+    PROJECT_NAME = os.environ['BROWSERSTACK_PROJECT_NAME']
 
-    #BROWSERSTACK_URL = 'http://'+USERNAME+':'+ACCESS_KEY+'@hub-cloud.browserstack.com/wd/hub'
+    BROWSERSTACK_URL = 'http://'+USERNAME+':'+ACCESS_KEY+'@hub-cloud.browserstack.com/wd/hub'
     # """This is for Remote IE"""
 
     # if request.param == "RemoteIE":
@@ -77,16 +77,19 @@ def init_driver(request):
     #     )
     # #
     if request.param == "RemoteChrome":
-        BROWSERSTACK_URL = 'http://rocketchattester1:3qKpZ3j75MbhWztWU1R9@hub-cloud.browserstack.com/wd/hub'
+        #BROWSERSTACK_URL = 'http://rocketchattester1:3qKpZ3j75MbhWztWU1R9@hub-cloud.browserstack.com/wd/hub'
         desired_cap = {
             'os_version': 'Catalina',
             'resolution': '1920x1080',
             'browser': 'Chrome',
             'browser_version': 'latest',
             'os': 'OS X',
-            'name': 'Chrome Testing',  # test name
-            'build': 'BStack Build Number 3',  # CI/CD job or build name
-            'browserstack.local': 'true'
+            #'name': 'Chrome Testing',  # test name
+            #'build': 'BStack Build Number 3',  # CI/CD job or build name
+            'browserstack.local': 'true',
+            'browserstack.localIdentifier': LOCAL_IDENTIFIER,
+            'project': PROJECT_NAME,
+            'build': BUILD_NAME
         }
         driver = webdriver.Remote(
             command_executor=BROWSERSTACK_URL,
