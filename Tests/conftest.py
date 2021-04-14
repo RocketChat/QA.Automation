@@ -10,7 +10,6 @@ import os
 def init_driver(request):
     global driver
     # """This checks chrome browser"""
-    # print("------Setup------")
     # if request.param == "Chrome":
     #     options = chrome_Options()
     #     options.headless = False
@@ -97,5 +96,4 @@ def init_driver(request):
         )
     request.cls.driver = driver
     yield
-    print("------Teardown------")
     driver.quit()
