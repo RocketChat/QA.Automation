@@ -28,7 +28,7 @@ def init_driver(request):
     # """This checks Safari browser"""
     # if request.param == "Safari":
     #     driver = webdriver.Safari()
-
+    #
     """This is for BrowserStack Testing"""
     USERNAME = os.environ['BROWSERSTACK_USERNAME']
     ACCESS_KEY = os.environ['BROWSERSTACK_ACCESS_KEY']
@@ -83,8 +83,8 @@ def init_driver(request):
             'browser': 'Chrome',
             'browser_version': 'latest',
             'os': 'OS X',
-            #'name': 'Chrome Testing',  # test name
-            #'build': 'BStack Build Number 3',  # CI/CD job or build name
+            # 'name': 'Chrome Testing',  # test name
+            # 'build': 'BStack Build Ishrat',  # CI/CD job or build name
             'browserstack.local': 'true',
             'browserstack.localIdentifier': LOCAL_IDENTIFIER,
             'project': PROJECT_NAME,

@@ -17,7 +17,6 @@ class Test_MessageActions(BaseTest):
         self.driver.maximize_window()
         self.messageActions = MessageActionsPage(self.driver)
         self.messageActions.send_message(data.message)
-        time.sleep(3)
         self.messageActions.mouse_over_message()
         time.sleep(2)
         self.messageActions.add_quote(data.QUOTE)

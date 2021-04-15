@@ -9,7 +9,7 @@ data = data_env.get_data()
 
 class ChannelOptionsPage(BasePage):
     VALUE = (By.XPATH, "//a[@aria-label='" + data.channel_name + "']//div[@data-qa='sidebar-item-title']")
-    CHANNEL = "//a[@aria-label='" + data.channel_name + "']/parent::div"
+    CHANNEL = (By.XPATH, "//a[@aria-label='" + data.channel_name + "']/parent::div")
     OPTIONS_BUTTON = (By.XPATH, "//a[@aria-label='" + data.channel_name + "']//button[@class='rcx-box rcx-box--full rcx-box--animated rcx-sidebar-item__menu rcx-button--mini-square rcx-button--square rcx-button--ghost rcx-button rcx-css-ue04py']")
     FAVORITE_BUTTON = (By.XPATH, "//*[contains(text(),'Favorite')]")
     FAVORITE_ITEM = (By.CSS_SELECTOR, "#rocket-chat > aside > div.rooms-list.sidebar--custom-colors > div > div > div > div.rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(2) > a > div > div.rc-box.rcx-box--full.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rc-box.rcx-box--full.rcx-sidebar-item__title")
@@ -27,7 +27,7 @@ class ChannelOptionsPage(BasePage):
     READ_BUTTON = (By.XPATH, "//*[contains(text(),'Mark Read')]")
 
     """Leave and Join"""
-    SOURCE = "//a[@aria-label='general']/parent::div"
+    SOURCE = (By.XPATH, "//a[@aria-label='general']/parent::div")
     OPTIONS_BUTTON_GENERAL = (By.XPATH,
                               "//a[@aria-label='general']//button[@class='rcx-box rcx-box--full rcx-box--animated rcx-sidebar-item__menu rcx-button--mini-square rcx-button--square rcx-button--ghost rcx-button rcx-css-ue04py']")
     LEAVE_OPTION = (By.XPATH, "//*[contains(text(),'Leave')]")
@@ -43,12 +43,12 @@ class ChannelOptionsPage(BasePage):
         super().__init__(driver)
 
     def go_to_option(self):
-        self.do_mouse_hover(self.CHANNEL)
+        self.mouse_over(self.CHANNEL)
         time.sleep(2)
         self.do_click(self.OPTIONS_BUTTON)
 
     def go_to_general(self):
-        self.do_mouse_hover(self.SOURCE)
+        self.mouse_over(self.SOURCE)
         time.sleep(2)
         self.do_click(self.OPTIONS_BUTTON_GENERAL)
 
@@ -83,7 +83,7 @@ class ChannelOptionsPage(BasePage):
         return self.get_element_text(self.FAVORITE_ITEM)
 
     def perform_unfavorite(self):
-        self.do_mouse_hover(self.CHANNEL)
+        self.mouse_over(self.CHANNEL)
         self.do_click(self.OPTIONS_BUTTON)
         time.sleep(2)
         self.do_click(self.UNFAVORITE_BUTTON)

@@ -42,10 +42,6 @@ class BasePage:
         source = self.driver.find_element_by_xpath(by_locator)
         ActionChains(self.driver).double_click(source).perform()
 
-    def do_mouse_hover(self, by_locator):
-        source = self.driver.find_element_by_xpath(by_locator)
-        ActionChains(self.driver).move_to_element(source).perform()
-
     def is_displayed(self, by_locator):
         element = WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located(by_locator))
         return bool(element)
@@ -53,6 +49,10 @@ class BasePage:
     def save_screenshot(self, folder):
         path = os.getcwd()
         self.driver.save_screenshot(path + folder)
+
+    def mouse_over(self, by_locator):
+        source = WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located(by_locator))
+        ActionChains(self.driver).move_to_element(source).perform()
 
 
 
