@@ -4,6 +4,7 @@ from Pages.MessageActionsPage import MessageActionsPage
 from Tests.test_base import BaseTest
 from Config.main import Data
 import allure
+import time
 data_env = Data()
 data = data_env.get_data()
 
@@ -17,6 +18,7 @@ class Test_MessageActions(BaseTest):
         self.messageActions = MessageActionsPage(self.driver)
         self.messageActions.send_message(data.message)
         self.messageActions.mouse_over_message()
+        time.sleep(2)
         self.messageActions.add_quote(data.QUOTE)
         allure.attach(self.driver.get_screenshot_as_png(), name="Quote", attachment_type=AttachmentType.PNG)
         assert self.messageActions.is_quote_visible()
