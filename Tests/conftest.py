@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.options import Options as chrome_Options
 import os
 
 
-@pytest.fixture(params=["RemoteChrome"], scope="class")
+@pytest.fixture(params=["RemoteChrome", "RemoteIE", "RemoteSafari"], scope="class")
 #@pytest.fixture(params=["Chrome"], scope="class")
 def init_driver(request):
     global driver
@@ -37,44 +37,44 @@ def init_driver(request):
     PROJECT_NAME = os.environ['BROWSERSTACK_PROJECT_NAME']
 
     BROWSERSTACK_URL = 'http://'+USERNAME+':'+ACCESS_KEY+'@hub-cloud.browserstack.com/wd/hub'
-    # """This is for Remote IE"""
+    """This is for Remote IE"""
 
-    # if request.param == "RemoteIE":
-    #     desired_cap = {
-    #         'os': 'Windows',
-    #         'os_version': '10',
-    #         'browser': 'IE',
-    #         'browser_version': '11.0',
-    #         'name': "IETesting",
-    #         'browserstack.local': 'true',
-    #         'browserstack.localIdentifier': LOCAL_IDENTIFIER,
-    #         'project': PROJECT_NAME,
-    #         'build': BUILD_NAME
-    #     }
-    #     driver = webdriver.Remote(
-    #         command_executor=BROWSERSTACK_URL,
-    #         desired_capabilities=desired_cap
-    #     )
-    #
-    # """BrowserStack Safari"""
-    # if request.param == "RemoteSafari":
-    #     desired_cap = {
-    #         'os': 'OS X',
-    #         'os_version': 'Catalina',
-    #         'resolution': '1920x1080',
-    #         'browser': 'Safari',
-    #         'browser_version': '13.1',
-    #         'name': "SafariTesting",
-    #         'browserstack.local': 'true',
-    #         'browserstack.localIdentifier': LOCAL_IDENTIFIER,
-    #         'project': PROJECT_NAME,
-    #         'build': BUILD_NAME
-    #     }
-    #     driver = webdriver.Remote(
-    #         command_executor=BROWSERSTACK_URL,
-    #         desired_capabilities=desired_cap
-    #     )
-    # #
+    if request.param == "RemoteIE":
+        desired_cap = {
+            'os': 'Windows',
+            'os_version': '10',
+            'browser': 'IE',
+            'browser_version': '11.0',
+            'name': "IETesting",
+            'browserstack.local': 'true',
+            'browserstack.localIdentifier': LOCAL_IDENTIFIER,
+            'project': PROJECT_NAME,
+            'build': BUILD_NAME
+        }
+        driver = webdriver.Remote(
+            command_executor=BROWSERSTACK_URL,
+            desired_capabilities=desired_cap
+        )
+
+    """BrowserStack Safari"""
+    if request.param == "RemoteSafari":
+        desired_cap = {
+            'os': 'OS X',
+            'os_version': 'Catalina',
+            'resolution': '1920x1080',
+            'browser': 'Safari',
+            'browser_version': '13.1',
+            'name': "SafariTesting",
+            'browserstack.local': 'true',
+            'browserstack.localIdentifier': LOCAL_IDENTIFIER,
+            'project': PROJECT_NAME,
+            'build': BUILD_NAME
+        }
+        driver = webdriver.Remote(
+            command_executor=BROWSERSTACK_URL,
+            desired_capabilities=desired_cap
+        )
+
     if request.param == "RemoteChrome":
         #BROWSERSTACK_URL = 'http://rocketchattester1:3qKpZ3j75MbhWztWU1R9@hub-cloud.browserstack.com/wd/hub'
         desired_cap = {
