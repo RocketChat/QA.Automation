@@ -98,13 +98,13 @@ class CreateDataPage(BasePage):
         #time.sleep(3)
 
         self.do_click(self.SAVE_BUTTON)
-        self.driver.refresh()
+        #self.driver.refresh()
 
     def is_user_visible(self):
         return self.is_visible(self.USER_CREATED)
 
     def dm_new_user(self, new_message):
-        self.do_click(self.USER_CREATED)
+        #self.do_click(self.USER_CREATED)
         self.do_click(self.DM_BUTTON)
         self.do_click(self.TEXTAREA)
         self.do_send_keys(self.TEXTAREA, new_message)
@@ -178,6 +178,7 @@ class CreateDataPage(BasePage):
         self.do_send_keys(self.DM_USERS_INPUT, new_user)
         time.sleep(3)
         self.do_enter(self.DM_USERS_INPUT)
+        time.sleep(3)
         self.do_click(self.CREATE_DM_BUTTON)
 
     def is_DM_visible(self):

@@ -18,6 +18,7 @@ class Test_Home(BaseTest):
         self.search = SearchPage(self.driver)
         self.search.save_screenshot("/Screenshots/Homepage.png")
         header = self.search.get_header_value()
+        print(header)
         allure.attach(self.driver.get_screenshot_as_png(), name="Homepage", attachment_type=AttachmentType.PNG)
         assert header == data.HOMEPAGE_HEADER
 
