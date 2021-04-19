@@ -1,5 +1,5 @@
 from Pages.CreateDataPage import CreateDataPage
-from Pages.Loginpage import LoginPage
+from Pages.LoginLogoutPage import LoginPage
 from Tests.test_base import BaseTest
 from Config.main import Data
 import allure
@@ -25,6 +25,7 @@ class Test_Create(BaseTest):
     def test_new_DM(self):
         self.create = CreateDataPage(self.driver)
         self.create.dm_new_user(data.new_message)
+        #assert self.create.is_user_displayed()
 
     @allure.severity(allure.severity_level.CRITICAL)
     def test_add_new_channel(self):

@@ -1,6 +1,6 @@
 import pytest
 from allure_commons.types import AttachmentType
-from Pages.Loginpage import LoginPage
+from Pages.LoginLogoutPage import LoginPage
 from Tests.test_base import BaseTest
 from Config.main import Data
 import allure

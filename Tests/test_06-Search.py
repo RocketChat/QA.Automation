@@ -2,7 +2,7 @@ import allure
 from allure_commons.types import AttachmentType
 
 from Pages.SearchPage import SearchPage
-from Pages.Loginpage import LoginPage
+from Pages.LoginLogoutPage import LoginPage
 from Tests.test_base import BaseTest
 from Config.main import Data
 data_env = Data()
