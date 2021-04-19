@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.options import Options as chrome_Options
 import os
 
 
-@pytest.fixture(params=["RemoteChrome"], scope="class")
+@pytest.fixture(params=["Chrome"], scope="class")
 def init_driver(request):
     global driver
     """This checks chrome browser"""
@@ -28,15 +28,15 @@ def init_driver(request):
     if request.param == "Safari":
         driver = webdriver.Safari()
 
-    """This is for BrowserStack Testing"""
-    USERNAME = os.environ['BROWSERSTACK_USERNAME']
-    ACCESS_KEY = os.environ['BROWSERSTACK_ACCESS_KEY']
-    LOCAL_IDENTIFIER = os.environ['BROWSERSTACK_LOCAL_IDENTIFIER']
-    BUILD_NAME = os.environ['BROWSERSTACK_BUILD_NAME']
-    PROJECT_NAME = os.environ['BROWSERSTACK_PROJECT_NAME']
-
-    BROWSERSTACK_URL = 'http://'+USERNAME+':'+ACCESS_KEY+'@hub-cloud.browserstack.com/wd/hub'
-    """This is for Remote IE"""
+    # """This is for BrowserStack Testing"""
+    # USERNAME = os.environ['BROWSERSTACK_USERNAME']
+    # ACCESS_KEY = os.environ['BROWSERSTACK_ACCESS_KEY']
+    # LOCAL_IDENTIFIER = os.environ['BROWSERSTACK_LOCAL_IDENTIFIER']
+    # BUILD_NAME = os.environ['BROWSERSTACK_BUILD_NAME']
+    # PROJECT_NAME = os.environ['BROWSERSTACK_PROJECT_NAME']
+    #
+    # BROWSERSTACK_URL = 'http://'+USERNAME+':'+ACCESS_KEY+'@hub-cloud.browserstack.com/wd/hub'
+    # """This is for Remote IE"""
 
     if request.param == "RemoteIE":
         BROWSERSTACK_URL = 'http://rocketchattester1:3qKpZ3j75MbhWztWU1R9@hub-cloud.browserstack.com/wd/hub'

@@ -22,8 +22,12 @@ class Test_ChannelOptions(BaseTest):
         allure.attach(self.driver.get_screenshot_as_png(), name="Options", attachment_type=AttachmentType.PNG)
         self.channelOptions.perform_favorite()
         assert self.channelOptions.favorite_item_label() == value
-        self.channelOptions.perform_unfavorite()
+        self.channelOptions.go_to_Home()
         time.sleep(2)
+        self.channelOptions.go_to_option()
+        self.channelOptions.perform_unfavorite()
+        time.sleep(3)
+        self.channelOptions.go_to_Home()
         self.channelOptions.go_to_option()
         assert self.channelOptions.is_favorite_button_displayed()
         self.channelOptions.go_to_Home()
@@ -31,6 +35,7 @@ class Test_ChannelOptions(BaseTest):
 
     @allure.severity(allure.severity_level.NORMAL)
     def test_perform_read_unread_channel(self):
+        pytest.skip("test")
         self.channelOptions = ChannelOptionsPage(self.driver)
         self.channelOptions.go_to_option()
         label1 = self.channelOptions.get_button_label()
@@ -47,6 +52,7 @@ class Test_ChannelOptions(BaseTest):
 
     @allure.severity(allure.severity_level.NORMAL)
     def test_perform_hide_show_channel(self):
+        pytest.skip("test")
         self.channelOptions = ChannelOptionsPage(self.driver)
         value = self.channelOptions.get_label_text()
         print(value)
@@ -58,6 +64,7 @@ class Test_ChannelOptions(BaseTest):
 
     @allure.severity(allure.severity_level.CRITICAL)
     def test_perform_leave_join_channel(self):
+        pytest.skip("test")
         self.channelOptions = ChannelOptionsPage(self.driver)
         self.channelOptions.go_to_general()
         self.channelOptions.perform_leave()
