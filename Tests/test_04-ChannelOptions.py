@@ -35,7 +35,6 @@ class Test_ChannelOptions(BaseTest):
 
     @allure.severity(allure.severity_level.NORMAL)
     def test_perform_read_unread_channel(self):
-        pytest.skip("test")
         self.channelOptions = ChannelOptionsPage(self.driver)
         self.channelOptions.go_to_option()
         label1 = self.channelOptions.get_button_label()
@@ -52,7 +51,6 @@ class Test_ChannelOptions(BaseTest):
 
     @allure.severity(allure.severity_level.NORMAL)
     def test_perform_hide_show_channel(self):
-        pytest.skip("test")
         self.channelOptions = ChannelOptionsPage(self.driver)
         value = self.channelOptions.get_label_text()
         print(value)
@@ -64,7 +62,6 @@ class Test_ChannelOptions(BaseTest):
 
     @allure.severity(allure.severity_level.CRITICAL)
     def test_perform_leave_join_channel(self):
-        pytest.skip("test")
         self.channelOptions = ChannelOptionsPage(self.driver)
         self.channelOptions.go_to_general()
         self.channelOptions.perform_leave()
