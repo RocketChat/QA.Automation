@@ -12,9 +12,9 @@ data = data_env.get_data()
 class Test_Home(BaseTest):
     @allure.severity(allure.severity_level.NORMAL)
     def test_homepage_title(self):
-        self.loginPage = LoginPage(self.driver)
-        self.loginPage.do_login(data.user_name, data.password)
-        self.driver.maximize_window()
+        # self.loginPage = LoginPage(self.driver)
+        # self.loginPage.do_login(data.user_name, data.password)
+        # self.driver.maximize_window()
         self.search = SearchPage(self.driver)
         self.search.save_screenshot("/Screenshots/Homepage.png")
         header = self.search.get_header_value()
