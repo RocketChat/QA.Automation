@@ -30,8 +30,8 @@ class Test_ChannelOptions(BaseTest):
         self.channelOptions.go_to_Home()
         self.channelOptions.go_to_option()
         assert self.channelOptions.is_favorite_button_displayed()
-        self.channelOptions.go_to_Home()
-        time.sleep(3)
+        self.channelOptions.double_click_Home()
+        time.sleep(2)
 
     @allure.severity(allure.severity_level.NORMAL)
     def test_perform_read_unread_channel(self):
@@ -40,13 +40,13 @@ class Test_ChannelOptions(BaseTest):
         label1 = self.channelOptions.get_button_label()
         print(label1)
         self.channelOptions.performReadUnread()
-        self.channelOptions.go_to_Home()
+        self.channelOptions.double_click_Home()
         time.sleep(2)
         self.channelOptions.go_to_option()
         label2 = self.channelOptions.get_button_label()
         assert (label1 != label2)
         time.sleep(2)
-        self.channelOptions.go_to_Home()
+        self.channelOptions.double_click_Home()
         time.sleep(3)
 
     @allure.severity(allure.severity_level.NORMAL)

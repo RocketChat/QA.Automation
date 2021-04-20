@@ -39,7 +39,7 @@ class BasePage:
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator)).send_keys(Keys.ENTER)
 
     def do_double_click(self, by_locator):
-        source = self.driver.find_element_by_xpath(by_locator)
+        source = WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located(by_locator))
         ActionChains(self.driver).double_click(source).perform()
 
     def is_displayed(self, by_locator):

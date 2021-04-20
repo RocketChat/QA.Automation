@@ -13,7 +13,7 @@ class Test_Login(BaseTest):
 
     @allure.severity(allure.severity_level.NORMAL)
     def test_login_page_title(self):
-        pytest.skip("Skipping this test as title is not present in IE")
+        #pytest.skip("Skipping this test as title is not present in IE")
         self.loginPage = LoginPage(self.driver)
         title = self.loginPage.get_login_page_title(data.LOGIN_PAGE_TITLE)
         print(title)

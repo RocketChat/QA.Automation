@@ -39,7 +39,7 @@ def init_driver(request):
     """This is for Remote IE"""
 
     if request.param == "RemoteIE":
-        #BROWSERSTACK_URL = 'http://rocketchattester1:3qKpZ3j75MbhWztWU1R9@hub-cloud.browserstack.com/wd/hub'
+        BROWSERSTACK_URL = 'http://rocketchattester1:3qKpZ3j75MbhWztWU1R9@hub-cloud.browserstack.com/wd/hub'
         desired_cap = {
             'os': 'Windows',
             'os_version': '10',
@@ -48,7 +48,7 @@ def init_driver(request):
             'resolution': '2048x1536',
             'name': "IETesting",
             'browserstack.local': 'true',
-            'build': 'BStack Build IE',
+            'build': 'Test Build IE',
             # 'browserstack.localIdentifier': LOCAL_IDENTIFIER,
             # 'project': PROJECT_NAME,
             # 'build': BUILD_NAME
@@ -57,31 +57,32 @@ def init_driver(request):
             command_executor=BROWSERSTACK_URL,
             desired_capabilities=desired_cap
         )
-
-    """BrowserStack Safari"""
-    #BROWSERSTACK_URL = 'http://rocketchattester1:3qKpZ3j75MbhWztWU1R9@hub-cloud.browserstack.com/wd/hub'
-    if request.param == "RemoteSafari":
-        desired_cap = {
-            'os': 'OS X',
-            'os_version': 'Catalina',
-            'resolution': '1920x1080',
-            'browser': 'Safari',
-            'browser_version': '13.1',
-            'name': "SafariTesting",
-            'browserstack.local': 'true',
-            'build': 'BStack Build safari',
-            'autoAcceptAlerts': 'true',
-            'acceptSslCert': 'true'
-            # 'browserstack.localIdentifier': LOCAL_IDENTIFIER,
-            # 'project': PROJECT_NAME,
-            # 'build': BUILD_NAME
-        }
-        driver = webdriver.Remote(
-            command_executor=BROWSERSTACK_URL,
-            desired_capabilities=desired_cap
-        )
-
+    #
+    # """BrowserStack Safari"""
+    # #BROWSERSTACK_URL = 'http://rocketchattester1:3qKpZ3j75MbhWztWU1R9@hub-cloud.browserstack.com/wd/hub'
+    # if request.param == "RemoteSafari":
+    #     desired_cap = {
+    #         'os': 'OS X',
+    #         'os_version': 'Catalina',
+    #         'resolution': '1920x1080',
+    #         'browser': 'Safari',
+    #         'browser_version': '13.1',
+    #         'name': "SafariTesting",
+    #         'browserstack.local': 'true',
+    #         'build': 'BStack Build safari',
+    #         'autoAcceptAlerts': 'true',
+    #         'acceptSslCert': 'true'
+    #         # 'browserstack.localIdentifier': LOCAL_IDENTIFIER,
+    #         # 'project': PROJECT_NAME,
+    #         # 'build': BUILD_NAME
+    #     }
+    #     driver = webdriver.Remote(
+    #         command_executor=BROWSERSTACK_URL,
+    #         desired_capabilities=desired_cap
+    #     )
+    #
     if request.param == "RemoteChrome":
+        #BROWSERSTACK_URL = 'http://rocketchattester1:3qKpZ3j75MbhWztWU1R9@hub-cloud.browserstack.com/wd/hub'
         desired_cap = {
             'os_version': 'Catalina',
             'resolution': '1920x1080',
@@ -89,11 +90,30 @@ def init_driver(request):
             'browser_version': 'latest',
             'os': 'OS X',
             'name': 'Chrome Testing',  # test name
-            # 'build': 'BStack Build Ishrat',  # CI/CD job or build name
+            # 'build': 'Test Build Chrome',  # CI/CD job or build name
             'browserstack.local': 'true',
             'browserstack.localIdentifier': LOCAL_IDENTIFIER,
             'project': PROJECT_NAME,
             'build': BUILD_NAME
+        }
+        driver = webdriver.Remote(
+            command_executor=BROWSERSTACK_URL,
+            desired_capabilities=desired_cap
+        )
+    if request.param == "RemoteFirefox":
+        BROWSERSTACK_URL = 'http://rocketchattester1:3qKpZ3j75MbhWztWU1R9@hub-cloud.browserstack.com/wd/hub'
+        desired_cap = {
+            'os': 'Windows',
+            'os_version': '10',
+            'resolution': '1920x1080',
+            'browser': 'Firefox',
+            'browser_version': 'latest',
+            'name': "FirefoxTesting",
+            'browserstack.local': 'true',
+            'build': 'Test Build Firefox',
+            # 'browserstack.localIdentifier': LOCAL_IDENTIFIER,
+            # 'project': PROJECT_NAME,
+            # 'build': BUILD_NAME
         }
         driver = webdriver.Remote(
             command_executor=BROWSERSTACK_URL,

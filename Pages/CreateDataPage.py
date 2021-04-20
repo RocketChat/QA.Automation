@@ -7,8 +7,6 @@ data = data_env.get_data()
 
 
 class CreateDataPage(BasePage):
-
-    #MORE_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[6]")
     AVATAR = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[1]")
     ADMINISTRATION_BUTTON = (By.CSS_SELECTOR, "body > div.rc-popover.rc-popover-- > div > div > div > div:nth-child(5) > li > div > div.rcx-option__content")
     USERS_BUTTON = (By.CSS_SELECTOR, "#rocket-chat > aside > div.flex-nav > div > div > div > div > div.rc-scrollbars-view > div > div > a:nth-child(3)")
@@ -96,8 +94,8 @@ class CreateDataPage(BasePage):
         #self.do_click(self.ROLES_INPUT)
         #self.do_click(self.OPTION_USER)
         #self.do_click(self.PASSWORD_INPUT)
-        #time.sleep(3)
 
+        time.sleep(3)
         self.do_click(self.SAVE_BUTTON)
         #self.driver.refresh()
 
