@@ -96,8 +96,8 @@ class CreateDataPage(BasePage):
         #self.do_click(self.ROLES_INPUT)
         #self.do_click(self.OPTION_USER)
         #self.do_click(self.PASSWORD_INPUT)
-        #time.sleep(3)
 
+        time.sleep(3)
         self.do_click(self.SAVE_BUTTON)
         #self.driver.refresh()
 

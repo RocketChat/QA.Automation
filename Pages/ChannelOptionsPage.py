@@ -55,6 +55,9 @@ class ChannelOptionsPage(BasePage):
     def go_to_Home(self):
         self.do_click(self.HOME_BUTTON)
 
+    def double_click_Home(self):
+        self.do_double_click(self.HOME_BUTTON)
+
     def perform_leave(self):
         self.do_click(self.LEAVE_OPTION)
         time.sleep(2)
