@@ -37,85 +37,59 @@ def init_driver(request):
     if request.param == "Safari":
         driver = webdriver.Safari()
 
-    """This is BrowserStack Testing"""
+    remote_cap = {
+        'os': 'OS X',
+        'os_version': 'Catalina',
+        'resolution': '1920x1080',
+        'browser_version': 'latest',
+        'name': request.param,
+        'browserstack.local': 'true',
+        'autoAcceptAlerts': 'true',
+        'acceptSslCert': 'true',
+        'browserstack.localIdentifier': LOCAL_IDENTIFIER,
+        'project': PROJECT_NAME,
+        'build': BUILD_NAME
+    }
+
     if request.param == "RemoteIE":
         desired_cap = {
+            **remote_cap,
             'os': 'Windows',
             'os_version': '10',
             'browser': 'IE',
-            'browser_version': '11.0',
-            'resolution': '2048x1536',
-            'name': "IETesting",
-            'browserstack.local': 'true',
-            'browserstack.localIdentifier': LOCAL_IDENTIFIER,
-            'project': PROJECT_NAME,
-            'build': BUILD_NAME
+            'browser_version': '11.0'
         }
-        driver = webdriver.Remote(
-            command_executor=BROWSERSTACK_URL,
-            desired_capabilities=desired_cap
-        )
-    #
-    """BrowserStack Safari"""
+
     if request.param == "RemoteSafari":
         desired_cap = {
-            'os': 'OS X',
-            'os_version': 'Catalina',
-            'resolution': '1920x1080',
-            'browser': 'Safari',
-            'browser_version': '13.1',
-            'name': "SafariTesting",
-            'browserstack.local': 'true',
-            'autoAcceptAlerts': 'true',
-            'acceptSslCert': 'true',
-            'browserstack.localIdentifier': LOCAL_IDENTIFIER,
-            'project': PROJECT_NAME,
-            'build': BUILD_NAME
+            **remote_cap,
+            'browser': 'Safari'
         }
-        driver = webdriver.Remote(
-            command_executor=BROWSERSTACK_URL,
-            desired_capabilities=desired_cap
-        )
 
     if request.param == "RemoteChrome":
         desired_cap = {
-            'os_version': 'Catalina',
-            'resolution': '1920x1080',
-            'browser': 'Chrome',
-            'browser_version': 'latest',
-            'os': 'OS X',
-            'name': 'Chrome Testing',  # test name
-            # 'build': 'Test Build Chrome',  # CI/CD job or build name
-            'browserstack.local': 'true',
-            'browserstack.localIdentifier': LOCAL_IDENTIFIER,
-            'project': PROJECT_NAME,
-            'build': BUILD_NAME
+            **remote_cap,
+            'browser': 'Chrome'
         }
+
+    if request.param == "RemoteFirefox":
+        desired_cap = {
+            **remote_cap,
+            'os': 'Windows',
+            'os_version': '10',
+            'browser': 'Firefox'
+        }
+
+    if not driver and desired_cap:
         driver = webdriver.Remote(
             command_executor=BROWSERSTACK_URL,
             desired_capabilities=desired_cap
         )
 
-    """BrowserStack Firefox"""
-    if request.param == "RemoteFirefox":
-        desired_cap = {
-            'os': 'Windows',
-            'os_version': '10',
-            'resolution': '1920x1080',
-            'browser': 'Firefox',
-            'browser_version': 'latest',
-            'name': "FirefoxTesting",
-            'browserstack.local': 'true',
-            'browserstack.localIdentifier': LOCAL_IDENTIFIER,
-            'project': PROJECT_NAME,
-            'build': BUILD_NAME
-        }
-        driver = webdriver.Remote(
-            command_executor=BROWSERSTACK_URL,
-            desired_capabilities=desired_cap
-        )
     yield driver
+
     print("------Teardown------")
+
     driver.quit()
 
 
