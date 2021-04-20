@@ -16,6 +16,10 @@ class SearchPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
+    def get_header_value(self):
+        if self.is_visible(self.HEADER):
+            return self.get_element_text(self.HEADER)
+
     def is_home_icon_displayed(self):
         return self.is_visible(self.HOME_BUTTON)
 
