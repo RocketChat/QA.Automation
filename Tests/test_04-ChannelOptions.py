@@ -36,6 +36,7 @@ class Test_ChannelOptions(BaseTest):
     @allure.severity(allure.severity_level.NORMAL)
     def test_perform_read_unread_channel(self):
         self.channelOptions = ChannelOptionsPage(self.driver)
+        self.channelOptions.double_click_Home()
         self.channelOptions.go_to_option()
         label1 = self.channelOptions.get_button_label()
         print(label1)
@@ -54,6 +55,7 @@ class Test_ChannelOptions(BaseTest):
         self.channelOptions = ChannelOptionsPage(self.driver)
         value = self.channelOptions.get_label_text()
         print(value)
+        self.channelOptions.double_click_Home()
         self.channelOptions.go_to_option()
         self.channelOptions.perform_hide()
         time.sleep(2)
