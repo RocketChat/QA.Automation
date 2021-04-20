@@ -55,7 +55,7 @@ def init_driver(request):
             command_executor=BROWSERSTACK_URL,
             desired_capabilities=desired_cap
         )
-
+    #
     """BrowserStack Safari"""
     if request.param == "RemoteSafari":
         desired_cap = {
@@ -66,6 +66,8 @@ def init_driver(request):
             'browser_version': '13.1',
             'name': "SafariTesting",
             'browserstack.local': 'true',
+            'autoAcceptAlerts': 'true',
+            'acceptSslCert': 'true'
             'browserstack.localIdentifier': LOCAL_IDENTIFIER,
             'project': PROJECT_NAME,
             'build': BUILD_NAME
@@ -75,7 +77,6 @@ def init_driver(request):
             desired_capabilities=desired_cap
         )
 
-    """BrowserStack Chrome"""
     if request.param == "RemoteChrome":
         desired_cap = {
             'os_version': 'Catalina',
@@ -83,7 +84,8 @@ def init_driver(request):
             'browser': 'Chrome',
             'browser_version': 'latest',
             'os': 'OS X',
-            'name': "ChromeTesting",
+            'name': 'Chrome Testing',  # test name
+            # 'build': 'Test Build Chrome',  # CI/CD job or build name
             'browserstack.local': 'true',
             'browserstack.localIdentifier': LOCAL_IDENTIFIER,
             'project': PROJECT_NAME,
