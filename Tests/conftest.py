@@ -80,7 +80,7 @@ def init_driver(request):
             'browser': 'Firefox'
         }
 
-    if not driver and desired_cap:
+    if desired_cap:
         driver = webdriver.Remote(
             command_executor=BROWSERSTACK_URL,
             desired_capabilities=desired_cap
