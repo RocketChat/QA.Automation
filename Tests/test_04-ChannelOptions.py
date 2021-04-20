@@ -30,7 +30,7 @@ class Test_ChannelOptions(BaseTest):
         #self.channelOptions.double_click_Home()
         #self.channelOptions.go_to_option()
         #assert self.channelOptions.is_favorite_button_displayed()
-        self.channelOptions.double_click_Home()
+        self.channelOptions.go_to_Home()
         time.sleep(2)
 
     @allure.severity(allure.severity_level.NORMAL)
