@@ -67,7 +67,7 @@ def init_driver(request):
             'name': "SafariTesting",
             'browserstack.local': 'true',
             'autoAcceptAlerts': 'true',
-            'acceptSslCert': 'true'
+            'acceptSslCert': 'true',
             'browserstack.localIdentifier': LOCAL_IDENTIFIER,
             'project': PROJECT_NAME,
             'build': BUILD_NAME
