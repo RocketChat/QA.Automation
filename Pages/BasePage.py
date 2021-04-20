@@ -53,3 +53,6 @@ class BasePage:
     def mouse_over(self, by_locator):
         source = WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located(by_locator))
         ActionChains(self.driver).move_to_element(source).perform()
+
+    def implicitly_wait(self, time):
+        self.driver.implicitly_wait(time)

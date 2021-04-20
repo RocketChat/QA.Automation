@@ -37,6 +37,7 @@ class LoginPage(BasePage):
 
     """this is used to login"""
     def do_login(self, username, password):
+        self.implicitly_wait(10)
         self.do_send_keys(self.EMAIL, username)
         self.do_send_keys(self.PASSWORD, password)
         self.do_click(self.LOGIN_BUTTON)
