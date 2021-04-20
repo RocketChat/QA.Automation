@@ -8,6 +8,7 @@ data = data_env.get_data()
 
 
 class SearchPage(BasePage):
+    HEADER = (By.CSS_SELECTOR, ".rc-header")
     HOME_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[1]")
     SEARCH_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[2]")
     SEARCH_INPUT = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/div/div[1]/div/label/input")

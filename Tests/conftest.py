@@ -51,6 +51,8 @@ def init_driver(request):
         'build': BUILD_NAME
     }
 
+    desired_cap = None
+
     if request.param == "RemoteIE":
         desired_cap = {
             **remote_cap,
@@ -80,7 +82,7 @@ def init_driver(request):
             'browser': 'Firefox'
         }
 
-    if desired_cap:
+    if desired_cap is not None:
         driver = webdriver.Remote(
             command_executor=BROWSERSTACK_URL,
             desired_capabilities=desired_cap
