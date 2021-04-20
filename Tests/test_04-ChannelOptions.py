@@ -27,24 +27,15 @@ class Test_ChannelOptions(BaseTest):
         self.channelOptions.go_to_option()
         self.channelOptions.perform_unfavorite()
         time.sleep(3)
+        self.channelOptions.go_to_Home()
+        self.channelOptions.go_to_option()
+        assert self.channelOptions.is_favorite_button_displayed()
         self.channelOptions.double_click_Home()
-        # self.channelOptions.go_to_option()
-        # assert self.channelOptions.is_favorite_button_displayed()
-        # self.channelOptions.double_click_Home()
-        # time.sleep(2)
-
-    @allure.severity(allure.severity_level.CRITICAL)
-    def test_perform_leave_join_channel(self):
-        self.channelOptions = ChannelOptionsPage(self.driver)
-        self.channelOptions.go_to_general()
-        self.channelOptions.perform_leave()
-        self.channelOptions.perform_join(data.PUBLIC_CHANNEL)
-        assert self.channelOptions.is_channel_displayed()
+        time.sleep(2)
 
     @allure.severity(allure.severity_level.NORMAL)
     def test_perform_read_unread_channel(self):
         self.channelOptions = ChannelOptionsPage(self.driver)
-        self.channelOptions.double_click_Home()
         self.channelOptions.go_to_option()
         label1 = self.channelOptions.get_button_label()
         print(label1)
@@ -63,10 +54,20 @@ class Test_ChannelOptions(BaseTest):
         self.channelOptions = ChannelOptionsPage(self.driver)
         value = self.channelOptions.get_label_text()
         print(value)
-        self.channelOptions.double_click_Home()
         self.channelOptions.go_to_option()
         self.channelOptions.perform_hide()
         time.sleep(2)
         self.channelOptions.perform_show(value)
+        self.channelOptions.double_click_Home()
         time.sleep(3)
+
+    @allure.severity(allure.severity_level.CRITICAL)
+    def test_perform_leave_join_channel(self):
+        self.channelOptions = ChannelOptionsPage(self.driver)
+        self.channelOptions.go_to_general()
+        self.channelOptions.perform_leave()
+        self.channelOptions.perform_join(data.PUBLIC_CHANNEL)
+        assert self.channelOptions.is_channel_displayed()
+
+
 
