@@ -50,7 +50,7 @@ class LoginPage(BasePage):
         self.do_click(self.LOGOUT_BUTTON)
 
     def is_logout_successful(self):
-        return self.is_visible(self.EMAIL)
+        return self.is_visible(self.LOGIN_BUTTON)
 
 
 

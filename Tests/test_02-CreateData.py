@@ -1,5 +1,5 @@
 from Pages.CreateDataPage import CreateDataPage
-from Pages.Loginpage import LoginPage
+from Pages.LoginLogoutPage import LoginPage
 from Tests.test_base import BaseTest
 from Config.main import Data
 import allure
@@ -18,13 +18,13 @@ class Test_Create(BaseTest):
         self.create = CreateDataPage(self.driver)
         self.create.add_new_user(data.new_user, data.new_username, data.new_email, data.new_status, data.new_bio, data.new_nickname, data.new_password)
         allure.attach(self.driver.get_screenshot_as_png(), name="CreateUser", attachment_type=AttachmentType.PNG)
-        #assert self.create.is_user_visible()
+        # assert self.create.is_user_visible()
 
     @allure.severity(allure.severity_level.CRITICAL)
     def test_new_DM(self):
         self.create = CreateDataPage(self.driver)
         self.create.dm_new_user(data.new_message)
-        # assert self.create.is_user_displayed()
+        #assert self.create.is_user_displayed()
 
     @allure.severity(allure.severity_level.CRITICAL)
     def test_add_new_channel(self):
@@ -55,4 +55,3 @@ class Test_Create(BaseTest):
         self.create = CreateDataPage(self.driver)
         self.create.add_DM(data.new_user)
         assert self.create.is_DM_visible()
-

@@ -64,6 +64,7 @@ class ChannelOptionsPage(BasePage):
         self.do_click(self.LEAVE_BUTTON)
 
     def perform_join(self, value):
+        time.sleep(3)
         self.do_click(self.DIRECTORY)
         self.do_click(self.DIRECTORY_SEARCH_INPUT)
         self.do_send_keys(self.DIRECTORY_SEARCH_INPUT, value)

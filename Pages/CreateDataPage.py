@@ -7,8 +7,6 @@ data = data_env.get_data()
 
 
 class CreateDataPage(BasePage):
-
-    #MORE_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[6]")
     AVATAR = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[1]")
     ADMINISTRATION_BUTTON = (By.CSS_SELECTOR, "body > div.rc-popover.rc-popover-- > div > div > div > div:nth-child(5) > li > div > div.rcx-option__content")
     USERS_BUTTON = (By.CSS_SELECTOR, "#rocket-chat > aside > div.flex-nav > div > div > div > div > div.rc-scrollbars-view > div > div > a:nth-child(3)")
@@ -156,6 +154,41 @@ class CreateDataPage(BasePage):
         self.do_send_keys(self.CHANNEL_INPUT, channel_name)
         time.sleep(3)
         self.do_enter(self.CHANNEL_INPUT)
+
+        self.do_click(self.DISCUSSION_INPUT)
+        self.do_send_keys(self.DISCUSSION_INPUT, discussion_name)
+
+        self.do_click(self.CHANNEL_USERS_INPUT)
+        self.do_send_keys(self.CHANNEL_USERS_INPUT, new_user)
+        time.sleep(3)
+        self.do_enter(self.CHANNEL_USERS_INPUT)
+
+        self.do_click(self.DISCUSSION_MESSAGE)
+        self.do_send_keys(self.DISCUSSION_MESSAGE, discussion_message)
+        time.sleep(2)
+
+        self.do_click(self.CREATE__DISCUSSION_BUTTON)
+        time.sleep(3)
+
+    def is_discussion_visible(self):
+        return self.is_visible(self.CREATED_DISCUSSION)
+
+    def add_DM(self, new_user):
+        self.do_click(self.ADD_BUTTON)
+        self.do_click(self.DMBUTTON)
+        self.do_click(self.DM_USERS_INPUT)
+        self.do_send_keys(self.DM_USERS_INPUT, new_user)
+        time.sleep(3)
+        self.do_enter(self.DM_USERS_INPUT)
+        time.sleep(3)
+        self.do_click(self.CREATE_DM_BUTTON)
+
+    def is_DM_visible(self):
+        return self.is_visible(self.TEXTAREA)
+
+    def go_to_Home(self):
+        self.do_click(self.HOME_BUTTON)
+
 
         self.do_click(self.DISCUSSION_INPUT)
         self.do_send_keys(self.DISCUSSION_INPUT, discussion_name)
