@@ -12,9 +12,9 @@ data = data_env.get_data()
 class Test_MessageActions(BaseTest):
     @allure.severity(allure.severity_level.NORMAL)
     def test_add_quote(self):
-        self.loginPage = LoginPage(self.driver)
-        self.loginPage.do_login(data.user_name, data.password)
-        self.driver.maximize_window()
+        # self.loginPage = LoginPage(self.driver)
+        # self.loginPage.do_login(data.user_name, data.password)
+        # self.driver.maximize_window()
         self.messageActions = MessageActionsPage(self.driver)
         self.messageActions.send_message(data.message)
         self.messageActions.mouse_over_message()

@@ -13,9 +13,9 @@ data = data_env.get_data()
 class Test_ChannelOptions(BaseTest):
     @allure.severity(allure.severity_level.NORMAL)
     def test_perform_favorite_unfavorite_channel(self):
-        self.loginPage = LoginPage(self.driver)
-        self.loginPage.do_login(data.user_name, data.password)
-        self.driver.maximize_window()
+        # self.loginPage = LoginPage(self.driver)
+        # self.loginPage.do_login(data.user_name, data.password)
+        # self.driver.maximize_window()
         self.channelOptions = ChannelOptionsPage(self.driver)
         value = self.channelOptions.get_label_text()
         self.channelOptions.go_to_option()

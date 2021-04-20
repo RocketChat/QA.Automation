@@ -13,9 +13,9 @@ class Test_ViewMode(BaseTest):
 
     @allure.severity(allure.severity_level.NORMAL)
     def test_extended_mode(self):
-        self.loginPage = LoginPage(self.driver)
-        self.loginPage.do_login(data.user_name, data.password)
-        self.driver.maximize_window()
+        # self.loginPage = LoginPage(self.driver)
+        # self.loginPage.do_login(data.user_name, data.password)
+        # self.driver.maximize_window()
         self.viewMode = ViewModePage(self.driver)
         time.sleep(3)
         self.viewMode.select_Extended_Mode()
