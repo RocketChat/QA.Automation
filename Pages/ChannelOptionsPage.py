@@ -83,9 +83,6 @@ class ChannelOptionsPage(BasePage):
         return self.get_element_text(self.FAVORITE_ITEM)
 
     def perform_unfavorite(self):
-        self.mouse_over(self.CHANNEL)
-        self.do_click(self.OPTIONS_BUTTON)
-        time.sleep(2)
         self.do_click(self.UNFAVORITE_BUTTON)
 
     def is_favorite_button_displayed(self):

@@ -24,6 +24,7 @@ class CreateDataPage(BasePage):
     OPTION_USER = (By.CSS_SELECTOR, "body > div:nth-child(22) > div > div > ol > li:nth-child(5) > div >label>input")
     SAVE_BUTTON = (By.CSS_SELECTOR, "div.rc-scrollbars-view > form > fieldset > div:nth-child(13) > span > div > button.rcx-box.rcx-box--full.rcx-box--animated.rcx-button.rcx-css-t3n91h")
 
+    USER = (By.XPATH, "//a[@aria-label='" + data.new_username + "']/parent::div")
     USER_CREATED = (By.XPATH, "//*[contains(text(),'" + data.new_user + "')]")
     DM_BUTTON = (By.XPATH, "//button[contains(text(),'Direct Message')]")
     TEXTAREA = (By.XPATH, "//*[@name='msg']")
@@ -98,13 +99,16 @@ class CreateDataPage(BasePage):
         #time.sleep(3)
 
         self.do_click(self.SAVE_BUTTON)
-        self.driver.refresh()
+        #self.driver.refresh()
 
     def is_user_visible(self):
         return self.is_visible(self.USER_CREATED)
 
+    def is_user_displayed(self):
+        return self.is_displayed(self.USER)
+
     def dm_new_user(self, new_message):
-        self.do_click(self.USER_CREATED)
+        #self.do_click(self.USER_CREATED)
         self.do_click(self.DM_BUTTON)
         self.do_click(self.TEXTAREA)
         self.do_send_keys(self.TEXTAREA, new_message)

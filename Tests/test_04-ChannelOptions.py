@@ -22,8 +22,12 @@ class Test_ChannelOptions(BaseTest):
         allure.attach(self.driver.get_screenshot_as_png(), name="Options", attachment_type=AttachmentType.PNG)
         self.channelOptions.perform_favorite()
         assert self.channelOptions.favorite_item_label() == value
-        self.channelOptions.perform_unfavorite()
+        self.channelOptions.go_to_Home()
         time.sleep(2)
+        self.channelOptions.go_to_option()
+        self.channelOptions.perform_unfavorite()
+        time.sleep(3)
+        self.channelOptions.go_to_Home()
         self.channelOptions.go_to_option()
         assert self.channelOptions.is_favorite_button_displayed()
         self.channelOptions.go_to_Home()

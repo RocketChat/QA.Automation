@@ -44,6 +44,7 @@ def init_driver(request):
             'os_version': '10',
             'browser': 'IE',
             'browser_version': '11.0',
+            'resolution': '2048x1536',
             'name': "IETesting",
             'browserstack.local': 'true',
             'browserstack.localIdentifier': LOCAL_IDENTIFIER,
