@@ -27,10 +27,9 @@ class Test_ChannelOptions(BaseTest):
         self.channelOptions.go_to_option()
         self.channelOptions.perform_unfavorite()
         time.sleep(3)
-        #self.channelOptions.go_to_Home()
-        self.channelOptions.double_click_Home()
-        self.channelOptions.go_to_option()
-        assert self.channelOptions.is_favorite_button_displayed()
+        #self.channelOptions.double_click_Home()
+        #self.channelOptions.go_to_option()
+        #assert self.channelOptions.is_favorite_button_displayed()
         self.channelOptions.double_click_Home()
         time.sleep(2)
 
