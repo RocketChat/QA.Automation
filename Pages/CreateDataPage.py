@@ -190,22 +190,35 @@ class CreateDataPage(BasePage):
         self.do_click(self.HOME_BUTTON)
 
 
+        self.do_click(self.DISCUSSION_INPUT)
+        self.do_send_keys(self.DISCUSSION_INPUT, discussion_name)
 
+        self.do_click(self.CHANNEL_USERS_INPUT)
+        self.do_send_keys(self.CHANNEL_USERS_INPUT, new_user)
+        time.sleep(3)
+        self.do_enter(self.CHANNEL_USERS_INPUT)
 
+        self.do_click(self.DISCUSSION_MESSAGE)
+        self.do_send_keys(self.DISCUSSION_MESSAGE, discussion_message)
+        time.sleep(2)
 
+        self.do_click(self.CREATE__DISCUSSION_BUTTON)
+        time.sleep(3)
 
+    def is_discussion_visible(self):
+        return self.is_visible(self.CREATED_DISCUSSION)
 
+    def add_DM(self, new_user):
+        self.do_click(self.ADD_BUTTON)
+        self.do_click(self.DMBUTTON)
+        self.do_click(self.DM_USERS_INPUT)
+        self.do_send_keys(self.DM_USERS_INPUT, new_user)
+        time.sleep(3)
+        self.do_enter(self.DM_USERS_INPUT)
+        self.do_click(self.CREATE_DM_BUTTON)
 
+    def is_DM_visible(self):
+        return self.is_visible(self.TEXTAREA)
 
-
-
-
-
-
-
-
-
-
-
-
-
+    def go_to_Home(self):
+        self.do_click(self.HOME_BUTTON)

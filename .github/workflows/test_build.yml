@@ -1,18 +1,23 @@
-name: Run CI
+name: CI
 
 on:
   push:
     branches:
-      - develop
+      - ci
 
 jobs:
   test:
     name: Running end to end tests
     runs-on: ubuntu-latest
 
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: ["RemoteChrome", "RemoteFirefox", "RemoteSafari", "RemoteIE"]
+
     services:
       rocketchat:
-        image: ghcr.io/rocketchat/rocket.chat.preview:pr-21484
+        image: rocketchat/rocket.chat.preview:3.14.0-rc.0
         ports:
           - 3000:3000
         env:
@@ -55,10 +60,11 @@ jobs:
       env:
         BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
         BROWSERSTACK_ACCESS_KEY-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+        BROWSER: ${{ matrix.browser }}
       run: |
         cd ..
         cd QA.Automation
-        pytest -v -s --alluredir="/tmp/reports/allure_reports" Tests
+        pytest -v -s --alluredir="/tmp/reports/allure_reports/${BROWSER}" Tests
 
     - name: 'Stop BrowserStackLocal'
       uses: 'browserstack/github-actions/setup-local@master'

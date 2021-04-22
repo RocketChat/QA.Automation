@@ -13,9 +13,9 @@ data = data_env.get_data()
 class Test_ChannelOptions(BaseTest):
     @allure.severity(allure.severity_level.NORMAL)
     def test_perform_favorite_unfavorite_channel(self):
-        self.loginPage = LoginPage(self.driver)
-        self.loginPage.do_login(data.user_name, data.password)
-        self.driver.maximize_window()
+        # self.loginPage = LoginPage(self.driver)
+        # self.loginPage.do_login(data.user_name, data.password)
+        # self.driver.maximize_window()
         self.channelOptions = ChannelOptionsPage(self.driver)
         value = self.channelOptions.get_label_text()
         self.channelOptions.go_to_option()
@@ -58,6 +58,7 @@ class Test_ChannelOptions(BaseTest):
         self.channelOptions.perform_hide()
         time.sleep(2)
         self.channelOptions.perform_show(value)
+        self.channelOptions.double_click_Home()
         time.sleep(3)
 
     @allure.severity(allure.severity_level.CRITICAL)
@@ -67,4 +68,6 @@ class Test_ChannelOptions(BaseTest):
         self.channelOptions.perform_leave()
         self.channelOptions.perform_join(data.PUBLIC_CHANNEL)
         assert self.channelOptions.is_channel_displayed()
+
+
 
