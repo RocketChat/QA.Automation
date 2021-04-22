@@ -58,6 +58,7 @@ class Test_ChannelOptions(BaseTest):
         self.channelOptions.perform_hide()
         time.sleep(2)
         self.channelOptions.perform_show(value)
+        self.channelOptions.double_click_Home()
         time.sleep(3)
 
     @allure.severity(allure.severity_level.CRITICAL)
@@ -67,3 +68,6 @@ class Test_ChannelOptions(BaseTest):
         self.channelOptions.perform_leave()
         self.channelOptions.perform_join(data.PUBLIC_CHANNEL)
         assert self.channelOptions.is_channel_displayed()
+
+
+

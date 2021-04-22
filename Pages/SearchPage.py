@@ -8,7 +8,6 @@ data = data_env.get_data()
 
 
 class SearchPage(BasePage):
-    HEADER = (By.CSS_SELECTOR, ".rc-header")
     HOME_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[1]")
     SEARCH_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[2]")
     SEARCH_INPUT = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/div/div[1]/div/label/input")
@@ -16,10 +15,6 @@ class SearchPage(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
-
-    def get_header_value(self):
-        if self.is_visible(self.HEADER):
-            return self.get_element_text(self.HEADER)
 
     def is_home_icon_displayed(self):
         return self.is_visible(self.HOME_BUTTON)

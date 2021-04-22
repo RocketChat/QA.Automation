@@ -44,7 +44,7 @@ class ChannelOptionsPage(BasePage):
 
     def go_to_option(self):
         self.mouse_over(self.CHANNEL)
-        time.sleep(2)
+        time.sleep(3)
         self.do_click(self.OPTIONS_BUTTON)
 
     def go_to_general(self):
