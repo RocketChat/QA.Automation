@@ -28,6 +28,7 @@ class Test_Create(BaseTest):
 
     @allure.severity(allure.severity_level.CRITICAL)
     def test_add_new_channel(self):
+        self.driver.maximize_window()
         self.create = CreateDataPage(self.driver)
         self.create.go_to_Home()
         time.sleep(3)
