@@ -136,6 +136,7 @@ class CreateDataPage(BasePage):
 
     def add_users_to_channel(self, new_user):
         self.do_click(self.CHANNEL_CREATED)
+        time.sleep(4)
         self.do_click(self.MEMBER_BUTTON)
         self.do_click(self.ADD_USERS)
         self.do_click(self.INPUT_FIELD)
