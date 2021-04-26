@@ -118,14 +118,9 @@ class ChannelOptionsPage(BasePage):
                 time.sleep(2)
                 self.do_click(self.UNREAD_BUTTON)
                 print("changed to unread")
-        except NoSuchElementException:
-            try:
-                if self.is_displayed(self.READ_BUTTON):
-                    time.sleep(2)
-                    self.do_click(self.READ_BUTTON)
-                    print("changed to read")
-            except NoSuchElementException:
-                time.sleep(1)
+        except:
+            self.do_click(self.READ_BUTTON)
+            print("changed to read")
 
 
 
