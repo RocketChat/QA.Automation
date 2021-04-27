@@ -35,10 +35,10 @@ class CreateDataPage(BasePage):
     CREATE_BUTTON = (By.XPATH, "//*[@id='modal-root']/div/dialog/div/div[2]/div/button[2]")
     CHANNEL_CREATED = (By.XPATH, "//*[contains(text(),'" + data.channel_name + "')]")
 
-    MEMBER_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/div/main/header/div/div[3]/button[3]")
-    ADD_USERS = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/div/main/div/aside/footer/div/button[2]")
+    MEMBER_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/main/header/div/div[3]/button[3]")
+    ADD_USERS = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/main/div/aside/footer/div/button[2]")
     INPUT_FIELD = (By.CSS_SELECTOR, "div.rc-scrollbars-view > div > div > div > div.rcx-box> input")
-    ADD_USERS_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/div/main/div/aside/footer/button")
+    ADD_USERS_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/main/div/aside/footer/button")
     MESSAGE = (By.CSS_SELECTOR, ".wrapper>ul>li:last-child>div:nth-child(2)>div:nth-child(2)")
 
     DISCUSSION_BUTTON = (By.XPATH, "//span[contains(text(),'Discussion')]")
