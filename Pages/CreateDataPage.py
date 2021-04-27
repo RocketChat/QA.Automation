@@ -36,9 +36,9 @@ class CreateDataPage(BasePage):
     CHANNEL_CREATED = (By.XPATH, "//*[contains(text(),'" + data.channel_name + "')]")
 
     MEMBER_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/main/header/div/div[3]/button[3]")
-    ADD_USERS = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/div/main/div/aside/footer/div/button[2]")
+    ADD_USERS = (By.XPATH, "//*[@id='rocket-chat'']/div[2]/div/main/div/aside/footer/div/button[2]")
     INPUT_FIELD = (By.CSS_SELECTOR, "div.rc-scrollbars-view > div > div > div > div.rcx-box> input")
-    ADD_USERS_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/div/main/div/aside/footer/button")
+    ADD_USERS_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/main/div/aside/footer/button")
     MESSAGE = (By.CSS_SELECTOR, ".wrapper>ul>li:last-child>div:nth-child(2)>div:nth-child(2)")
 
     DISCUSSION_BUTTON = (By.XPATH, "//span[contains(text(),'Discussion')]")
@@ -135,7 +135,6 @@ class CreateDataPage(BasePage):
 
     def add_users_to_channel(self, new_user):
         self.do_click(self.CHANNEL_CREATED)
-        time.sleep(4)
         self.do_click(self.MEMBER_BUTTON)
         self.do_click(self.ADD_USERS)
         self.do_click(self.INPUT_FIELD)
