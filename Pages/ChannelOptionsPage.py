@@ -64,16 +64,24 @@ class ChannelOptionsPage(BasePage):
         self.do_click(self.LEAVE_BUTTON)
 
     def perform_join(self, value):
+        """Directory search doesn't work in Safari, so trying normal search on homepage"""
+        # time.sleep(3)
+        # self.do_click(self.DIRECTORY)
+        # self.do_click(self.DIRECTORY_SEARCH_INPUT)
+        # self.do_send_keys(self.DIRECTORY_SEARCH_INPUT, value)
+        # time.sleep(2)
+        # self.do_enter(self.DIRECTORY_SEARCH_INPUT)
+        # #self.do_click(self.DIRECTORY_SEARCH_BUTTON)
+        # time.sleep(2)
+        # self.do_click(self.RESULT_1)
+        # time.sleep(2)
+        self.do_click(self.SEARCH_BUTTON)
+        self.do_click(self.SEARCH_INPUT)
+        time.sleep(2)
+        self.do_send_keys(self.SEARCH_INPUT, value)
+        time.sleep(5)
+        self.do_enter(self.SEARCH_INPUT)
         time.sleep(3)
-        self.do_click(self.DIRECTORY)
-        self.do_click(self.DIRECTORY_SEARCH_INPUT)
-        self.do_send_keys(self.DIRECTORY_SEARCH_INPUT, value)
-        time.sleep(2)
-        self.do_enter(self.DIRECTORY_SEARCH_INPUT)
-        #self.do_click(self.DIRECTORY_SEARCH_BUTTON)
-        time.sleep(2)
-        self.do_click(self.RESULT_1)
-        time.sleep(2)
         self.do_click(self.JOIN_BUTTON)
 
     def is_channel_displayed(self):
