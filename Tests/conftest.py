@@ -58,29 +58,29 @@ def init_driver(request):
             desired_capabilities=desired_cap
         )
     #
-    # """BrowserStack Safari"""
-    # #BROWSERSTACK_URL = 'http://rocketchattester1:3qKpZ3j75MbhWztWU1R9@hub-cloud.browserstack.com/wd/hub'
-    # if request.param == "RemoteSafari":
-    #     desired_cap = {
-    #         'os': 'OS X',
-    #         'os_version': 'Catalina',
-    #         'resolution': '1920x1080',
-    #         'browser': 'Safari',
-    #         'browser_version': '13.1',
-    #         'name': "SafariTesting",
-    #         'browserstack.local': 'true',
-    #         'build': 'BStack Build safari',
-    #         'autoAcceptAlerts': 'true',
-    #         'acceptSslCert': 'true'
-    #         # 'browserstack.localIdentifier': LOCAL_IDENTIFIER,
-    #         # 'project': PROJECT_NAME,
-    #         # 'build': BUILD_NAME
-    #     }
-    #     driver = webdriver.Remote(
-    #         command_executor=BROWSERSTACK_URL,
-    #         desired_capabilities=desired_cap
-    #     )
-    #
+    """BrowserStack Safari"""
+    BROWSERSTACK_URL = 'http://rocketchattester1:3qKpZ3j75MbhWztWU1R9@hub-cloud.browserstack.com/wd/hub'
+    if request.param == "RemoteSafari":
+        desired_cap = {
+            'os': 'OS X',
+            'os_version': 'Catalina',
+            'resolution': '1920x1080',
+            'browser': 'Safari',
+            'browser_version': '13.1',
+            'name': "SafariTesting",
+            'browserstack.local': 'true',
+            'build': 'BStack Build safari',
+            'autoAcceptAlerts': 'true',
+            'acceptSslCert': 'true'
+            # 'browserstack.localIdentifier': LOCAL_IDENTIFIER,
+            # 'project': PROJECT_NAME,
+            # 'build': BUILD_NAME
+        }
+        driver = webdriver.Remote(
+            command_executor=BROWSERSTACK_URL,
+            desired_capabilities=desired_cap
+        )
+
     if request.param == "RemoteChrome":
         BROWSERSTACK_URL = 'http://rocketchattester1:3qKpZ3j75MbhWztWU1R9@hub-cloud.browserstack.com/wd/hub'
         desired_cap = {
