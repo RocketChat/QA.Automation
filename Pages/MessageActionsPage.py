@@ -9,7 +9,7 @@ data = data_env.get_data()
 class MessageActionsPage(BasePage):
     USER = (By.XPATH, "//*[contains(text(),'" + data.new_username + "')]")
     TEXTAREA = (By.XPATH, "//*[@name='msg']")
-    SOURCE = ".wrapper>ul>li:last-child"
+    SOURCE = (By.CSS_SELECTOR, ".wrapper>ul>li:last-child")
     ACTION_ONE = (By.CSS_SELECTOR, ".wrapper>ul>li:last-child> div.message-actions > div.message-actions__buttons > button:nth-child(1)")
     QUOTE = (By.XPATH, "//*[text()[contains(.,'Testing quote')]]")
 
@@ -34,7 +34,7 @@ class MessageActionsPage(BasePage):
         time.sleep(3)
 
     def mouse_over_message(self):
-        self.do_mouse_hover(self.SOURCE)
+        self.mouse_over(self.SOURCE)
 
     def add_quote(self, quote):
         self.do_click(self.ACTION_ONE)

@@ -1,6 +1,6 @@
 import pytest
 from allure_commons.types import AttachmentType
-from Pages.Loginpage import LoginPage
+from Pages.LoginLogoutPage import LoginPage
 from Tests.test_base import BaseTest
 from Config.main import Data
 import allure
@@ -13,13 +13,19 @@ class Test_Login(BaseTest):
 
     @allure.severity(allure.severity_level.NORMAL)
     def test_login_page_title(self):
-        # pytest.skip("Skipping this test in IE as title is not added in IE")
+        #pytest.skip("Skipping this test as title is not present in IE")
         self.loginPage = LoginPage(self.driver)
         title = self.loginPage.get_login_page_title(data.LOGIN_PAGE_TITLE)
         print(title)
         self.loginPage.save_screenshot("/Screenshots/Login.png")
         allure.attach(self.driver.get_screenshot_as_png(), name="LoginScreen", attachment_type=AttachmentType.PNG)
         assert title == data.LOGIN_PAGE_TITLE
+
+    @allure.severity(allure.severity_level.NORMAL)
+    def test_links(self):
+        self.loginPage = LoginPage(self.driver)
+        assert self.loginPage.is_forgot_password_link_present()
+        assert self.loginPage.is_register_account_link_present()
 
     @allure.severity(allure.severity_level.BLOCKER)
     def test_login(self):

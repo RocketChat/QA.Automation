@@ -2,7 +2,7 @@ import allure
 from allure_commons.types import AttachmentType
 
 from Pages.SearchPage import SearchPage
-from Pages.Loginpage import LoginPage
+from Pages.LoginLogoutPage import LoginPage
 from Tests.test_base import BaseTest
 from Config.main import Data
 data_env = Data()
@@ -18,6 +18,7 @@ class Test_Home(BaseTest):
         self.search = SearchPage(self.driver)
         self.search.save_screenshot("/Screenshots/Homepage.png")
         header = self.search.get_header_value()
+        print(header)
         allure.attach(self.driver.get_screenshot_as_png(), name="Homepage", attachment_type=AttachmentType.PNG)
         assert header == data.HOMEPAGE_HEADER
 

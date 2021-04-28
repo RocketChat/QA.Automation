@@ -7,8 +7,6 @@ data = data_env.get_data()
 
 
 class CreateDataPage(BasePage):
-
-    #MORE_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[6]")
     AVATAR = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[1]")
     ADMINISTRATION_BUTTON = (By.CSS_SELECTOR, "body > div.rc-popover.rc-popover-- > div > div > div > div:nth-child(5) > li > div > div.rcx-option__content")
     USERS_BUTTON = (By.CSS_SELECTOR, "#rocket-chat > aside > div.flex-nav > div > div > div > div > div.rc-scrollbars-view > div > div > a:nth-child(3)")
@@ -24,6 +22,7 @@ class CreateDataPage(BasePage):
     OPTION_USER = (By.CSS_SELECTOR, "body > div:nth-child(22) > div > div > ol > li:nth-child(5) > div >label>input")
     SAVE_BUTTON = (By.CSS_SELECTOR, "div.rc-scrollbars-view > form > fieldset > div:nth-child(13) > span > div > button.rcx-box.rcx-box--full.rcx-box--animated.rcx-button.rcx-css-t3n91h")
 
+    USER = (By.XPATH, "//a[@aria-label='" + data.new_username + "']/parent::div")
     USER_CREATED = (By.XPATH, "//*[contains(text(),'" + data.new_user + "')]")
     DM_BUTTON = (By.XPATH, "//button[contains(text(),'Direct Message')]")
     TEXTAREA = (By.XPATH, "//*[@name='msg']")
@@ -36,11 +35,24 @@ class CreateDataPage(BasePage):
     CREATE_BUTTON = (By.XPATH, "//*[@id='modal-root']/div/dialog/div/div[2]/div/button[2]")
     CHANNEL_CREATED = (By.XPATH, "//*[contains(text(),'" + data.channel_name + "')]")
 
-    MEMBER_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/div/main/header/div/div[3]/button[3]")
-    ADD_USERS = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/div/main/div/aside/footer/div/button[2]")
+    MEMBER_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/main/header/div/div[3]/button[3]")
+    ADD_USERS = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/main/div/aside/footer/div/button[2]")
     INPUT_FIELD = (By.CSS_SELECTOR, "div.rc-scrollbars-view > div > div > div > div.rcx-box> input")
-    ADD_USERS_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/div/main/div/aside/footer/button")
+    ADD_USERS_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/main/div/aside/footer/button")
     MESSAGE = (By.CSS_SELECTOR, ".wrapper>ul>li:last-child>div:nth-child(2)>div:nth-child(2)")
+
+    DISCUSSION_BUTTON = (By.XPATH, "//span[contains(text(),'Discussion')]")
+    CHANNEL_INPUT = (By.XPATH, "//*[@id='parentChannel']")
+    DISCUSSION_INPUT = (By.XPATH, "//*[@id='discussion_name']")
+    CHANNEL_USERS_INPUT = (By.XPATH, "//*[@id='users']")
+    DISCUSSION_MESSAGE = (By.XPATH, "//*[@id='discussion_message']")
+    CREATE__DISCUSSION_BUTTON = (By.XPATH, "//button[@form='create-discussion']")
+    CREATED_DISCUSSION = (By.XPATH, "//*[contains(text(),'" + data.discussion_name + "')]")
+
+    DMBUTTON = (By.XPATH, "//*[contains(text(),'Direct Messages')]")
+    DM_USERS_INPUT = (By.XPATH, "//*[@id='directMessageUsers']")
+    CREATE_DM_BUTTON = (By.XPATH, "//button[@form='create-dm']")
+    HOME_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[1]")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -82,16 +94,19 @@ class CreateDataPage(BasePage):
         #self.do_click(self.ROLES_INPUT)
         #self.do_click(self.OPTION_USER)
         #self.do_click(self.PASSWORD_INPUT)
-        #time.sleep(3)
 
+        time.sleep(3)
         self.do_click(self.SAVE_BUTTON)
-        self.driver.refresh()
+        #self.driver.refresh()
 
     def is_user_visible(self):
         return self.is_visible(self.USER_CREATED)
 
+    def is_user_displayed(self):
+        return self.is_displayed(self.USER)
+
     def dm_new_user(self, new_message):
-        self.do_click(self.USER_CREATED)
+        #self.do_click(self.USER_CREATED)
         self.do_click(self.DM_BUTTON)
         self.do_click(self.TEXTAREA)
         self.do_send_keys(self.TEXTAREA, new_message)
@@ -100,19 +115,19 @@ class CreateDataPage(BasePage):
 
     def add_new_channel(self, channel_name, new_user):
         """There is currently an issue so we have to first click on the close button"""
-        self.do_click(self.CLOSE_BUTTON)
-        time.sleep(3)
+        #self.do_click(self.CLOSE_BUTTON)
+        #time.sleep(3)
         self.do_click(self.ADD_BUTTON)
         self.do_click(self.CHANNEL_BUTTON)
         self.do_click(self.CHANNEL_NAME_INPUT)
         self.do_send_keys(self.CHANNEL_NAME_INPUT, channel_name)
         self.do_enter(self.CHANNEL_NAME_INPUT)
         time.sleep(3)
-        self.do_click(self.INVITE_USER_INPUT)
-        self.do_send_keys(self.INVITE_USER_INPUT, new_user)
-        time.sleep(5)
-        self.do_enter(self.INVITE_USER_INPUT)
-        time.sleep(5)
+        # self.do_click(self.INVITE_USER_INPUT)
+        # self.do_send_keys(self.INVITE_USER_INPUT, new_user)
+        # time.sleep(5)
+        # self.do_enter(self.INVITE_USER_INPUT)
+        # time.sleep(5)
 
         self.do_click(self.CREATE_BUTTON)
 
@@ -130,6 +145,49 @@ class CreateDataPage(BasePage):
 
     def is_message_visible(self):
         return self.is_visible(self.MESSAGE)
+
+    def add_discussion(self, channel_name, discussion_name, new_user, discussion_message):
+        time.sleep(5)
+        self.do_click(self.ADD_BUTTON)
+        self.do_click(self.DISCUSSION_BUTTON)
+        self.do_click(self.CHANNEL_INPUT)
+        self.do_send_keys(self.CHANNEL_INPUT, channel_name)
+        time.sleep(3)
+        self.do_enter(self.CHANNEL_INPUT)
+
+        self.do_click(self.DISCUSSION_INPUT)
+        self.do_send_keys(self.DISCUSSION_INPUT, discussion_name)
+
+        self.do_click(self.CHANNEL_USERS_INPUT)
+        self.do_send_keys(self.CHANNEL_USERS_INPUT, new_user)
+        time.sleep(3)
+        self.do_enter(self.CHANNEL_USERS_INPUT)
+
+        self.do_click(self.DISCUSSION_MESSAGE)
+        self.do_send_keys(self.DISCUSSION_MESSAGE, discussion_message)
+        time.sleep(2)
+
+        self.do_click(self.CREATE__DISCUSSION_BUTTON)
+        time.sleep(3)
+
+    def is_discussion_visible(self):
+        return self.is_visible(self.CREATED_DISCUSSION)
+
+    def add_DM(self, new_user):
+        self.do_click(self.ADD_BUTTON)
+        self.do_click(self.DMBUTTON)
+        self.do_click(self.DM_USERS_INPUT)
+        self.do_send_keys(self.DM_USERS_INPUT, new_user)
+        time.sleep(3)
+        self.do_enter(self.DM_USERS_INPUT)
+        time.sleep(3)
+        self.do_click(self.CREATE_DM_BUTTON)
+
+    def is_DM_visible(self):
+        return self.is_visible(self.TEXTAREA)
+
+    def go_to_Home(self):
+        self.do_click(self.HOME_BUTTON)
 
 
 

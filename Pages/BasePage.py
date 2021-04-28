@@ -1,3 +1,4 @@
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -24,7 +25,7 @@ class BasePage:
         return element.text
 
     def is_enabled(self, by_locator):
-        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
+        element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(by_locator))
         return bool(element)
 
     def get_title(self, title):
@@ -39,20 +40,31 @@ class BasePage:
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator)).send_keys(Keys.ENTER)
 
     def do_double_click(self, by_locator):
-        source = self.driver.find_element_by_xpath(by_locator)
+        source = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
         ActionChains(self.driver).double_click(source).perform()
 
-    def do_mouse_hover(self, by_locator):
-        source = self.driver.find_element_by_css_selector(by_locator)
-        ActionChains(self.driver).move_to_element(source).perform()
-
     def is_displayed(self, by_locator):
-        element = WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located(by_locator))
+        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
         return bool(element)
 
     def save_screenshot(self, folder):
         path = os.getcwd()
         self.driver.save_screenshot(path + folder)
+
+    def mouse_over(self, by_locator):
+        source = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
+        ActionChains(self.driver).move_to_element(source).perform()
+
+
+
+
+
+
+
+
+
+
+
 
 
 
