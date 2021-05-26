@@ -1,6 +1,8 @@
 class LocalData:
-    user_name = "rocketchat.internal.admin.test"
-    password = "rocketchat.internal.admin.test"
+    # user_name = "rocketchat.internal.admin.test"
+    # password = "rocketchat.internal.admin.test"
+    user_name = "ishrat.manzoor@rocket.chat"
+    password = "Welcome@123"
     url = "http://localhost:3000/"
     channel_name = "channel1"
     user = "localuser"
@@ -26,3 +28,7 @@ class LocalData:
     new_nickname = "localuser"
     new_password = "Test@01"
     new_message = "Hello new user testing"
+
+    # Team Data
+    team_name = "Team01"
+    team_topic = "Testing Teams Feature"

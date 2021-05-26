@@ -715,3 +715,9 @@ JavaScript error: , line 0: uncaught exception: undefined
 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1620044929773	geckodriver	INFO	Listening on 127.0.0.1:57159
+1620044930622	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileiFyh64"
+1620044936164	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1620044942472	Marionette	INFO	Listening on port 57171
+1620044942507	Marionette	WARN	TLS certificate errors will be ignored for this session

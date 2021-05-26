@@ -22,6 +22,7 @@ class Test_Create(BaseTest):
 
     @allure.severity(allure.severity_level.CRITICAL)
     def test_new_DM(self):
+        pytest.skip("test")
         self.create = CreateDataPage(self.driver)
         self.create.dm_new_user(data.new_message)
         assert self.create.is_user_displayed()
