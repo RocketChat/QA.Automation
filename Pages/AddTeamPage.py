@@ -1,5 +1,4 @@
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
 import time
 from Pages.BasePage import BasePage
 from Config.main import Data
@@ -17,11 +16,30 @@ class AddTeamPage(BasePage):
     TEAM_CREATED = (By.XPATH, "//*[contains(text(),'" + data.team_name + "')]")
 
     """Add members to team"""
-    MEMBER_BUTTON = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/header/div/div[3]/button[5]')
+    MEMBERS = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/header/div/div[3]/button[5]')
     ADD_USERS = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/main/div/aside/footer/div/button[2]")
     INPUT_FIELD = (By.CSS_SELECTOR, "div.rc-scrollbars-view > div > div > div > div.rcx-box> input")
     ADD_USERS_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/main/div/aside/footer/button")
     MESSAGE = (By.CSS_SELECTOR, ".wrapper>ul>li:last-child>div:nth-child(2)>div:nth-child(2)")
+
+    """Add existing channel to team"""
+    CHANNELS = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/header/div/div[3]/button[3]')
+    ADD_EXISTING = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/div/aside/footer/div/button[1]')
+    CHANNEL_INPUT = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[1]/div/div/div/div[1]/input')
+    ADD_CHANNEL = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[2]/div/button[2]')
+    CHANNEL_ADDED = (By.XPATH, "//*[contains(text(),'" + data.channel_name + "')]")
+    HOME_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[1]")
+
+    """Add New channel to team"""
+    CREATE_NEW = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/div/aside/footer/div/button[2]')
+    NAME_INPUT = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[1]/div/div[1]/span/label/input')
+    NEW_CHANNEL = (By.XPATH, "//*[contains(text(),'" + data.new_channel + "')]")
+
+    """Remove channel from team"""
+    CHANNEL = (By.XPATH, "//li[@class='rcx-option']//div[contains(text(), '" + data.channel_name + "')]/parent::div/parent::div/parent::li/parent::div")
+    OPTIONS_BUTTON = (By.XPATH, "//li[@class='rcx-option']//div[contains(text(), '" + data.channel_name + "')]/parent::div/parent::div/parent::li/parent::div//button[@class='rcx-box rcx-box--full rcx-box--animated rcx-button--tiny-square rcx-button--square rcx-button--ghost rcx-button rcx-css-ue04py']")
+    REMOVE_FROM_TEAM = (By.XPATH, "//*[contains(text(), 'Remove from team')]")
+    REMOVE_BUTTON = (By.XPATH, "//*[@id='modal-root']/div/dialog/div/div[2]/div/button[2]")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -40,7 +58,7 @@ class AddTeamPage(BasePage):
 
     def add_members_to_team(self, new_user):
         self.do_click(self.TEAM_CREATED)
-        self.do_click(self.MEMBER_BUTTON)
+        self.do_click(self.MEMBERS)
         self.do_click(self.ADD_USERS)
         self.do_click(self.INPUT_FIELD)
         self.do_send_keys(self.INPUT_FIELD, new_user)
@@ -50,6 +68,52 @@ class AddTeamPage(BasePage):
 
     def is_message_visible(self):
         return self.is_visible(self.MESSAGE)
+
+    def add_existing_channel_to_team(self, channel_name):
+        self.do_click(self.TEAM_CREATED)
+        self.do_click(self.CHANNELS)
+        self.do_click(self.ADD_EXISTING)
+        self.do_click(self.CHANNEL_INPUT)
+        self.do_send_keys(self.CHANNEL_INPUT, channel_name)
+        time.sleep(3)
+        self.do_enter(self.CHANNEL_INPUT)
+        self.do_click(self.ADD_CHANNEL)
+
+    def is_channel_visible(self):
+        return self.is_visible(self.CHANNEL_ADDED)
+
+    def go_to_Home(self):
+        self.do_click(self.HOME_BUTTON)
+
+    def add_new_channel_to_team(self, new_channel):
+        self.do_click(self.TEAM_CREATED)
+        time.sleep(3)
+        self.do_click(self.CHANNELS)
+        self.do_click(self.CREATE_NEW)
+        self.do_click(self.NAME_INPUT)
+        self.do_send_keys(self.NAME_INPUT, new_channel)
+        time.sleep(3)
+        self.do_click(self.CREATE_BUTTON)
+
+    def is_new_channel_visible(self):
+        return self.is_visible(self.NEW_CHANNEL)
+
+    def remove_channel_from_team(self):
+        self.do_click(self.TEAM_CREATED)
+        time.sleep(3)
+        self.do_click(self.CHANNELS)
+        self.mouse_over(self.CHANNEL)
+        time.sleep(2)
+        self.do_click(self.OPTIONS_BUTTON)
+        self.do_click(self.REMOVE_FROM_TEAM)
+        self.do_click(self.REMOVE_BUTTON)
+
+
+
+
+
+
+
 
 
 

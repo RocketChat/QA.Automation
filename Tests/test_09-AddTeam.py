@@ -13,6 +13,7 @@ data = data_env.get_data()
 class Test_Team(BaseTest):
     @allure.severity(allure.severity_level.CRITICAL)
     def test_add_new_team(self):
+        pytest.skip("test")
         self.loginPage = LoginPage(self.driver)
         self.loginPage.do_login(data.user_name, data.password)
         self.team = AddTeamPage(self.driver)
@@ -22,8 +23,32 @@ class Test_Team(BaseTest):
 
     @allure.severity(allure.severity_level.CRITICAL)
     def test_add_users_to_team(self):
+        pytest.skip("test")
         self.team = AddTeamPage(self.driver)
         self.team.add_members_to_team(data.new_user)
         allure.attach(self.driver.get_screenshot_as_png(), name="AddMember", attachment_type=AttachmentType.PNG)
         assert self.team.is_message_visible()
+
+    @allure.severity(allure.severity_level.CRITICAL)
+    def test_existing_channel_to_team(self):
+        pytest.skip("test")
+        self.team = AddTeamPage(self.driver)
+        self.team.add_existing_channel_to_team(data.channel_name)
+        assert self.team.is_channel_visible()
+        self.team.go_to_Home()
+
+    @allure.severity(allure.severity_level.CRITICAL)
+    def test_add_new_channel_to_team(self):
+        pytest.skip("test")
+        self.team = AddTeamPage(self.driver)
+        self.team.add_new_channel_to_team(data.new_channel)
+        assert self.team.is_new_channel_visible()
+
+    @allure.severity(allure.severity_level.CRITICAL)
+    def test_remove_channel_from_team(self):
+        self.loginPage = LoginPage(self.driver)
+        self.loginPage.do_login(data.user_name, data.password)
+        self.team = AddTeamPage(self.driver)
+        self.team.remove_channel_from_team()
+
 

@@ -32,3 +32,4 @@ class LocalData:
     # Team Data
     team_name = "Team01"
     team_topic = "Testing Teams Feature"
+    new_channel = "ANewChannel"
