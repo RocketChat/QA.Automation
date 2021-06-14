@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.options import Options as chrome_Options
 import os
 
 
-@pytest.fixture(params=["Chrome"], scope="class")
+@pytest.fixture(params=["Chrome"], scope="session")
 def init_driver(request):
     global driver
     """This checks chrome browser"""
@@ -119,6 +119,10 @@ def init_driver(request):
             command_executor=BROWSERSTACK_URL,
             desired_capabilities=desired_cap
         )
-    request.cls.driver = driver
-    yield
+    yield driver
     driver.quit()
+
+
+@pytest.fixture(scope="class")
+def init_driver_class(request, init_driver):
+    request.cls.driver = init_driver

@@ -10,8 +10,8 @@ data = data_env.get_data()
 class Test_Post(BaseTest):
     @allure.severity(allure.severity_level.CRITICAL)
     def test_post_in_private_channel(self):
-        self.loginPage = LoginPage(self.driver)
-        self.loginPage.do_login(data.user_name, data.password)
+        # self.loginPage = LoginPage(self.driver)
+        # self.loginPage.do_login(data.user_name, data.password)
         self.driver.maximize_window()
         self.post = PostPage(self.driver)
         self.post.post_message_in_private_channel(data.message)

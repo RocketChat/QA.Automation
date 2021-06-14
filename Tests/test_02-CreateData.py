@@ -28,7 +28,6 @@ class Test_Create(BaseTest):
 
     @allure.severity(allure.severity_level.CRITICAL)
     def test_add_new_channel(self):
-        pytest.skip("test")
         self.create = CreateDataPage(self.driver)
         self.create.go_to_Home()
         time.sleep(3)
@@ -37,7 +36,6 @@ class Test_Create(BaseTest):
 
     @allure.severity(allure.severity_level.CRITICAL)
     def test_add_users_to_channel(self):
-        pytest.skip("test")
         self.create = CreateDataPage(self.driver)
         self.create.add_users_to_channel(data.new_user)
         allure.attach(self.driver.get_screenshot_as_png(), name="AddUser", attachment_type=AttachmentType.PNG)

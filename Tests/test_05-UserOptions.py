@@ -13,9 +13,9 @@ data = data_env.get_data()
 class Test_DMOptions(BaseTest):
     @allure.severity(allure.severity_level.NORMAL)
     def test_perform_read_unread_user(self):
-        self.loginPage = LoginPage(self.driver)
-        self.loginPage.do_login(data.user_name, data.password)
-        self.driver.maximize_window()
+        # self.loginPage = LoginPage(self.driver)
+        # self.loginPage.do_login(data.user_name, data.password)
+        # self.driver.maximize_window()
         self.dmOptions = DMOptionsPage(self.driver)
         self.dmOptions.go_to_option()
         allure.attach(self.driver.get_screenshot_as_png(), name="OptionsDM", attachment_type=AttachmentType.PNG)
