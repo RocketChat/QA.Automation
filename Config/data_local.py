@@ -33,3 +33,5 @@ class LocalData:
     team_name = "Team01"
     team_topic = "Testing Teams Feature"
     new_channel = "ANewChannel"
+    channel2team = "channeltoteam"
+    new_name = "edited"

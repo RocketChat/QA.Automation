@@ -13,13 +13,20 @@ data = data_env.get_data()
 class Test_Delete(BaseTest):
     @allure.severity(allure.severity_level.CRITICAL)
     def test_delete_user(self):
-        # self.loginPage = LoginPage(self.driver)
-        # self.loginPage.do_login(data.user_name, data.password)
+        self.loginPage = LoginPage(self.driver)
+        self.loginPage.do_login(data.user_name, data.password)
         self.delete = DeleteDataPage(self.driver)
         self.delete.Delete_user()
         self.delete.user_not_displayed()
 
     def test_delete_channel(self):
+        self.loginPage = LoginPage(self.driver)
+        self.loginPage.do_login(data.user_name, data.password)
         self.delete = DeleteDataPage(self.driver)
         self.delete.Delete_channel()
-        self.delete.channel_not_displayed()
+        assert self.delete.channel_not_displayed()
+
+    def test_delete_team(self):
+        self.delete = DeleteDataPage(self.driver)
+        self.delete.Delete_team()
+        assert self.delete.team_not_displayed()

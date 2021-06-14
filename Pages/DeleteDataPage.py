@@ -23,9 +23,12 @@ class DeleteDataPage(BasePage):
     HOME_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[1]")
 
     CHANNEL = (By.XPATH, "//*[contains(text(),'" + data.channel_name + "')]")
-    INFO_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/main/header/div/div[3]/button[5]")
-    DELETE_CHANNEL = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/main/div/aside/div/div/div[1]/div/div/div[2]/div/button[2]")
+    INFO_BUTTON = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/header/div/div[3]/button[1]')
+    DELETE = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/main/div/aside/div/div/div[1]/div/div/div[2]/div/button[2]")
     DELETE_CONFIRM_CHANNEL = (By.XPATH, "//*[@id='modal-root']/div/dialog/div/div[2]/div/button[2]")
+
+    TEAM_CREATED = (By.XPATH, "//*[contains(text(),'" + data.team_name + "')]")
+    REMOVE_BUTTON = (By.XPATH, '//*[contains(text(), "Remove")]')
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -44,7 +47,7 @@ class DeleteDataPage(BasePage):
     def Delete_channel(self):
         self.do_click(self.CHANNEL)
         self.do_click(self.INFO_BUTTON)
-        self.do_click(self.DELETE_CHANNEL)
+        self.do_click(self.DELETE)
         self.do_click(self.DELETE_CONFIRM_CHANNEL)
         self.do_click(self.HOME_BUTTON)
 
@@ -60,11 +63,25 @@ class DeleteDataPage(BasePage):
     def channel_not_displayed(self):
         try:
             if self.is_displayed(self.CHANNEL):
-                print("Channel is still displayed when it should not!")
-            exit()
+                raise Exception("Channel is still displayed when it should not!")
 
         except (NoSuchElementException, TimeoutException):
             print("Channel deleted successfully")
+
+    def Delete_team(self):
+        self.do_click(self.TEAM_CREATED)
+        self.do_click(self.INFO_BUTTON)
+        self.do_click(self.DELETE)
+        self.do_click(self.REMOVE_BUTTON)
+        self.do_click(self.HOME_BUTTON)
+
+    def team_not_displayed(self):
+        try:
+            if self.is_displayed(self.TEAM_CREATED):
+                raise Exception("Team is still displayed when it should not!")
+
+        except (NoSuchElementException, TimeoutException):
+            print("Team deleted successfully")
 
 
 

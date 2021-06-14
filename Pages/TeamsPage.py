@@ -6,7 +6,7 @@ data_env = Data()
 data = data_env.get_data()
 
 
-class AddTeamPage(BasePage):
+class TeamsPage(BasePage):
     """Add new team"""
     ADD_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[5]")
     TEAM_BUTTON = (By.XPATH, "//span[contains(text(),'Team')]")
@@ -40,6 +40,21 @@ class AddTeamPage(BasePage):
     OPTIONS_BUTTON = (By.XPATH, "//li[@class='rcx-option']//div[contains(text(), '" + data.channel_name + "')]/parent::div/parent::div/parent::li/parent::div//button[@class='rcx-box rcx-box--full rcx-box--animated rcx-button--tiny-square rcx-button--square rcx-button--ghost rcx-button rcx-css-ue04py']")
     REMOVE_FROM_TEAM = (By.XPATH, "//*[contains(text(), 'Remove from team')]")
     REMOVE_BUTTON = (By.XPATH, "//*[@id='modal-root']/div/dialog/div/div[2]/div/button[2]")
+
+    """Convert channel to team"""
+    CHANNEL_BUTTON = (By.XPATH, "//span[contains(text(),'Channel')]")
+    CHANNEL_NAME_INPUT = (By.XPATH, "//*[@id='modal-root']/div/dialog/div/div[1]/div/div[1]/span/label/input")
+    CHANNEL_CREATED = (By.XPATH, "//*[contains(text(),'" + data.channel2team + "')]")
+    INFO_BUTTON = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/header/div/div[3]/button[1]')
+    MORE_BUTTON = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/div/aside/div/div/div[1]/div/div/div[2]/div/button[3]')
+    CONVERT_TO_TEAM = (By.XPATH, '//*[contains(text(), "Convert to Team"]')
+    CONVERT_BUTTON = (By.XPATH, '//*[contains(text(), "Convert"]')
+
+    """Edit Team"""
+    EDIT_BUTTON = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/div/aside/div/div/div[1]/div/div/div[2]/div/button[1]')
+    NAME = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/div/aside/div/div/div[1]/form/div[2]/span/input')
+    SAVE_BUTTON = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/div/aside/div/div/div[1]/form/div[10]/span/div/div/button[2]')
+    TEAM_EDIT = (By.XPATH, "//*[contains(text(),'" + data.new_name + "')]")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -107,6 +122,40 @@ class AddTeamPage(BasePage):
         self.do_click(self.OPTIONS_BUTTON)
         self.do_click(self.REMOVE_FROM_TEAM)
         self.do_click(self.REMOVE_BUTTON)
+
+    def convert_channel_to_team(self, channel2team):
+        self.do_click(self.ADD_BUTTON)
+        self.do_click(self.CHANNEL_BUTTON)
+        self.do_click(self.CHANNEL_NAME_INPUT)
+        self.do_send_keys(self.CHANNEL_NAME_INPUT, channel2team)
+        time.sleep(3)
+        self.do_click(self.CREATE_BUTTON)
+        time.sleep(2)
+        self.do_click(self.CHANNEL_CREATED)
+        self.do_click(self.INFO_BUTTON)
+        self.do_click(self.MORE_BUTTON)
+        self.do_click(self.CONVERT_TO_TEAM)
+        self.do_click(self.CONVERT_BUTTON)
+
+    def edit_team(self, new_name):
+        self.do_click(self.TEAM_CREATED)
+        self.do_click(self.INFO_BUTTON)
+        self.do_click(self.EDIT_BUTTON)
+        self.do_click(self.NAME)
+        self.do_send_keys(self.NAME, new_name)
+        self.do_click(self.SAVE_BUTTON)
+
+    def is_change_visible(self):
+        return self.is_visible(self.TEAM_EDIT)
+
+
+
+
+
+
+
+
+
 
 
 
