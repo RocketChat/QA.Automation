@@ -10,9 +10,9 @@ data = data_env.get_data()
 class Test_Directory(BaseTest):
     @allure.severity(allure.severity_level.NORMAL)
     def test_search_channel(self):
-        self.loginPage = LoginPage(self.driver)
-        self.loginPage.do_login(data.user_name, data.password)
-        self.driver.maximize_window()
+        # self.loginPage = LoginPage(self.driver)
+        # self.loginPage.do_login(data.user_name, data.password)
+        # self.driver.maximize_window()
         self.search = DirectorySearchPage(self.driver)
         self.search.search_channel(data.channel_name)
         assert self.search.is_channel_name_visible()

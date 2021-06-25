@@ -28,6 +28,7 @@ class Test_Create(BaseTest):
 
     @allure.severity(allure.severity_level.CRITICAL)
     def test_add_new_channel(self):
+        self.driver.maximize_window()
         self.create = CreateDataPage(self.driver)
         self.create.go_to_Home()
         time.sleep(3)
@@ -43,7 +44,6 @@ class Test_Create(BaseTest):
 
     @allure.severity(allure.severity_level.CRITICAL)
     def test_create_discussion(self):
-        pytest.skip("test")
         self.create = CreateDataPage(self.driver)
         self.create.go_to_Home()
         time.sleep(3)
@@ -53,7 +53,6 @@ class Test_Create(BaseTest):
 
     @allure.severity(allure.severity_level.CRITICAL)
     def test_create_DM(self):
-        pytest.skip("test")
         self.create = CreateDataPage(self.driver)
         self.create.add_DM(data.new_user)
         assert self.create.is_DM_visible()

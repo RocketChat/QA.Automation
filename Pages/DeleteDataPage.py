@@ -20,14 +20,15 @@ class DeleteDataPage(BasePage):
     CONFIRM_DELETE = (By.XPATH, "//*[@id='modal-root']/div/dialog/div/div[2]/div/div/button[2]")
     OK_BUTTON = (By.XPATH, "//*[contains(text(),'Ok')]")
     CLOSE_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[5]/div/div/header/div/button")
-    HOME_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[1]")
+    HOME_BUTTON = (By.CSS_SELECTOR, ".rcx-box>button:nth-child(1)")
 
     CHANNEL = (By.XPATH, "//*[contains(text(),'" + data.channel_name + "')]")
     INFO_BUTTON = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/header/div/div[3]/button[1]')
     DELETE = (By.XPATH, "//*[@id='rocket-chat']/div[2]/div/main/div/aside/div/div/div[1]/div/div/div[2]/div/button[2]")
-    DELETE_CONFIRM_CHANNEL = (By.XPATH, "//*[@id='modal-root']/div/dialog/div/div[2]/div/button[2]")
+    DELETE_CONFIRM_CHANNEL = (By.XPATH, "//button[contains(text(), 'Yes, delete it!')]")
 
     TEAM_CREATED = (By.XPATH, "//*[contains(text(),'" + data.team_name + "')]")
+    CONTINUE = (By.XPATH, "//button[contains(text(), 'Continue')]")
     REMOVE_BUTTON = (By.XPATH, '//*[contains(text(), "Remove")]')
 
     def __init__(self, driver):
@@ -72,6 +73,7 @@ class DeleteDataPage(BasePage):
         self.do_click(self.TEAM_CREATED)
         self.do_click(self.INFO_BUTTON)
         self.do_click(self.DELETE)
+        self.do_click(self.CONTINUE)
         self.do_click(self.REMOVE_BUTTON)
         self.do_click(self.HOME_BUTTON)
 

@@ -8,7 +8,7 @@ data = data_env.get_data()
 
 
 class DirectorySearchPage(BasePage):
-    DIRECTORY_SEARCH = (By.XPATH, '//*[@id="rocket-chat"]/aside/div[1]/div/div/div[2]/button[3]')
+    DIRECTORY_SEARCH = (By.CSS_SELECTOR, ".rcx-box>button:nth-child(3)")
     SEARCH_INPUT = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/section/div[3]/form/label/input')
     CHANNEL_SECTION = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/section/div[2]/div/div/button[1]')
     USERS_SECTION = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/section/div[2]/div/div/button[2]')

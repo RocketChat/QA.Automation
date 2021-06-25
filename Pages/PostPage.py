@@ -11,7 +11,7 @@ class PostPage(BasePage):
     TextArea = (By.XPATH, "//*[@name='msg']")
     MESSAGE_SENT = (By.XPATH, "//*[text()[contains(.,'" + data.message + "')]]")
     PUBLIC_CHANNEL = (By.XPATH, "//*[contains(text(),'general')]")
-    SEARCH_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[2]")
+    SEARCH_BUTTON = (By.CSS_SELECTOR, ".rcx-box>button:nth-child(2)")
     SEARCH_INPUT = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/div/div[1]/div/label/input")
     EMOJI_PICKER = (By.XPATH, "//span[@class='rc-message-box__icon emoji-picker-icon js-emoji-picker']")
     EMOJI_INPUT = (By.XPATH, "//input[@name='name']")

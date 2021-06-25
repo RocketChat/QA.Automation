@@ -17,6 +17,7 @@ class Test_DMOptions(BaseTest):
         # self.loginPage.do_login(data.user_name, data.password)
         # self.driver.maximize_window()
         self.dmOptions = DMOptionsPage(self.driver)
+        self.dmOptions.double_click_Home()
         self.dmOptions.go_to_option()
         allure.attach(self.driver.get_screenshot_as_png(), name="OptionsDM", attachment_type=AttachmentType.PNG)
         label1 = self.dmOptions.get_button_label()
