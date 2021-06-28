@@ -9,9 +9,9 @@ data = data_env.get_data()
 
 class ViewModePage(BasePage):
 
-    VIEW_MODE_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[4]")
+    VIEW_MODE_BUTTON = (By.CSS_SELECTOR, ".rcx-box>button:nth-child(4)")
     EXTENDED_MODE = (By.CSS_SELECTOR, "body > div.rc-popover.rc-popover-- > div > div > div > ul:nth-child(2) > li:nth-child(1) > label > label")
-    HOME = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[1]")
+    HOME = (By.CSS_SELECTOR, ".rcx-box>button:nth-child(1)")
     MEDIUM_MODE = (By.CSS_SELECTOR, "body > div.rc-popover.rc-popover-- > div > div > div > ul:nth-child(2) > li:nth-child(2) > label > label")
     CONDENSED_MODE = (By.CSS_SELECTOR, "body > div.rc-popover.rc-popover-- > div > div > div > ul:nth-child(2) > li:nth-child(3) > label > label")
 

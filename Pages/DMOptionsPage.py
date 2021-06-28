@@ -16,10 +16,10 @@ class DMOptionsPage(BasePage):
     FAVORITE_ITEM = (By.CSS_SELECTOR,
                      "#rocket-chat > aside > div.rooms-list.sidebar--custom-colors > div > div > div > div.rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(2) > a > div > div.rc-box.rcx-box--full.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rc-box.rcx-box--full.rcx-sidebar-item__title")
     UNFAVORITE_BUTTON = (By.XPATH, "//*[contains(text(),'Unfavorite')]")
-    HOME_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[1]")
+    HOME_BUTTON = (By.CSS_SELECTOR, ".rcx-box>button:nth-child(1)")
     HIDE_OPTION = (By.XPATH, "//*[contains(text(),'Hide')]")
     HIDE_BUTTON = (By.XPATH, "//button[contains(text(),'Yes, hide it!')]")
-    SEARCH_BUTTON = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/button[2]")
+    SEARCH_BUTTON = (By.CSS_SELECTOR, ".rcx-box>button:nth-child(2)")
     SEARCH_INPUT = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/div/div[1]/div/label/input")
     TEXTAREA = (By.XPATH, "//textarea[@name='msg']")
 

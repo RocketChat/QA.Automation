@@ -13,8 +13,9 @@ data = data_env.get_data()
 class Test_Team(BaseTest):
     @allure.severity(allure.severity_level.CRITICAL)
     def test_add_new_team(self):
-        self.loginPage = LoginPage(self.driver)
-        self.loginPage.do_login(data.user_name, data.password)
+        # self.loginPage = LoginPage(self.driver)
+        # self.loginPage.do_login(data.user_name, data.password)
+        # self.driver.maximize_window()
         self.team = TeamsPage(self.driver)
         self.team.add_team(data.team_name, data.team_topic)
         allure.attach(self.driver.get_screenshot_as_png(), name="CreateTeam", attachment_type=AttachmentType.PNG)
