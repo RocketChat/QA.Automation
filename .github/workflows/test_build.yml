@@ -17,7 +17,7 @@ jobs:
 
     services:
       rocketchat:
-        image: rocketchat/rocket.chat.preview:3.14.0-rc.0
+        image: rocketchat/rocket.chat.preview:3.16.0-rc.0
         ports:
           - 3000:3000
         env:
