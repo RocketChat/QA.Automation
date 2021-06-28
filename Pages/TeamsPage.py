@@ -48,8 +48,8 @@ class TeamsPage(BasePage):
     CHANNEL_CREATED = (By.XPATH, "//*[contains(text(),'" + data.channel2team + "')]")
     INFO_BUTTON = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/header/div/div[3]/button[1]')
     MORE_BUTTON = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/div/aside/div/div/div[1]/div/div/div[2]/div/button[3]')
-    CONVERT_TO_TEAM = (By.XPATH, '//*[contains(text(), "Convert to Team"]')
-    CONVERT_BUTTON = (By.XPATH, '//*[contains(text(), "Convert"]')
+    CONVERT_TO_TEAM = (By.XPATH, '/html/body/div[4]/div/div/ol/li[2]')
+    CONVERT_BUTTON = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[2]/div/div/button[2]')
 
     """Edit Team"""
     EDIT_BUTTON = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/div/aside/div/div/div[1]/div/div/div[2]/div/button[1]')
@@ -137,6 +137,7 @@ class TeamsPage(BasePage):
         self.do_click(self.MORE_BUTTON)
         time.sleep(3)
         self.do_click(self.CONVERT_TO_TEAM)
+        time.sleep(2)
         self.do_click(self.CONVERT_BUTTON)
 
     def edit_team(self, new_name):

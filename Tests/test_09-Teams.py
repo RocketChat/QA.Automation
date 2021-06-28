@@ -49,7 +49,6 @@ class Test_Team(BaseTest):
 
     @allure.severity(allure.severity_level.NORMAL)
     def test_convert_channel_to_team(self):
-        pytest.skip("test")
         self.team = TeamsPage(self.driver)
         self.team.convert_channel_to_team(data.channel2team)
 
