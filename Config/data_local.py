@@ -26,3 +26,10 @@ class LocalData:
     new_nickname = "localuser"
     new_password = "Test@01"
     new_message = "Hello new user testing"
+
+    # Team Data
+    team_name = "Team01"
+    team_topic = "Testing Teams Feature"
+    new_channel = "ANewChannel"
+    channel2team = "channeltoteam"
+    new_name = "edited"
