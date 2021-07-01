@@ -31,7 +31,6 @@ class Test_Login(BaseTest):
     def test_login(self):
         self.loginPage = LoginPage(self.driver)
         self.loginPage.do_login(data.user_name, data.password)
-        self.driver.maximize_window()
         allure.attach(self.driver.get_screenshot_as_png(), name="Home", attachment_type=AttachmentType.PNG)
 
     @allure.severity(allure.severity_level.CRITICAL)

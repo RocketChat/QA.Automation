@@ -43,7 +43,8 @@ class CreateDataPage(BasePage):
 
     DISCUSSION_BUTTON = (By.CSS_SELECTOR, ".rc-popover__list>li:nth-child(4)")
     CHANNEL_INPUT = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[1]/div/fieldset/div[2]/span/div/div[1]/input')
-    DISCUSSION_INPUT = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[1]/div/fieldset/div[4]/span/label/input')
+    #DISCUSSION_INPUT = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[1]/div/fieldset/div[4]/span/label/input')
+    DISCUSSION_INPUT = (By.XPATH, '//input[@type="text"]')
     CHANNEL_USERS_INPUT = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[1]/div/fieldset/div[5]/span/div/div[1]/input')
     DISCUSSION_MESSAGE = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[1]/div/fieldset/div[6]/span/textarea')
     CREATE__DISCUSSION_BUTTON = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[2]/div/button')
@@ -82,6 +83,7 @@ class CreateDataPage(BasePage):
         self.do_click(self.BIO_INPUT)
         self.do_send_keys(self.BIO_INPUT, new_bio)
         self.do_enter(self.BIO_INPUT)
+        time.sleep(5)
 
         self.do_click(self.NICKNAME_INPUT)
         self.do_send_keys(self.NICKNAME_INPUT, new_nickname)
@@ -155,6 +157,7 @@ class CreateDataPage(BasePage):
         self.do_send_keys(self.CHANNEL_INPUT, channel_name)
         time.sleep(3)
         self.do_enter(self.CHANNEL_INPUT)
+        time.sleep(3)
 
         self.do_click(self.DISCUSSION_INPUT)
         self.do_send_keys(self.DISCUSSION_INPUT, discussion_name)

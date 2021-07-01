@@ -37,6 +37,7 @@ class DeleteDataPage(BasePage):
     def Delete_user(self):
         self.do_click(self.AVATAR)
         self.do_click(self.ADMINISTRATION_BUTTON)
+        time.sleep(3)
         self.do_click(self.USERS_BUTTON)
         self.do_click(self.USER_CREATED)
         self.do_click(self.MORE_BUTTON)
@@ -71,6 +72,7 @@ class DeleteDataPage(BasePage):
 
     def Delete_team(self):
         self.do_click(self.TEAM_CREATED)
+        time.sleep(5)
         self.do_click(self.INFO_BUTTON)
         self.do_click(self.DELETE)
         self.do_click(self.CONTINUE)

@@ -721,3 +721,436 @@ JavaScript error: , line 0: uncaught exception: undefined
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
 1620044942472	Marionette	INFO	Listening on port 57171
 1620044942507	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625043769183	geckodriver	INFO	Listening on 127.0.0.1:51117
+1625043770027	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileB3RDOP"
+1625043776170	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1625043780324	Marionette	INFO	Listening on port 51125
+1625043780430	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:3000/packages/launch-screen.js?hash=8b03c50c1ca0d26c3c261c661bcbc74065194977, line 118: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: resource:///modules/FaviconLoader.jsm, line 596: InvalidStateError: JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment
+JavaScript error: resource:///modules/FaviconLoader.jsm, line 596: InvalidStateError: JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment
+1625043792458	Marionette	INFO	Stopped listening on port 51125
+1625043822172	geckodriver	INFO	Listening on 127.0.0.1:51499
+1625043822186	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileSs342e"
+1625043822828	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1625043825889	Marionette	INFO	Listening on port 51504
+1625043826000	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:3000/packages/dynamic-import.js?hash=d57b2b097bffd5964fa91d1965d2659e151040c5 line 139 > eval, line 186: TypeError: reload is not a function
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+1625044052096	Marionette	INFO	Stopped listening on port 51504
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625044198305	geckodriver	INFO	Listening on 127.0.0.1:52541
+1625044198330	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileJVteZU"
+1625044199169	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1625044201964	Marionette	INFO	Listening on port 52546
+1625044202026	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+1625044222268	Marionette	INFO	Stopped listening on port 52546
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625044718305	geckodriver	INFO	Listening on 127.0.0.1:55369
+1625044719330	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofile3ITNc8"
+1625044729360	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofile3ITNc8/search.json.mozlz4", (void 0)))
+1625044732259	Marionette	INFO	Listening on port 55381
+1625044764559	geckodriver	INFO	Listening on 127.0.0.1:55681
+1625044764569	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofilerEjArH"
+1625044765296	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofilerEjArH/search.json.mozlz4", (void 0)))
+1625044767217	Marionette	INFO	Listening on port 55686
+1625044767268	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+1625044788383	Marionette	INFO	Stopped listening on port 55686
+1625044963069	geckodriver	INFO	Listening on 127.0.0.1:56970
+1625044963086	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileSjOz2g"
+1625044963673	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileSjOz2g/search.json.mozlz4", (void 0)))
+1625044965526	Marionette	INFO	Listening on port 56975
+1625044965572	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+1625045004577	Marionette	INFO	Stopped listening on port 56975
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+console.log: WebExtensions: reset-default-search: starting.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+1625045332930	geckodriver	INFO	Listening on 127.0.0.1:59349
+1625045332949	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileqAjKWz"
+1625045333437	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileqAjKWz/search.json.mozlz4", (void 0)))
+1625045335103	Marionette	INFO	Listening on port 59354
+1625045335138	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625045362935	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:237:19
+TimedPromise@chrome://marionette/content/sync.js:222:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:431:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+1625045572814	Marionette	INFO	Stopped listening on port 59354
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625045753433	geckodriver	INFO	Listening on 127.0.0.1:60340
+1625045753447	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileMQgyns"
+1625045753895	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileMQgyns/search.json.mozlz4", (void 0)))
+1625045755791	Marionette	INFO	Listening on port 60345
+1625045755818	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625045878285	geckodriver	INFO	Listening on 127.0.0.1:60926
+1625045878297	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofile1p7eGb"
+1625045878774	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofile1p7eGb/search.json.mozlz4", (void 0)))
+1625045880683	Marionette	INFO	Listening on port 60931
+1625045880780	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625045929949	Marionette	INFO	Stopped listening on port 60931
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 718: Error: Phase "Sqlite.jsm: wait until all connections are closed" is finished, it is too late to register completion condition "protections.sqlite#0: waiting for shutdown"
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625046038569	geckodriver	INFO	Listening on 127.0.0.1:62523
+1625046038591	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofile0xtbrO"
+1625046039135	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofile0xtbrO/search.json.mozlz4", (void 0)))
+1625046041114	Marionette	INFO	Listening on port 62528
+1625046041173	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625046112213	Marionette	INFO	Stopped listening on port 55381
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625046244600	geckodriver	INFO	Listening on 127.0.0.1:63656
+1625046244619	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileRYHq0B"
+1625046245141	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileRYHq0B/search.json.mozlz4", (void 0)))
+1625046247835	Marionette	INFO	Listening on port 63661
+1625046247925	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625046259794	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:237:19
+TimedPromise@chrome://marionette/content/sync.js:222:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:431:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+1625046292421	Marionette	INFO	Stopped listening on port 63661
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625046301554	geckodriver	INFO	Listening on 127.0.0.1:64029
+1625046301567	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofile1v46ml"
+1625046302273	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofile1v46ml/search.json.mozlz4", (void 0)))
+1625046304389	Marionette	INFO	Listening on port 64034
+1625046304463	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625046332963	Marionette	INFO	Stopped listening on port 64034
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625046661458	geckodriver	INFO	Listening on 127.0.0.1:64758
+1625046661479	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileii5w8k"
+1625046661938	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileii5w8k/search.json.mozlz4", (void 0)))
+1625046663924	Marionette	INFO	Listening on port 64763
+1625046663953	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625046713153	Marionette	INFO	Stopped listening on port 64763
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625046865818	geckodriver	INFO	Listening on 127.0.0.1:65267
+1625046865834	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileZWpKev"
+1625046866349	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileZWpKev/search.json.mozlz4", (void 0)))
+1625046868034	Marionette	INFO	Listening on port 65272
+1625046868102	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625046916470	Marionette	INFO	Stopped listening on port 65272
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625047026270	geckodriver	INFO	Listening on 127.0.0.1:49531
+1625047026286	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileIssJND"
+1625047026902	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileIssJND/search.json.mozlz4", (void 0)))
+1625047028697	Marionette	INFO	Listening on port 49537
+1625047028784	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:3000/packages/dynamic-import.js?hash=d57b2b097bffd5964fa91d1965d2659e151040c5 line 139 > eval, line 186: TypeError: reload is not a function
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+1625047110700	Marionette	INFO	Stopped listening on port 49537
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625047197846	geckodriver	INFO	Listening on 127.0.0.1:50303
+1625047197858	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofilemockcH"
+1625047198433	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofilemockcH/search.json.mozlz4", (void 0)))
+1625047200152	Marionette	INFO	Listening on port 50308
+1625047200260	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625047251321	geckodriver	INFO	Listening on 127.0.0.1:50639
+1625047251333	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileHOOVE1"
+1625047251933	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileHOOVE1/search.json.mozlz4", (void 0)))
+1625047253607	Marionette	INFO	Listening on port 50644
+1625047253707	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625047266479	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:237:19
+TimedPromise@chrome://marionette/content/sync.js:222:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:431:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+1625047306896	Marionette	INFO	Stopped listening on port 50644
+1625047322630	geckodriver	INFO	Listening on 127.0.0.1:51016
+1625047322650	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileokxnKR"
+1625047323293	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileokxnKR/search.json.mozlz4", (void 0)))
+1625047325213	Marionette	INFO	Listening on port 51021
+1625047325246	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:3000/packages/dynamic-import.js?hash=d57b2b097bffd5964fa91d1965d2659e151040c5 line 139 > eval, line 186: TypeError: reload is not a function
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+1625047402897	Marionette	INFO	Stopped listening on port 51021
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625047546984	geckodriver	INFO	Listening on 127.0.0.1:51821
+1625047546995	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofiletREAOm"
+1625047547449	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofiletREAOm/search.json.mozlz4", (void 0)))
+1625047549322	Marionette	INFO	Listening on port 51826
+1625047549379	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625047778725	geckodriver	INFO	Listening on 127.0.0.1:52572
+1625047778745	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileJIBm33"
+1625047779329	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileJIBm33/search.json.mozlz4", (void 0)))
+1625047780879	Marionette	INFO	Listening on port 52577
+1625047780920	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625047810225	Marionette	INFO	Stopped listening on port 52577
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625047838069	geckodriver	INFO	Listening on 127.0.0.1:53066
+1625047838080	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileObhChO"
+1625047838651	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileObhChO/search.json.mozlz4", (void 0)))
+1625047840360	Marionette	INFO	Listening on port 53071
+1625047840460	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:3000/packages/dynamic-import.js?hash=d57b2b097bffd5964fa91d1965d2659e151040c5 line 139 > eval, line 186: TypeError: reload is not a function
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+1625047936814	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:237:19
+TimedPromise@chrome://marionette/content/sync.js:222:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:431:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+JavaScript error: , line 0: uncaught exception: undefined
+JavaScript error: , line 0: uncaught exception: undefined
+JavaScript error: , line 0: uncaught exception: undefined
+JavaScript error: http://localhost:3000/packages/dynamic-import.js?hash=d57b2b097bffd5964fa91d1965d2659e151040c5 line 139 > eval, line 186: TypeError: reload is not a function
+1625048215179	Marionette	INFO	Stopped listening on port 53071
+1625048376324	geckodriver	INFO	Listening on 127.0.0.1:54376
+1625048376344	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileKrrRMY"
+1625048377018	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileKrrRMY/search.json.mozlz4", (void 0)))
+1625048378830	Marionette	INFO	Listening on port 54381
+1625048378917	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625048391313	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:237:19
+TimedPromise@chrome://marionette/content/sync.js:222:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:431:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+JavaScript error: http://localhost:3000/app/app.js?hash=ec1e1a224a0f781a1b3c927768e3f8db76d4ca5c, line 59112: TypeError: room is undefined
+JavaScript error: http://localhost:3000/app/app.js?hash=ec1e1a224a0f781a1b3c927768e3f8db76d4ca5c, line 59112: TypeError: room is undefined
+1625048416306	Marionette	INFO	Stopped listening on port 54381
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625049372994	geckodriver	INFO	Listening on 127.0.0.1:58468
+1625049373011	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileQXzt4S"
+1625049373501	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileQXzt4S/search.json.mozlz4", (void 0)))
+1625049375345	Marionette	INFO	Listening on port 58473
+1625049375390	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:3000/packages/dynamic-import.js?hash=d57b2b097bffd5964fa91d1965d2659e151040c5 line 139 > eval, line 186: TypeError: reload is not a function
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=7d630ced4f387791bba22c6c79ce12718a1baa4a, line 24726: TypeError: label[0] is undefined
+JavaScript error: , line 0: uncaught exception: undefined
+JavaScript error: , line 0: uncaught exception: undefined
+JavaScript error: , line 0: uncaught exception: undefined
+JavaScript error: http://localhost:3000/packages/dynamic-import.js?hash=d57b2b097bffd5964fa91d1965d2659e151040c5 line 139 > eval, line 186: TypeError: reload is not a function
+JavaScript error: http://localhost:3000/app/app.js?hash=ec1e1a224a0f781a1b3c927768e3f8db76d4ca5c, line 59112: TypeError: room is undefined
+1625049763881	Marionette	INFO	Stopped listening on port 58473
+console.warn: services.settings: main/language-dictionaries sync interrupted by shutdown
+console.warn: services.settings: main/public-suffix-list sync interrupted by shutdown
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625050105827	geckodriver	INFO	Listening on 127.0.0.1:63974
+1625050105839	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileZ0b4Ka"
+1625050106389	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileZ0b4Ka/search.json.mozlz4", (void 0)))
+1625050108596	Marionette	INFO	Listening on port 63979
+1625050108651	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:3000/packages/dynamic-import.js?hash=d57b2b097bffd5964fa91d1965d2659e151040c5 line 139 > eval, line 186: TypeError: reload is not a function
+1625050173350	Marionette	INFO	Stopped listening on port 63979
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625050298215	geckodriver	INFO	Listening on 127.0.0.1:65473
+1625050298233	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofilexpZ6TW"
+1625050298797	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofilexpZ6TW/search.json.mozlz4", (void 0)))
+1625050300577	Marionette	INFO	Listening on port 65479
+1625050300613	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625050316283	Marionette	INFO	Stopped listening on port 65479
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625138892911	geckodriver	INFO	Listening on 127.0.0.1:56876
+1625138893769	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileFiib8o"
+1625138899578	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/4h/49ytp1p10msfq4lmgf9vjt1r0000gn/T/rust_mozprofileFiib8o/search.json.mozlz4", (void 0)))
+1625138902291	Marionette	INFO	Listening on port 56884
+1625138902426	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:3000/packages/dynamic-import.js?hash=1c0a446c22d36cc99cfa3f4e158d9be738aa3b8f line 139 > eval, line 186: TypeError: reload is not a function
+JavaScript error: http://localhost:3000/packages/modules.js?hash=92a248a09abf33a2f81dc4b19ac408041f01fa81, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=92a248a09abf33a2f81dc4b19ac408041f01fa81, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=92a248a09abf33a2f81dc4b19ac408041f01fa81, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=92a248a09abf33a2f81dc4b19ac408041f01fa81, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=92a248a09abf33a2f81dc4b19ac408041f01fa81, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=92a248a09abf33a2f81dc4b19ac408041f01fa81, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=92a248a09abf33a2f81dc4b19ac408041f01fa81, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=92a248a09abf33a2f81dc4b19ac408041f01fa81, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=92a248a09abf33a2f81dc4b19ac408041f01fa81, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=92a248a09abf33a2f81dc4b19ac408041f01fa81, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=92a248a09abf33a2f81dc4b19ac408041f01fa81, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=92a248a09abf33a2f81dc4b19ac408041f01fa81, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=92a248a09abf33a2f81dc4b19ac408041f01fa81, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=92a248a09abf33a2f81dc4b19ac408041f01fa81, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=92a248a09abf33a2f81dc4b19ac408041f01fa81, line 24726: TypeError: label[0] is undefined
+JavaScript error: http://localhost:3000/packages/modules.js?hash=92a248a09abf33a2f81dc4b19ac408041f01fa81, line 24726: TypeError: label[0] is undefined
+JavaScript error: , line 0: uncaught exception: undefined
+JavaScript error: , line 0: uncaught exception: undefined
+JavaScript error: , line 0: uncaught exception: undefined
+JavaScript error: http://localhost:3000/packages/dynamic-import.js?hash=1c0a446c22d36cc99cfa3f4e158d9be738aa3b8f line 139 > eval, line 186: TypeError: reload is not a function
+JavaScript error: http://localhost:3000/app/app.js?hash=8ba1f16f3a07794c6c1d41e1d040274d0b2e4589, line 58967: TypeError: room is undefined
+JavaScript error: http://localhost:3000/app/app.js?hash=8ba1f16f3a07794c6c1d41e1d040274d0b2e4589, line 58967: TypeError: room is undefined
+JavaScript error: http://localhost:3000/app/app.js?hash=8ba1f16f3a07794c6c1d41e1d040274d0b2e4589, line 58967: TypeError: room is undefined
+1625139322749	Marionette	INFO	Stopped listening on port 56884
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

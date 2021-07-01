@@ -48,7 +48,7 @@ class TeamsPage(BasePage):
     CHANNEL_CREATED = (By.XPATH, "//*[contains(text(),'" + data.channel2team + "')]")
     INFO_BUTTON = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/header/div/div[3]/button[1]')
     MORE_BUTTON = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/div/aside/div/div/div[1]/div/div/div[2]/div/button[3]')
-    CONVERT_TO_TEAM = (By.XPATH, '/html/body/div[4]/div/div/ol/li[2]')
+    CONVERT_TO_TEAM = (By.XPATH, '//li[@class="rcx-option"][@value="convert"]')
     CONVERT_BUTTON = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[2]/div/div/button[2]')
 
     """Edit Team"""
@@ -74,6 +74,7 @@ class TeamsPage(BasePage):
 
     def add_members_to_team(self, new_user):
         self.do_click(self.TEAM_CREATED)
+        time.sleep(5)
         self.do_click(self.MEMBERS)
         self.do_click(self.ADD_USERS)
         self.do_click(self.INPUT_FIELD)
@@ -87,6 +88,7 @@ class TeamsPage(BasePage):
 
     def add_existing_channel_to_team(self, channel_name):
         self.do_click(self.TEAM_CREATED)
+        time.sleep(5)
         self.do_click(self.CHANNELS)
         self.do_click(self.ADD_EXISTING)
         self.do_click(self.CHANNEL_INPUT)
@@ -103,7 +105,7 @@ class TeamsPage(BasePage):
 
     def add_new_channel_to_team(self, new_channel):
         self.do_click(self.TEAM_CREATED)
-        time.sleep(3)
+        time.sleep(5)
         self.do_click(self.CHANNELS)
         self.do_click(self.CREATE_NEW)
         self.do_click(self.NAME_INPUT)
@@ -116,7 +118,7 @@ class TeamsPage(BasePage):
 
     def remove_channel_from_team(self):
         self.do_click(self.TEAM_CREATED)
-        time.sleep(3)
+        time.sleep(5)
         self.do_click(self.CHANNELS)
         self.mouse_over(self.CHANNEL)
         time.sleep(2)
@@ -126,6 +128,7 @@ class TeamsPage(BasePage):
 
     def convert_channel_to_team(self, channel2team):
         self.do_click(self.ADD_BUTTON)
+        time.sleep(5)
         self.do_click(self.CHANNEL_BUTTON)
         self.do_click(self.CHANNEL_NAME_INPUT)
         self.do_send_keys(self.CHANNEL_NAME_INPUT, channel2team)
@@ -133,15 +136,17 @@ class TeamsPage(BasePage):
         self.do_click(self.CREATE_BUTTON)
         time.sleep(2)
         self.do_click(self.CHANNEL_CREATED)
+        time.sleep(5)
         self.do_click(self.INFO_BUTTON)
         self.do_click(self.MORE_BUTTON)
-        time.sleep(3)
+        time.sleep(10)
         self.do_click(self.CONVERT_TO_TEAM)
         time.sleep(2)
         self.do_click(self.CONVERT_BUTTON)
 
     def edit_team(self, new_name):
         self.do_click(self.TEAM_CREATED)
+        time.sleep(5)
         self.do_click(self.INFO_BUTTON)
         self.do_click(self.EDIT_BUTTON)
         self.do_click(self.NAME)
