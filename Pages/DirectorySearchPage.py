@@ -27,6 +27,7 @@ class DirectorySearchPage(BasePage):
         self.do_click(self.SEARCH_INPUT)
         self.do_send_keys(self.SEARCH_INPUT, channelName)
         time.sleep(3)
+        self.save_screenshot("/Screenshots/DirectorySearchChannel.png")
         self.do_click(self.RESULT)
         time.sleep(3)
 
@@ -39,6 +40,7 @@ class DirectorySearchPage(BasePage):
         self.do_click(self.SEARCH_INPUT)
         self.do_send_keys(self.SEARCH_INPUT, user)
         time.sleep(3)
+        self.save_screenshot("/Screenshots/DirectorySearchUser.png")
         self.do_click(self.RESULT)
         time.sleep(3)
 
@@ -51,6 +53,7 @@ class DirectorySearchPage(BasePage):
         self.do_click(self.SEARCH_INPUT)
         self.do_send_keys(self.SEARCH_INPUT, team)
         time.sleep(3)
+        self.save_screenshot("/Screenshots/DirectorySearchTeam.png")
         self.do_click(self.RESULT)
         time.sleep(3)
 

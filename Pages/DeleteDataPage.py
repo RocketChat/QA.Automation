@@ -41,6 +41,7 @@ class DeleteDataPage(BasePage):
         self.do_click(self.USERS_BUTTON)
         self.do_click(self.USER_CREATED)
         self.do_click(self.MORE_BUTTON)
+        self.save_screenshot("/Screenshots/DeleteUser.png")
         self.do_click(self.DELETE_BUTTON)
         self.do_click(self.CONFIRM_DELETE)
         self.do_click(self.OK_BUTTON)
@@ -49,6 +50,7 @@ class DeleteDataPage(BasePage):
     def Delete_channel(self):
         self.do_click(self.CHANNEL)
         self.do_click(self.INFO_BUTTON)
+        self.save_screenshot("/Screenshots/DeleteChannel.png")
         self.do_click(self.DELETE)
         self.do_click(self.DELETE_CONFIRM_CHANNEL)
         self.do_click(self.HOME_BUTTON)
@@ -74,6 +76,7 @@ class DeleteDataPage(BasePage):
         self.do_click(self.TEAM_CREATED)
         time.sleep(5)
         self.do_click(self.INFO_BUTTON)
+        self.save_screenshot("/Screenshots/DeleteTeam.png")
         self.do_click(self.DELETE)
         self.do_click(self.CONTINUE)
         self.do_click(self.REMOVE_BUTTON)

@@ -32,6 +32,7 @@ class SearchPage(BasePage):
         self.do_click(self.SEARCH_INPUT)
         self.do_send_keys(self.SEARCH_INPUT, user)
         time.sleep(5)
+        self.save_screenshot("/Screenshots/SearchUser.png")
         self.do_enter(self.SEARCH_INPUT)
         time.sleep(5)
 
@@ -40,6 +41,7 @@ class SearchPage(BasePage):
         self.do_click(self.SEARCH_INPUT)
         self.do_send_keys(self.SEARCH_INPUT, channelName)
         time.sleep(5)
+        self.save_screenshot("/Screenshots/SearchPrivateChannel.png")
         self.do_enter(self.SEARCH_INPUT)
         time.sleep(5)
 
@@ -48,6 +50,7 @@ class SearchPage(BasePage):
         self.do_click(self.SEARCH_INPUT)
         self.do_send_keys(self.SEARCH_INPUT, publicChannel)
         time.sleep(5)
+        self.save_screenshot("/Screenshots/SearchPublicChannel.png")
         self.do_enter(self.SEARCH_INPUT)
         time.sleep(5)
 

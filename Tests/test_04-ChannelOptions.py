@@ -21,11 +21,13 @@ class Test_ChannelOptions(BaseTest):
         self.channelOptions.go_to_option()
         allure.attach(self.driver.get_screenshot_as_png(), name="Options", attachment_type=AttachmentType.PNG)
         self.channelOptions.perform_favorite()
+        self.channelOptions.save_screenshot("/Screenshots/PerformFavorite.png")
         assert self.channelOptions.favorite_item_label() == value
         self.channelOptions.go_to_Home()
         time.sleep(2)
         self.channelOptions.go_to_option()
         self.channelOptions.perform_unfavorite()
+        self.channelOptions.save_screenshot("/Screenshots/PerformFavorite.png")
         time.sleep(3)
         self.channelOptions.go_to_Home()
         self.channelOptions.go_to_option()
