@@ -57,6 +57,14 @@ class TeamsPage(BasePage):
     SAVE_BUTTON = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/div/aside/div/div/div[1]/form/div[10]/span/div/div/button[2]')
     TEAM_EDIT = (By.XPATH, "//*[contains(text(),'" + data.new_name + "')]")
 
+    """Move to Team"""
+    CHANNEL_CREATED2 = (By.XPATH, "//*[contains(text(),'" + data.channel + "')]")
+    MOVE_TO_TEAM = (By.XPATH, '//li[@class="rcx-option"][@value="move"]')
+    CONTINUE_BUTTON = (By.XPATH, "//button[contains(text(), 'Continue')]")
+    YES_BUTTON = (By.XPATH, "//button[contains(text(), 'Yes')]")
+    SEARCH_CHANNEL = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[1]/div/div[5]/div/div[1]/input')
+    MOVED_CHANNEL = (By.XPATH, '//li[@class="rcx-option"]//div[contains(text(),"' + data.channel + '")]')
+
     def __init__(self, driver):
         super().__init__(driver)
 
@@ -162,6 +170,41 @@ class TeamsPage(BasePage):
 
     def is_change_visible(self):
         return self.is_visible(self.TEAM_EDIT)
+
+    def move_channel_to_team(self, channel, team_name):
+        self.do_click(self.ADD_BUTTON)
+        time.sleep(5)
+        self.do_click(self.CHANNEL_BUTTON)
+        self.do_click(self.CHANNEL_NAME_INPUT)
+        self.do_send_keys(self.CHANNEL_NAME_INPUT, channel)
+        time.sleep(3)
+        self.do_click(self.CREATE_BUTTON)
+        time.sleep(2)
+        self.do_click(self.CHANNEL_CREATED2)
+        time.sleep(5)
+        self.do_click(self.INFO_BUTTON)
+        self.do_click(self.MORE_BUTTON)
+        time.sleep(10)
+        self.save_screenshot("/Screenshots/MovetToTeam.png")
+        self.do_click(self.MOVE_TO_TEAM)
+        time.sleep(2)
+        self.do_click(self.SEARCH_CHANNEL)
+        self.do_send_keys(self.SEARCH_CHANNEL, team_name)
+        time.sleep(2)
+        self.do_enter(self.SEARCH_CHANNEL)
+        time.sleep(2)
+        self.do_click(self.CONTINUE_BUTTON)
+        time.sleep(2)
+        self.do_click(self.YES_BUTTON)
+        time.sleep(5)
+        self.save_screenshot("/Screenshots/ChannelMovedToTeam.png")
+        self.do_click(self.TEAM_CREATED)
+        time.sleep(5)
+        self.do_click(self.CHANNELS)
+
+    def is_channel_moved(self):
+        return self.is_visible(self.MOVED_CHANNEL)
+
 
 
 

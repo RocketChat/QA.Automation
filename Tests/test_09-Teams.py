@@ -13,9 +13,9 @@ data = data_env.get_data()
 class Test_Team(BaseTest):
     @allure.severity(allure.severity_level.CRITICAL)
     def test_add_new_team(self):
-        # self.loginPage = LoginPage(self.driver)
-        # self.loginPage.do_login(data.user_name, data.password)
-        # self.driver.maximize_window()
+        self.loginPage = LoginPage(self.driver)
+        self.loginPage.do_login(data.user_name, data.password)
+        self.driver.maximize_window()
         self.team = TeamsPage(self.driver)
         self.team.add_team(data.team_name, data.team_topic)
         allure.attach(self.driver.get_screenshot_as_png(), name="CreateTeam", attachment_type=AttachmentType.PNG)
@@ -54,6 +54,14 @@ class Test_Team(BaseTest):
     def test_convert_channel_to_team(self):
         self.team = TeamsPage(self.driver)
         self.team.convert_channel_to_team(data.channel2team)
+        time.sleep(3)
+        self.team.go_to_Home()
+
+    @allure.severity(allure.severity_level.NORMAL)
+    def test_move_to_team(self):
+        self.team = TeamsPage(self.driver)
+        self.team.move_channel_to_team(data.channel, data.team_name)
+        assert self.team.is_channel_moved()
         time.sleep(3)
         self.team.go_to_Home()
 
