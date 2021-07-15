@@ -42,6 +42,7 @@ class MessageActionsPage(BasePage):
         self.do_send_keys(self.TEXTAREA, quote)
         self.do_enter(self.TEXTAREA)
         time.sleep(3)
+        self.save_screenshot("/Screenshots/Quote.png")
 
     def click_user(self):
         self.do_click(self.USER)
@@ -53,6 +54,7 @@ class MessageActionsPage(BasePage):
         time.sleep(3)
         self.do_click(self.EMOJI)
         time.sleep(3)
+        self.save_screenshot("/Screenshots/Emoji.png")
 
     def reply_in_thread(self, reply):
         self.do_click(self.ACTION_THREE)
@@ -60,6 +62,7 @@ class MessageActionsPage(BasePage):
         self.do_send_keys(self.THREAD_INPUT, reply)
         self.do_enter(self.THREAD_INPUT)
         time.sleep(3)
+        self.save_screenshot("/Screenshots/Thread.png")
         self.do_click(self.CLOSE_BUTTON)
         time.sleep(3)
 

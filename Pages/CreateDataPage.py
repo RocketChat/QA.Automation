@@ -43,7 +43,8 @@ class CreateDataPage(BasePage):
 
     DISCUSSION_BUTTON = (By.CSS_SELECTOR, ".rc-popover__list>li:nth-child(4)")
     CHANNEL_INPUT = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[1]/div/fieldset/div[2]/span/div/div[1]/input')
-    DISCUSSION_INPUT = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[1]/div/fieldset/div[4]/span/label/input')
+    #DISCUSSION_INPUT = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[1]/div/fieldset/div[4]/span/label/input')
+    DISCUSSION_INPUT = (By.XPATH, '//input[@type="text"]')
     CHANNEL_USERS_INPUT = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[1]/div/fieldset/div[5]/span/div/div[1]/input')
     DISCUSSION_MESSAGE = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[1]/div/fieldset/div[6]/span/textarea')
     CREATE__DISCUSSION_BUTTON = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[2]/div/button')
@@ -62,6 +63,7 @@ class CreateDataPage(BasePage):
         self.do_click(self.ADMINISTRATION_BUTTON)
         self.do_click(self.USERS_BUTTON)
         self.do_click(self.NEW_BUTTON)
+        self.save_screenshot("/Screenshots/NewUser.png")
 
         self.do_click(self.NAME_INPUT)
         self.do_send_keys(self.NAME_INPUT, new_user)
@@ -82,6 +84,7 @@ class CreateDataPage(BasePage):
         self.do_click(self.BIO_INPUT)
         self.do_send_keys(self.BIO_INPUT, new_bio)
         self.do_enter(self.BIO_INPUT)
+        time.sleep(5)
 
         self.do_click(self.NICKNAME_INPUT)
         self.do_send_keys(self.NICKNAME_INPUT, new_nickname)
@@ -119,6 +122,7 @@ class CreateDataPage(BasePage):
         #time.sleep(3)
         self.do_click(self.ADD_BUTTON)
         self.do_click(self.CHANNEL_BUTTON)
+        self.save_screenshot("/Screenshots/ChannelModal.png")
         self.do_click(self.CHANNEL_NAME_INPUT)
         self.do_send_keys(self.CHANNEL_NAME_INPUT, channel_name)
         self.do_enter(self.CHANNEL_NAME_INPUT)
@@ -139,6 +143,7 @@ class CreateDataPage(BasePage):
         time.sleep(4)
         self.do_click(self.MEMBER_BUTTON)
         self.do_click(self.ADD_USERS)
+        self.save_screenshot("/Screenshots/UserModal.png")
         self.do_click(self.INPUT_FIELD)
         self.do_send_keys(self.INPUT_FIELD, new_user)
         self.do_enter(self.INPUT_FIELD)
@@ -151,10 +156,12 @@ class CreateDataPage(BasePage):
         time.sleep(5)
         self.do_click(self.ADD_BUTTON)
         self.do_click(self.DISCUSSION_BUTTON)
+        self.save_screenshot("/Screenshots/DiscussionModal.png")
         self.do_click(self.CHANNEL_INPUT)
         self.do_send_keys(self.CHANNEL_INPUT, channel_name)
         time.sleep(3)
         self.do_enter(self.CHANNEL_INPUT)
+        time.sleep(3)
 
         self.do_click(self.DISCUSSION_INPUT)
         self.do_send_keys(self.DISCUSSION_INPUT, discussion_name)
@@ -177,6 +184,7 @@ class CreateDataPage(BasePage):
     def add_DM(self, new_user):
         self.do_click(self.ADD_BUTTON)
         self.do_click(self.DMBUTTON)
+        self.save_screenshot("/Screenshots/DMModal.png")
         self.do_click(self.DM_USERS_INPUT)
         self.do_send_keys(self.DM_USERS_INPUT, new_user)
         time.sleep(3)

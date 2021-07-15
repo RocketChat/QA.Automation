@@ -39,6 +39,7 @@ class LoginPage(BasePage):
     def do_login(self, username, password):
         self.do_send_keys(self.EMAIL, username)
         self.do_send_keys(self.PASSWORD, password)
+        self.save_screenshot("/Screenshots/Login.png")
         self.do_click(self.LOGIN_BUTTON)
         time.sleep(3)
         return SearchPage(self.driver)

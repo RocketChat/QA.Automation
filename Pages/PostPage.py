@@ -27,12 +27,14 @@ class PostPage(BasePage):
         self.do_click(self.TextArea)
         self.do_send_keys(self.TextArea, message)
         self.do_enter(self.TextArea)
+        self.save_screenshot("/Screenshots/MessagePrivate.png")
 
     def post_message_in_public_channel(self, message):
         self.do_click(self.PUBLIC_CHANNEL)
         self.do_click(self.TextArea)
         self.do_send_keys(self.TextArea, message)
         self.do_enter(self.TextArea)
+        self.save_screenshot("/Screenshots/MessagePublic.png")
 
     def post_emoji(self, emoji):
         self.do_click(self.USER)
@@ -43,6 +45,7 @@ class PostPage(BasePage):
         time.sleep(3)
         self.do_click(self.EMOJI)
         self.do_enter(self.TextArea)
+        self.save_screenshot("/Screenshots/MessageEmoji.png")
 
     def message_sent_is_visible(self):
         return self.is_visible(self.MESSAGE_SENT)

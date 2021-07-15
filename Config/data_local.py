@@ -28,8 +28,9 @@ class LocalData:
     new_message = "Hello new user testing"
 
     # Team Data
-    team_name = "Team01"
+    team_name = "Team1"
     team_topic = "Testing Teams Feature"
     new_channel = "ANewChannel"
     channel2team = "channeltoteam"
     new_name = "edited"
+    channel = "channel2"

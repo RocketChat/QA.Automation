@@ -48,7 +48,7 @@ class TeamsPage(BasePage):
     CHANNEL_CREATED = (By.XPATH, "//*[contains(text(),'" + data.channel2team + "')]")
     INFO_BUTTON = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/header/div/div[3]/button[1]')
     MORE_BUTTON = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/div/aside/div/div/div[1]/div/div/div[2]/div/button[3]')
-    CONVERT_TO_TEAM = (By.XPATH, '/html/body/div[4]/div/div/ol/li[2]')
+    CONVERT_TO_TEAM = (By.XPATH, '//li[@class="rcx-option"][@value="convert"]')
     CONVERT_BUTTON = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[2]/div/div/button[2]')
 
     """Edit Team"""
@@ -57,12 +57,21 @@ class TeamsPage(BasePage):
     SAVE_BUTTON = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/div/aside/div/div/div[1]/form/div[10]/span/div/div/button[2]')
     TEAM_EDIT = (By.XPATH, "//*[contains(text(),'" + data.new_name + "')]")
 
+    """Move to Team"""
+    CHANNEL_CREATED2 = (By.XPATH, "//*[contains(text(),'" + data.channel + "')]")
+    MOVE_TO_TEAM = (By.XPATH, '//li[@class="rcx-option"][@value="move"]')
+    CONTINUE_BUTTON = (By.XPATH, "//button[contains(text(), 'Continue')]")
+    YES_BUTTON = (By.XPATH, "//button[contains(text(), 'Yes')]")
+    SEARCH_CHANNEL = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[1]/div/div[5]/div/div[1]/input')
+    MOVED_CHANNEL = (By.XPATH, '//li[@class="rcx-option"]//div[contains(text(),"' + data.channel + '")]')
+
     def __init__(self, driver):
         super().__init__(driver)
 
     def add_team(self, team_name, team_topic):
         self.do_click(self.ADD_BUTTON)
         self.do_click(self.TEAM_BUTTON)
+        self.save_screenshot("/Screenshots/TeamModal.png")
         self.do_click(self.TEAM_NAME)
         self.do_send_keys(self.TEAM_NAME, team_name)
         self.do_click(self.TEAM_TOPIC)
@@ -74,8 +83,10 @@ class TeamsPage(BasePage):
 
     def add_members_to_team(self, new_user):
         self.do_click(self.TEAM_CREATED)
+        time.sleep(5)
         self.do_click(self.MEMBERS)
         self.do_click(self.ADD_USERS)
+        self.save_screenshot("/Screenshots/UsersToTeam.png")
         self.do_click(self.INPUT_FIELD)
         self.do_send_keys(self.INPUT_FIELD, new_user)
         time.sleep(3)
@@ -87,7 +98,9 @@ class TeamsPage(BasePage):
 
     def add_existing_channel_to_team(self, channel_name):
         self.do_click(self.TEAM_CREATED)
+        time.sleep(5)
         self.do_click(self.CHANNELS)
+        self.save_screenshot("/Screenshots/AddChannelsToTeam.png")
         self.do_click(self.ADD_EXISTING)
         self.do_click(self.CHANNEL_INPUT)
         self.do_send_keys(self.CHANNEL_INPUT, channel_name)
@@ -103,9 +116,10 @@ class TeamsPage(BasePage):
 
     def add_new_channel_to_team(self, new_channel):
         self.do_click(self.TEAM_CREATED)
-        time.sleep(3)
+        time.sleep(5)
         self.do_click(self.CHANNELS)
         self.do_click(self.CREATE_NEW)
+        self.save_screenshot("/Screenshots/NewChannelToTeam.png")
         self.do_click(self.NAME_INPUT)
         self.do_send_keys(self.NAME_INPUT, new_channel)
         time.sleep(3)
@@ -116,16 +130,18 @@ class TeamsPage(BasePage):
 
     def remove_channel_from_team(self):
         self.do_click(self.TEAM_CREATED)
-        time.sleep(3)
+        time.sleep(5)
         self.do_click(self.CHANNELS)
         self.mouse_over(self.CHANNEL)
         time.sleep(2)
         self.do_click(self.OPTIONS_BUTTON)
+        self.save_screenshot("/Screenshots/RemoveChannel.png")
         self.do_click(self.REMOVE_FROM_TEAM)
         self.do_click(self.REMOVE_BUTTON)
 
     def convert_channel_to_team(self, channel2team):
         self.do_click(self.ADD_BUTTON)
+        time.sleep(5)
         self.do_click(self.CHANNEL_BUTTON)
         self.do_click(self.CHANNEL_NAME_INPUT)
         self.do_send_keys(self.CHANNEL_NAME_INPUT, channel2team)
@@ -133,23 +149,62 @@ class TeamsPage(BasePage):
         self.do_click(self.CREATE_BUTTON)
         time.sleep(2)
         self.do_click(self.CHANNEL_CREATED)
+        time.sleep(5)
         self.do_click(self.INFO_BUTTON)
         self.do_click(self.MORE_BUTTON)
-        time.sleep(3)
+        time.sleep(10)
+        self.save_screenshot("/Screenshots/ConvertToTeam.png")
         self.do_click(self.CONVERT_TO_TEAM)
         time.sleep(2)
         self.do_click(self.CONVERT_BUTTON)
 
     def edit_team(self, new_name):
         self.do_click(self.TEAM_CREATED)
+        time.sleep(5)
         self.do_click(self.INFO_BUTTON)
         self.do_click(self.EDIT_BUTTON)
+        self.save_screenshot("/Screenshots/EditTeamModal.png")
         self.do_click(self.NAME)
         self.do_send_keys(self.NAME, new_name)
         self.do_click(self.SAVE_BUTTON)
 
     def is_change_visible(self):
         return self.is_visible(self.TEAM_EDIT)
+
+    def move_channel_to_team(self, channel, team_name):
+        self.do_click(self.ADD_BUTTON)
+        time.sleep(5)
+        self.do_click(self.CHANNEL_BUTTON)
+        self.do_click(self.CHANNEL_NAME_INPUT)
+        self.do_send_keys(self.CHANNEL_NAME_INPUT, channel)
+        time.sleep(3)
+        self.do_click(self.CREATE_BUTTON)
+        time.sleep(2)
+        self.do_click(self.CHANNEL_CREATED2)
+        time.sleep(5)
+        self.do_click(self.INFO_BUTTON)
+        self.do_click(self.MORE_BUTTON)
+        time.sleep(10)
+        self.save_screenshot("/Screenshots/MovetToTeam.png")
+        self.do_click(self.MOVE_TO_TEAM)
+        time.sleep(2)
+        self.do_click(self.SEARCH_CHANNEL)
+        self.do_send_keys(self.SEARCH_CHANNEL, team_name)
+        time.sleep(2)
+        self.do_enter(self.SEARCH_CHANNEL)
+        time.sleep(2)
+        self.do_click(self.CONTINUE_BUTTON)
+        time.sleep(2)
+        self.do_click(self.YES_BUTTON)
+        time.sleep(5)
+        self.save_screenshot("/Screenshots/ChannelMovedToTeam.png")
+        self.do_click(self.TEAM_CREATED)
+        time.sleep(5)
+        self.do_click(self.CHANNELS)
+
+    def is_channel_moved(self):
+        return self.is_visible(self.MOVED_CHANNEL)
+
 
 
 

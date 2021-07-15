@@ -23,18 +23,21 @@ class ViewModePage(BasePage):
         time.sleep(3)
         self.do_click(self.EXTENDED_MODE)
         time.sleep(3)
+        self.save_screenshot("/Screenshots/ExtendedMode.png")
 
     def select_Medium_Mode(self):
         self.do_click(self.VIEW_MODE_BUTTON)
         time.sleep(3)
         self.do_click(self.MEDIUM_MODE)
         time.sleep(3)
+        self.save_screenshot("/Screenshots/MediumMode.png")
 
     def select_Condensed_Mode(self):
         self.do_click(self.VIEW_MODE_BUTTON)
         time.sleep(3)
         self.do_click(self.CONDENSED_MODE)
         time.sleep(3)
+        self.save_screenshot("/Screenshots/CondensedMode.png")
 
     def double_click_home(self):
         self.do_double_click(self.HOME)
