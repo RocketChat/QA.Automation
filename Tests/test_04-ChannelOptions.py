@@ -18,6 +18,7 @@ class Test_ChannelOptions(BaseTest):
         # self.driver.maximize_window()
         self.channelOptions = ChannelOptionsPage(self.driver)
         value = self.channelOptions.get_label_text()
+        print(value)
         self.channelOptions.go_to_option()
         allure.attach(self.driver.get_screenshot_as_png(), name="Options", attachment_type=AttachmentType.PNG)
         self.channelOptions.perform_favorite()

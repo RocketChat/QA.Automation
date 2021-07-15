@@ -7,14 +7,14 @@ data_env = Data()
 data = data_env.get_data()
 
 
-class DMOptionsPage(BasePage):
+class UserOptionsPage(BasePage):
     VALUE = (By.XPATH, "//a[@aria-label='" + data.user + "']//div[@data-qa='sidebar-item-title']")
     USER = (By.XPATH, "//a[@aria-label='" + data.user + "']/parent::div")
     OPTIONS_BUTTON = (By.XPATH,
                       "//a[@aria-label='" + data.user + "']//button[@class='rcx-box rcx-box--full rcx-box--animated rcx-sidebar-item__menu rcx-button--mini-square rcx-button--square rcx-button--ghost rcx-button rcx-css-ue04py']")
     FAVORITE_BUTTON = (By.XPATH, "//*[contains(text(),'Favorite')]")
-    FAVORITE_ITEM = (By.CSS_SELECTOR,
-                     "#rocket-chat > aside > div.rooms-list.sidebar--custom-colors > div > div > div > div.rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(2) > a > div > div.rc-box.rcx-box--full.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rc-box.rcx-box--full.rcx-sidebar-item__title")
+    #FAVORITE_ITEM = (By.CSS_SELECTOR,"#rocket-chat > aside > div.rooms-list.sidebar--custom-colors > div > div > div > div.rc-scrollbars-view > div:nth-child(1) > div > div:nth-child(2) > a > div > div.rc-box.rcx-box--full.rcx-sidebar-item__container.rcx-sidebar-item__content.undefined > div.rc-box.rcx-box--full.rcx-sidebar-item__title")
+    FAVORITE_ITEM = (By.CSS_SELECTOR, ".rc-scrollbars-view>div>div>div:nth-child(2)>a>div>div:nth-child(2)>div>div:nth-child(2)")
     UNFAVORITE_BUTTON = (By.XPATH, "//*[contains(text(),'Unfavorite')]")
     HOME_BUTTON = (By.CSS_SELECTOR, ".rcx-box>button:nth-child(1)")
     HIDE_OPTION = (By.XPATH, "//*[contains(text(),'Hide')]")
