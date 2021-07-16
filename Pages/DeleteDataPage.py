@@ -58,8 +58,7 @@ class DeleteDataPage(BasePage):
     def user_not_displayed(self):
         try:
             if self.is_displayed(self.USER):
-                print("User is still displayed when it should not!")
-            exit()
+                raise Exception("User is still displayed when it should not!")
 
         except (NoSuchElementException, TimeoutException):
             print("User deleted successfully")
@@ -89,6 +88,7 @@ class DeleteDataPage(BasePage):
 
         except (NoSuchElementException, TimeoutException):
             print("Team deleted successfully")
+
 
 
 

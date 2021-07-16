@@ -17,14 +17,16 @@ class Test_Delete(BaseTest):
         # self.loginPage.do_login(data.user_name, data.password)
         self.delete = DeleteDataPage(self.driver)
         self.delete.Delete_user()
-        #assert self.delete.user_not_displayed()
+        assert not self.delete.user_not_displayed()
 
     def test_delete_channel(self):
         self.delete = DeleteDataPage(self.driver)
         self.delete.Delete_channel()
-        #assert self.delete.channel_not_displayed()
+        time.sleep(3)
+        assert not self.delete.channel_not_displayed()
 
     def test_delete_team(self):
         self.delete = DeleteDataPage(self.driver)
         self.delete.Delete_team()
-        #assert self.delete.team_not_displayed()
+        time.sleep(3)
+        assert not self.delete.team_not_displayed()
