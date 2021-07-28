@@ -43,6 +43,7 @@ class Test_Team(BaseTest):
         self.team.add_new_channel_to_team(data.new_channel)
         assert self.team.is_new_channel_visible()
         self.team.go_to_Home()
+        time.sleep(3)
 
     @allure.severity(allure.severity_level.CRITICAL)
     def test_remove_channel_from_team(self):
@@ -70,6 +71,13 @@ class Test_Team(BaseTest):
         self.team = TeamsPage(self.driver)
         self.team.edit_team(data.new_name)
         assert self.team.is_change_visible()
+        self.team.go_to_Home()
+
+    @allure.severity(allure.severity_level.NORMAL)
+    def test_convert_team_to_channel(self):
+        self.team = TeamsPage(self.driver)
+        self.team.convert_team_to_channel(data.team2channel, data.team_topic)
+        time.sleep(3)
         self.team.go_to_Home()
 
 

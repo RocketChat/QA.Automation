@@ -28,5 +28,5 @@ class Test_Delete(BaseTest):
     def test_delete_team(self):
         self.delete = DeleteDataPage(self.driver)
         self.delete.Delete_team()
-        time.sleep(3)
+        time.sleep(5)
         assert not self.delete.team_not_displayed()
