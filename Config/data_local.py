@@ -34,3 +34,4 @@ class LocalData:
     channel2team = "channeltoteam"
     new_name = "edited"
     channel = "channel2"
+    team2channel = "Team2Channel"

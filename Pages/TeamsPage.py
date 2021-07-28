@@ -65,6 +65,10 @@ class TeamsPage(BasePage):
     SEARCH_CHANNEL = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[1]/div/div[5]/div/div[1]/input')
     MOVED_CHANNEL = (By.XPATH, '//li[@class="rcx-option"]//div[contains(text(),"' + data.channel + '")]')
 
+    """TEAM TO CHANNEL"""
+    TEAM2_CREATED = (By.XPATH, "//*[contains(text(),'" + data.team2channel + "')]")
+    CONVERT_TO_CHANNEL = (By.XPATH, '//li[@class="rcx-option"][@value="convertToChannel"]')
+
     def __init__(self, driver):
         super().__init__(driver)
 
@@ -160,7 +164,7 @@ class TeamsPage(BasePage):
 
     def edit_team(self, new_name):
         self.do_click(self.TEAM_CREATED)
-        time.sleep(5)
+        time.sleep(6)
         self.do_click(self.INFO_BUTTON)
         self.do_click(self.EDIT_BUTTON)
         self.save_screenshot("/Screenshots/EditTeamModal.png")
@@ -181,7 +185,7 @@ class TeamsPage(BasePage):
         self.do_click(self.CREATE_BUTTON)
         time.sleep(2)
         self.do_click(self.CHANNEL_CREATED2)
-        time.sleep(5)
+        time.sleep(6)
         self.do_click(self.INFO_BUTTON)
         self.do_click(self.MORE_BUTTON)
         time.sleep(10)
@@ -204,6 +208,25 @@ class TeamsPage(BasePage):
 
     def is_channel_moved(self):
         return self.is_visible(self.MOVED_CHANNEL)
+
+    def convert_team_to_channel(self, team2channel, team_topic):
+        self.do_click(self.ADD_BUTTON)
+        self.do_click(self.TEAM_BUTTON)
+        self.do_click(self.TEAM_NAME)
+        self.do_send_keys(self.TEAM_NAME, team2channel)
+        self.do_click(self.TEAM_TOPIC)
+        self.do_send_keys(self.TEAM_TOPIC, team_topic)
+        self.do_click(self.CREATE_BUTTON)
+        time.sleep(2)
+        self.do_click(self.TEAM2_CREATED)
+        time.sleep(5)
+        self.do_click(self.INFO_BUTTON)
+        self.do_click(self.MORE_BUTTON)
+        time.sleep(10)
+        self.save_screenshot("/Screenshots/ConvertToChannel.png")
+        self.do_click(self.CONVERT_TO_CHANNEL)
+        time.sleep(2)
+        self.do_click(self.CONVERT_BUTTON)
 
 
 
