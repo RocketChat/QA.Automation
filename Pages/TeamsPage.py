@@ -42,6 +42,12 @@ class TeamsPage(BasePage):
     REMOVE_FROM_TEAM = (By.XPATH, "//*[contains(text(), 'Remove from team')]")
     REMOVE_BUTTON = (By.XPATH, "//*[@id='modal-root']/div/dialog/div/div[2]/div/button[2]")
 
+    """Delete channel from team"""
+    CHANNELTODELETE = (By.XPATH, "//li[@class='rcx-option']//div[contains(text(), '" + data.new_channel + "')]/parent::div/parent::div/parent::li/parent::div")
+    OPTIONS_BUTTON2 = (By.XPATH, "//li[@class='rcx-option']//div[contains(text(), '" + data.new_channel + "')]/parent::div/parent::div/parent::li/parent::div//button[@class='rcx-box rcx-box--full rcx-box--animated rcx-button--tiny-square rcx-button--square rcx-button--ghost rcx-button rcx-css-ue04py']")
+    DELETE_BUTTON = (By.XPATH, "//*[contains(text(), 'Delete')]")
+    CONFIRM_DELETE = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[2]/div/button[2]')
+
     """Convert channel to team"""
     CHANNEL_BUTTON = (By.CSS_SELECTOR, ".rc-popover__list>li:nth-child(1)")
     CHANNEL_NAME_INPUT = (By.XPATH, "//*[@id='modal-root']/div/dialog/div/div[1]/div/div[1]/span/label/input")
@@ -51,13 +57,7 @@ class TeamsPage(BasePage):
     CONVERT_TO_TEAM = (By.XPATH, '//li[@class="rcx-option"][@value="convert"]')
     CONVERT_BUTTON = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[2]/div/div/button[2]')
 
-    """Edit Team"""
-    EDIT_BUTTON = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/div/aside/div/div/div[1]/div/div/div[2]/div/button[1]')
-    NAME = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/div/aside/div/div/div[1]/form/div[2]/span/input')
-    SAVE_BUTTON = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/div/aside/div/div/div[1]/form/div[10]/span/div/div/button[2]')
-    TEAM_EDIT = (By.XPATH, "//*[contains(text(),'" + data.new_name + "')]")
-
-    """Move to Team"""
+    """Move channel to Team"""
     CHANNEL_CREATED2 = (By.XPATH, "//*[contains(text(),'" + data.channel + "')]")
     MOVE_TO_TEAM = (By.XPATH, '//li[@class="rcx-option"][@value="move"]')
     CONTINUE_BUTTON = (By.XPATH, "//button[contains(text(), 'Continue')]")
@@ -65,9 +65,25 @@ class TeamsPage(BasePage):
     SEARCH_CHANNEL = (By.XPATH, '//*[@id="modal-root"]/div/dialog/div/div[1]/div/div[5]/div/div[1]/input')
     MOVED_CHANNEL = (By.XPATH, '//li[@class="rcx-option"]//div[contains(text(),"' + data.channel + '")]')
 
-    """TEAM TO CHANNEL"""
+    """Convert Team to channel"""
     TEAM2_CREATED = (By.XPATH, "//*[contains(text(),'" + data.team2channel + "')]")
     CONVERT_TO_CHANNEL = (By.XPATH, '//li[@class="rcx-option"][@value="convertToChannel"]')
+
+    """Hide Team"""
+    VALUE = (By.XPATH, "//a[@aria-label='" + data.team_name + "']//div[@data-qa='sidebar-item-title']")
+    TEAM = (By.XPATH, "//a[@aria-label='" + data.team_name + "']/parent::div")
+    MENU_BUTTON = (By.XPATH,"//a[@aria-label='" + data.team_name + "']//button[@class='rcx-box rcx-box--full rcx-box--animated rcx-sidebar-item__menu rcx-button--mini-square rcx-button--square rcx-button--ghost rcx-button rcx-css-ue04py']")
+    HIDE_OPTION = (By.XPATH, "//*[contains(text(),'Hide')]")
+    HIDE_BUTTON = (By.XPATH, "//button[contains(text(),'Yes, hide it!')]")
+    SEARCH_BUTTON = (By.CSS_SELECTOR, ".rcx-box>button:nth-child(2)")
+    SEARCH_INPUT = (By.XPATH, "//*[@id='rocket-chat']/aside/div[1]/div/div/div[2]/div/div[1]/div/label/input")
+    TEXTAREA = (By.XPATH, "//textarea[@name='msg']")
+
+    """Edit Team"""
+    EDIT_BUTTON = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/div/aside/div/div/div[1]/div/div/div[2]/div/button[1]')
+    NAME = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/div/aside/div/div/div[1]/form/div[2]/span/input')
+    SAVE_BUTTON = (By.XPATH, '//*[@id="rocket-chat"]/div[2]/div/main/div/aside/div/div/div[1]/form/div[10]/span/div/div/button[2]')
+    TEAM_EDIT = (By.XPATH, "//*[contains(text(),'" + data.new_name + "')]")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -142,6 +158,17 @@ class TeamsPage(BasePage):
         self.save_screenshot("/Screenshots/RemoveChannel.png")
         self.do_click(self.REMOVE_FROM_TEAM)
         self.do_click(self.REMOVE_BUTTON)
+
+    def delete_channel_from_team(self):
+        self.do_click(self.TEAM_CREATED)
+        time.sleep(5)
+        self.do_click(self.CHANNELS)
+        self.mouse_over(self.CHANNELTODELETE)
+        time.sleep(2)
+        self.do_click(self.OPTIONS_BUTTON2)
+        self.save_screenshot("/Screenshots/DeleteChannel.png")
+        self.do_click(self.DELETE_BUTTON)
+        self.do_click(self.CONFIRM_DELETE)
 
     def convert_channel_to_team(self, channel2team):
         self.do_click(self.ADD_BUTTON)
@@ -227,6 +254,25 @@ class TeamsPage(BasePage):
         self.do_click(self.CONVERT_TO_CHANNEL)
         time.sleep(2)
         self.do_click(self.CONVERT_BUTTON)
+
+    def get_label_text(self):
+        return self.get_element_text(self.VALUE)
+
+    def hideShow_team(self, value):
+        self.mouse_over(self.TEAM)
+        time.sleep(2)
+        self.do_click(self.MENU_BUTTON)
+        self.do_click(self.HIDE_OPTION)
+        self.do_click(self.HIDE_BUTTON)
+        time.sleep(3)
+        self.do_click(self.SEARCH_BUTTON)
+        self.do_click(self.SEARCH_INPUT)
+        time.sleep(2)
+        self.do_send_keys(self.SEARCH_INPUT, value)
+        time.sleep(5)
+        self.do_enter(self.SEARCH_INPUT)
+        time.sleep(3)
+        assert self.TEXTAREA
 
 
 

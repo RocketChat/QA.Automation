@@ -51,6 +51,12 @@ class Test_Team(BaseTest):
         self.team.remove_channel_from_team()
         self.team.go_to_Home()
 
+    @allure.severity(allure.severity_level.CRITICAL)
+    def test_delete_channel_from_team(self):
+        self.team = TeamsPage(self.driver)
+        self.team.delete_channel_from_team()
+        self.team.go_to_Home()
+
     @allure.severity(allure.severity_level.NORMAL)
     def test_convert_channel_to_team(self):
         self.team = TeamsPage(self.driver)
@@ -67,18 +73,29 @@ class Test_Team(BaseTest):
         self.team.go_to_Home()
 
     @allure.severity(allure.severity_level.NORMAL)
+    def test_convert_team_to_channel(self):
+        self.team = TeamsPage(self.driver)
+        self.team.convert_team_to_channel(data.team2channel, data.team_topic)
+        time.sleep(3)
+        self.team.go_to_Home()
+
+    @allure.severity(allure.severity_level.NORMAL)
+    def test_hide_team(self):
+        self.team = TeamsPage(self.driver)
+        value = self.team.get_label_text()
+        print(value)
+        self.team.hideShow_team(value)
+        time.sleep(3)
+        self.team.go_to_Home()
+
+    @allure.severity(allure.severity_level.NORMAL)
     def test_edit_team(self):
         self.team = TeamsPage(self.driver)
         self.team.edit_team(data.new_name)
         assert self.team.is_change_visible()
         self.team.go_to_Home()
 
-    @allure.severity(allure.severity_level.NORMAL)
-    def test_convert_team_to_channel(self):
-        self.team = TeamsPage(self.driver)
-        self.team.convert_team_to_channel(data.team2channel, data.team_topic)
-        time.sleep(3)
-        self.team.go_to_Home()
+
 
 
 
